@@ -8,16 +8,15 @@
   <body>
     <header>
       <div>
-        <!-- pic -->
         <img src="images/bon.jpg" alt="photo of self" />
         <h1>Bonnie Soderborg</h1>
       </div>
       <nav>
-        <!-- <?php include $_SERVER['DOCUMENT_ROOT'].'/CS313Website/modules/nav.php';?> -->
-        <ul id="mainNav">
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/CS313Website/modules/nav.php';?>
+        <!-- <ul id="mainNav">
           <li><a href="index.html" class="current">Home</a></li>
           <li><a href="assignments.html">Assignments</a></li>
-        </ul>
+        </ul> -->
       </nav>
     </header>
     <main>

@@ -13,7 +13,7 @@
         <img src="images/bon.jpg" alt="photo of self" />
         <h1>Bonnie Soderborg</h1>
         <?php
-date_default_timezone_set('America/MDT');
+date_default_timezone_set('America/Denver');
 
 $timestamp = time();
 $date_time = date("d-m-Y (D) H:i:s", $timestamp);
@@ -23,7 +23,6 @@ echo "Current date and local time on this server is $date_time";
         <!-- <span></span> -->
       </div>
       <nav>
-        <!-- <?php include $_SERVER['DOCUMENT_ROOT'].'/CS313Website/modules/nav.php';?> -->
         <ul id="mainNav">
           <li><a href="index.html" class="current">Home</a></li>
           <li><a href="assignments.html">Assignments</a></li>

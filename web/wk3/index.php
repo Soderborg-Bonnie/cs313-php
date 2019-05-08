@@ -39,7 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <?php
       foreach ($majors as $value)
         {
-            echo '<input type="radio" value="'.$value[0].'" name="major" />'.$value[1].'<br />';
+            echo '<input type="radio" value="'.$value[0].'" name="major" ';
+            if ($major==$value[0]) { echo 'checked '; }
+            echo ' />'.$value[1].'<br />';
         }
         ?>
       <label>Comments</label><br />
@@ -56,9 +58,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
-        echo "<p>Name: $name</p>".
-        '<a href="mailto:'.$email.'">'.$name.'</a>'.
-        "<p>Major: ".$major."</p>".
+        echo "<p>Name: $name</p>";
+        if ($email !='')
+        {
+            echo '<a href="mailto:'.$email.'">'.$email.'</a>';
+        }
+        echo"<p>Major: ".$major."</p>".
         "<p>Comments: ".$comments."</p>";
         foreach ($continent as $value)
         {

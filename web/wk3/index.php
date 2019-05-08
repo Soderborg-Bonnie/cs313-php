@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <label>Name</label>
       <input type="text" name="name" value="<?php echo $name; ?>"/><br />
       <label>Email</label>
-      <input type="email" name="email" value="<?php email; ?>"/><br />
+      <input type="email" name="email" value="<?php $email; ?>"/><br />
       <label>Major</label><br />
       <input type="radio" name="major" value="comScience" />Computer Science
       <input type="radio" name="major" value="web" />Web Design and Development
@@ -51,13 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "<p>Comments: ".$comments."</p>";
         foreach ($continent as &$value)
         {
-            echo $value;
+            echo '<p>'.$value.'</p>';
         }
-        if (isset($continent)) {
-            echo "<p>Continent(s): ";
-            print_r($continent);
-            echo "</p>";
-        }
-    }
-?>  </body>
+?>
+ </body>
 </html>

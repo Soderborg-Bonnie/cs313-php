@@ -64,7 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo '<input type="checkbox" value="'.$value[0].'" name="continent[]" ';
             foreach ($continent as $x)
             {
-                echo 'checked ';
+                if ($x==$value)
+                {
+                    echo 'checked ';
+                }
             }
             echo ' />'.$value[1].'<br />';
         }

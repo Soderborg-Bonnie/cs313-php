@@ -3,6 +3,14 @@ $name='';
 $email='';
 $continent='';
 $comments='';
+$major='';
+$majors = array
+  (
+  array("comScience","Computer Science"),
+  array("web","Web Design"),
+  array("compIT","Computer IT"),
+  array("compEng","Computer Engineering")
+  );
 ?>
 
 <html lang="en">
@@ -19,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $continent = $_POST['continent'];
     $comments=htmlspecialchars($_POST['comments']);
+    $major=htmlspecialchars($_POST['major']);
 }
 ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -27,11 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <label>Email</label>
       <input type="email" name="email" value="<?php $email; ?>"/><br />
       <label>Major</label><br />
-      <input type="radio" name="major" value="comScience" />Computer Science
-      <input type="radio" name="major" value="web" />Web Design and Development
-      <input type="radio" name="major" value="compIT" />Computer information
-      Technology <input type="radio" name="major" value="compEng" />Computer
-      Engineering<br />
+      <?php
+      foreach ($majors as $value)
+        {
+            echo '<input type="radio" value="'.$value[0].'" name="major" />'.$value[1].'<br />';
+        }
+        ?>
       <label>Comments</label><br />
       <textarea rows="4" cols="50" name="comments"></textarea><br />
       <input type="checkbox" name="continent[]" value="NA">North America   <br>
@@ -48,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         echo "<p>Name: $name</p>".
         '<a href="mailto:'.$email.'">'.$name.'</a>'.
-        "<p>Major: ".$_POST['major']."</p>".
+        "<p>Major: ".$major."</p>".
         "<p>Comments: ".$comments."</p>";
         foreach ($continent as $value)
         {

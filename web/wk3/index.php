@@ -16,9 +16,9 @@ $comments='';
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email'];
+    $email = htmlspecialchars($_POST['email']);
     $continent = $_POST['continent'];
-    $comments=$_POST['comments'];
+    $comments=htmlspecialchars($_POST['comments']);
 }
 ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -45,14 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
         echo "<p>Name: $name</p>".
         '<a href="mailto:'.$email.'">'.$name.'</a>'.
         "<p>Major: ".$_POST['major']."</p>".
         "<p>Comments: ".$comments."</p>";
-        foreach ($continent as &$value)
+        foreach ($continent as $value)
         {
             echo '<p>'.$value.'</p>';
         }
+
+        
 ?>
  </body>
 </html>

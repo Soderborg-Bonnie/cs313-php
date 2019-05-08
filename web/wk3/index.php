@@ -11,6 +11,19 @@ $majors = array
   array("compIT","Computer IT"),
   array("compEng","Computer Engineering")
   );
+
+
+
+  $continents = array
+  (
+  array("NA","North America"),
+  array("SA","South Americ"),
+  array("EU","Europe"),
+  array("AI","Asia"),
+  array("AU","Australia"),
+  array("AF","Africa"),
+  array("AA","Antartica")
+  );
 ?>
 
 <html lang="en">
@@ -45,14 +58,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         ?>
       <label>Comments</label><br />
-      <textarea rows="4" cols="50" name="comments"></textarea><br />
-      <input type="checkbox" name="continent[]" value="NA">North America   <br>
-      <input type="checkbox" name="continent[]" value="SA">South America   <br>
-      <input type="checkbox" name="continent[]" value="EU">Europe   <br>
-      <input type="checkbox" name="continent[]" value="AI">Asia   <br>
-      <input type="checkbox" name="continent[]" value="AU">Australia   <br>
-      <input type="checkbox" name="continent[]" value="AF">Africa   <br>
-      <input type="checkbox" name="continent[]" value="AA">Antartica   <br>
+      <textarea rows="4" cols="50" name="comments"></textarea><br /><?php
+      foreach ($continents as $value)
+        {
+            echo '<input type="checkbox" value="'.$value[0].'" name="continent[]" ';
+            foreach ($continent as $x)
+            {
+                echo 'checked ';
+            }
+            echo ' />'.$value[1].'<br />';
+        }
+        ?>
       <input type="submit" /><br />
      </form>
     <?php
@@ -69,6 +85,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         {
             echo '<p>'.$value.'</p>';
         }
+
+        foreach ($continent as $x)
+            {
+                echo '<p>'.$x.'</p>';
+            }
+
     }
         
 ?>

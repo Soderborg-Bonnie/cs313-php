@@ -1,3 +1,10 @@
+<?php
+$name='';
+$email='';
+$continent='';
+$comments='';
+?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,11 +13,19 @@
   </head>
   <body>
     <header></header>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email'];
+    $continent = $_POST['continent'];
+    $comments=$_POST['comments'];
+}
+?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       <label>Name</label>
-      <input type="text" name="name" /><br />
+      <input type="text" name="name" value="<?php echo $name; ?>"/><br />
       <label>Email</label>
-      <input type="email" name="email" /><br />
+      <input type="email" name="email" value="<?php email; ?>"/><br />
       <label>Major</label><br />
       <input type="radio" name="major" value="comScience" />Computer Science
       <input type="radio" name="major" value="web" />Web Design and Development
@@ -30,16 +45,19 @@
      </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo "<p>Name: ".$_POST['name']."</p>".
-        '<a href="mailto:'.$_POST['email'].'">'.$_POST['name'].'</a>'.
+        echo "<p>Name: $name</p>".
+        '<a href="mailto:'.$email.'">'.$name.'</a>'.
         "<p>Major: ".$_POST['major']."</p>".
-        "<p>Comments: ".$_POST['comments']."</p>";
-        if (isset($_POST['continent'])) {
+        "<p>Comments: ".$comments."</p>";
+        foreach ($continent as &$value)
+        {
+            echo $value;
+        }
+        if (isset($continent)) {
             echo "<p>Continent(s): ";
-            print_r($_POST['continent']);
+            print_r($continent);
             echo "</p>";
         }
     }
-?>
-  </body>
+?>  </body>
 </html>

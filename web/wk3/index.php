@@ -84,10 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo"<p>Major: ".$major."</p>".
         "<p>Comments: ".$comments."</p>";
-        foreach ($continent as $value)
-        {
-            echo '<p>'.$value.'</p>';
-        }
 
         foreach ($continent as $x)
             {

@@ -6,8 +6,7 @@
   </head>
   <body>
     <header></header>
-    <!-- <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> -->
-    <form action="POST" action="index.php">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       <label>Name</label>
       <input type="text" name="name" /><br />
       <label>Email</label>

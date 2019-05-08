@@ -91,7 +91,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         foreach ($continent as $x)
             {
-                echo '<p>'.$x.'</p>';
+                foreach ($continents as $value)
+                {
+                    if ($x==$value[0])
+                    {
+                        echo '<p>'.$value[1].'</p>';
+                    }
+                }
             }
 
     }

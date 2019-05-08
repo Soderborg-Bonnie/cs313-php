@@ -27,6 +27,7 @@
       <input type="checkbox" name="continent[]" value="AU">Australia   <br>
       <input type="checkbox" name="continent[]" value="AF">Africa   <br>
       <input type="checkbox" name="continent[]" value="AA">Antartica   <br>
+      <input type="submit" /><br />
      </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

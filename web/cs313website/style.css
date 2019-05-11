@@ -11,7 +11,7 @@ https://coolors.co/de6b48-e5b181-f4b9b2-daedbd-7dbbc3 */
   padding: 0;
 }
 body {
-    font-family: 'Fira Sans Condensed', sans-serif;  font-size: 16px;
+  font-family: 'Fira Sans Condensed', sans-serif;  font-size: 16px;
   min-width: 420px;
   width: 100%;
   margin: 0 auto;
@@ -58,7 +58,6 @@ nav ul li a {
   padding: 1rem;
   font-weight: 700;
   text-decoration: none;
-  text-shadow: 2px 2px 3px grey);
 }
 nav ul li a:link {
   color: white;

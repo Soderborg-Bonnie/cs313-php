@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 16px;
+  min-width: 420px;
+  width: 100%;
+  margin: 2em auto;
+  display: inline-block;
+  text-align: center;
+}
+#logoText {
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 2em;
+  text-align: center;
+  color: #012f38;
+}
+.logo {
+  padding-bottom: 2em;
+}
+nav {
+  width: 100%;
+  text-align: left;
+  background: #078087;
+  z-index: 1;
+}
+
+nav button {
+  margin: 0.2rem 2%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+nav ul {
+  margin: 0 auto;
+  list-style-type: none;
+  text-align: left;
+  /* padding: 0; */
+  overflow: hidden;
+}
+
+nav ul li {
+  margin: 0.1em 0.5em;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  /* text-shadow: 2px 2px 4px #000; */
+}
+
+nav ul li a:link {
+  color: white;
+}
+
+nav ul li a:visited {
+  color: white;
+}
+
+nav ul li a:hover {
+  color: #c74690;
+  font-size: 1.3em;
+}
+
+nav ul li a:active {
+  color: #3ee236;
+}
+
+a.current:link,
+a.current:visited {
+  color: #3ee236;
+}
+
+nav ul.hide {
+  display: none;
+}
+
+footer {
+  text-align: center;
+}
+#designs {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#designs img {
+  border: 5px solid #078087;
+  border-radius: 25px;
+  margin: 1rem;
+}
+.addBtn {
+  font-size: 3em;
+  font-weight: 900;
+  margin-bottom: 1em;
+}
+.mainHome h1 {
+  font-size: 2em;
+  padding: 1em;
+}
+.pageBtn {
+  font-size: 2em;
+  padding: 0.5em;
+  background-color: #078087;
+  color: white;
+  margin: 2em;
+  width: 10em;
+}
+@media only screen and (min-width: 860px) {
+  /*******************************************header tablet size*/
+  header {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-top: -20px;
+    height: 290px;
+  }
+
+  /* .logo {
+    display: inline-flex;
+    margin-left: 200px;
+  } */
+  nav {
+    font-size: 1.5rem;
+    margin-top: -40px;
+    height: 5rem;
+  }
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  nav button {
+    display: none;
+  }
+  nav ul.hide {
+    display: grid;
+  }
+  #designs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+  #designs img {
+    margin: 0;
+  }
+  footer {
+    font-size: 0.7rem;
+  }
+  footer a {
+    margin: 0 4rem;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  /*******************************************header full size*/
+  /* .logo {
+    display: inline-flex;
+    margin-left: 400px;
+  } */
+  nav ul {
+    padding: 0 25rem;
+  }
+  /*********************************************main full size*/
+  main {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  #designs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  footer {
+    font-size: 0.8rem;
+  }
+  footer a {
+    margin: 0 5rem;
+  }
+}

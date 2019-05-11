@@ -188,15 +188,15 @@ $cookies = array
         ?>
         <header>
       <div class="logo">
-        <a href="/web/shoppingCart/index.php" id="logoText">
+        <a href="index.php" id="logoText">
           <h1>custom cookies</h1>
         </a>
       </div>
       <nav>
         <button onclick="toggleMenu()">&#9776;</button>
         <ul id="mainNav" class="hide">
-          <li><a href="/web/shoppingCart/index.php" class="current">Home</a></li>
-          <li><a href="/web/shoppingCart/cart.php">Cart</a></li>
+          <li><a href="index.php" class="current">Home</a></li>
+          <li><a href="cart.php">Cart</a></li>
         </ul>
       </nav>
     </header>
@@ -219,7 +219,7 @@ $cookies = array
               value=" + " 
               id="aveStrong"
               name="aveStrong"
-              onclick="window.location.href='/web/shoppingCart/index.php?inc=TRUE&name=aveStrong'"
+              onclick="window.location.href='index.php?inc=TRUE&name=aveStrong'"
               />
             </div>
           </div>
@@ -233,7 +233,7 @@ $cookies = array
               value=" + " 
               id="elmo"
               name="elmo"
-              onclick="window.location.href='/web/shoppingCart/index.php?inc=TRUE&name=elmo'"
+              onclick="window.location.href='index.php?inc=TRUE&name=elmo'"
               />            </div>
           </div>
           <div class="designLayers">
@@ -250,7 +250,7 @@ $cookies = array
               value=" + " 
               id="mickieBirthday"
               name="mickieBirthday"
-              onclick="window.location.href='/web/shoppingCart/index.php?inc=TRUE&name=mickieBirthday'"
+              onclick="window.location.href='index.php?inc=TRUE&name=mickieBirthday'"
               />
             </div>
           </div>
@@ -268,7 +268,7 @@ $cookies = array
               value=" + " 
               id="momFlowers"
               name="momFlowers"
-              onclick="window.location.href='/web/shoppingCart/index.php?inc=TRUE&name=momFlowers'"
+              onclick="window.location.href='index.php?inc=TRUE&name=momFlowers'"
               />
             </div>
           </div>
@@ -286,7 +286,7 @@ $cookies = array
               value=" + " 
               id="sesameStreet"
               name="sesameStreet"
-              onclick="window.location.href='/web/shoppingCart/index.php?inc=TRUE&name=sesameStreet'"
+              onclick="window.location.href='index.php?inc=TRUE&name=sesameStreet'"
               />
             </div>
           </div>

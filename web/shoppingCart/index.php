@@ -4,14 +4,13 @@ session_start();
 if (isset($_GET['name'])){
 
   function doCase($item) {
-    if(isset($_GET['inc'])) { // increasing
-        echo ++$_SESSION[$item]; // no need for extra variable (preincrement to echo immediately)
+    if(isset($_GET['inc'])) { 
+        echo ++$_SESSION[$item]; 
     }
-    if(isset($_GET['dec'])) { // decreasing
+    if(isset($_GET['dec'])) { 
 
-        echo --$_SESSION[$item]; // no need for extra variable (predecrement to echo immediately)
+        echo --$_SESSION[$item]; 
     }  } 
-    // switch ($_GET['name']) {     
     switch ($_GET['name']) {
       case 'aveStrong':
           doCase('aveStrong');           
@@ -170,7 +169,6 @@ $cookies = array
             'itemCount' => ""
         )   
     );
-    // echo $_SESSION["aveStrong"];
 ?>
 
 <html lang="en-US">

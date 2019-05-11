@@ -177,7 +177,7 @@ $cookies = array
   <head>
     <title>shopping cart</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/web/shoppingCart/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>

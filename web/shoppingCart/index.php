@@ -5,11 +5,11 @@ if (isset($_GET['name'])){
 
   function doCase($item) {
     if(isset($_GET['inc'])) { 
-        echo ++$_SESSION[$item]; 
+         ++$_SESSION[$item]; 
     }
     if(isset($_GET['dec'])) { 
 
-        echo --$_SESSION[$item]; 
+         --$_SESSION[$item]; 
     }  } 
     switch ($_GET['name']) {
       case 'aveStrong':

@@ -7,21 +7,21 @@ session_start();
   <head>
     <title>shopping cart</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/web/shoppingCart/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header>
       <div class="logo">
-        <a href="/web/shoppingCart/index.php" id="logoText">
+        <a href="index.php" id="logoText">
           <h1>custom cookies</h1>
         </a>
       </div>
       <nav>
         <button onclick="toggleMenu()">&#9776;</button>
         <ul id="mainNav" class="hide">
-          <li><a href="/web/shoppingCart/index.php" class="current">Home</a></li>
-          <li><a href="/web/shoppingCart/cart.php">Cart</a></li>
+          <li><a href="index.php" class="current">Home</a></li>
+          <li><a href="cart.php">Cart</a></li>
         </ul>
       </nav>
     </header>

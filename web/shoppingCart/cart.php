@@ -70,14 +70,14 @@ if (isset($_GET['name'])){
   <body>
     <header>
     <div class="logo">
-        <a href="/web/shoppingCart/index.php" id="logoText">
+        <a href="index.php" id="logoText">
           <h1>custom cookies</h1>
         </a>
       </div>      <nav>
         <button onclick="toggleMenu()">&#9776;</button>
         <ul id="mainNav" class="hide">
-          <li><a href="/web/shoppingCart/index.php" class="current">Home</a></li>
-          <li><a href="/web/shoppingCart/cart.php">Cart</a></li>
+          <li><a href="index.php" class="current">Home</a></li>
+          <li><a href="cart.php">Cart</a></li>
         </ul>
       </nav>
     </header>
@@ -99,7 +99,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='aveStrong'
     name='aveStrong'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=aveStrong'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=aveStrong'"  
     />
     
     <input 
@@ -107,7 +107,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='aveStrong'
     name='aveStrong'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=aveStrong'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=aveStrong'"'
     />
     </div>
   </div>    
@@ -128,7 +128,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='elmo'
     name='elmo'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=elmo'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=elmo'"  
     />
     
     <input 
@@ -136,7 +136,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='elmo'
     name='elmo'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=elmo'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=elmo'"'
     />
   </div>
 </div>
@@ -157,7 +157,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='mickieBirthday'
     name='mickieBirthday'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=mickieBirthday'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=mickieBirthday'"  
     />
     
     <input 
@@ -165,7 +165,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='mickieBirthday'
     name='mickieBirthday'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=mickieBirthday'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=mickieBirthday'"'
     />
   </div>
 </div>
@@ -186,7 +186,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='momFlowers'
     name='momFlowers'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=momFlowers'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=momFlowers'"  
     />
     
     <input 
@@ -194,7 +194,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='momFlowers'
     name='momFlowers'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=momFlowers'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=momFlowers'"'
     />
   </div>
 </div>
@@ -215,7 +215,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='sesameStreet'
     name='sesameStreet'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=sesameStreet'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=sesameStreet'"  
     />
     
     <input 
@@ -223,7 +223,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='sesameStreet'
     name='sesameStreet'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=sesameStreet'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=sesameStreet'"'
     />
   </div>
 </div>
@@ -244,7 +244,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='sunburst'
     name='sunburst'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=sunburst'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=sunburst'"  
     />
     
     <input 
@@ -252,7 +252,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='sunburst'
     name='sunburst'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=sunburst'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=sunburst'"'
     />
   </div>
 </div>
@@ -273,7 +273,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='teacher'
     name='teacher'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=teacher'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=teacher'"  
     />
     
     <input 
@@ -281,7 +281,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='teacher'
     name='teacher'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=teacher'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=teacher'"'
     />
   </div>
 </div>
@@ -302,7 +302,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='sushi'
     name='sushi'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=sushi'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=sushi'"  
     />
     
     <input 
@@ -310,7 +310,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='sushi'
     name='sushi'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=sushi'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=sushi'"'
     />
   </div>
 </div>
@@ -331,7 +331,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='dolphins'
     name='dolphins'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=dolphins'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=dolphins'"  
     />
     
     <input 
@@ -339,7 +339,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='dolphins'
     name='dolphins'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=dolphins'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=dolphins'"'
     />
   </div>
 </div>
@@ -361,7 +361,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='drSeuss'
     name='drSeuss'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=drSeuss'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=drSeuss'"  
     />
     
     <input 
@@ -369,7 +369,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='drSeuss'
     name='drSeuss'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=drSeuss'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=drSeuss'"'
     />
   </div>
 </div>
@@ -390,7 +390,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='thankYou'
     name='thankYou'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=thankYou'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=thankYou'"  
     />
     
     <input 
@@ -398,7 +398,7 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='thankYou'
     name='thankYou'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=thankYou'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=thankYou'"'
     />
   </div>
 </div>
@@ -419,7 +419,7 @@ if (isset($_GET['name'])){
     value=' + ' 
     id='missingIntern'
     name='missingIntern'
-    onclick="window.location.href='/web/shoppingCart/cart.php?inc=TRUE&name=missingIntern'"  
+    onclick="window.location.href='cart.php?inc=TRUE&name=missingIntern'"  
     />
     
     <input 
@@ -427,14 +427,14 @@ if (isset($_GET['name'])){
     value=' - ' 
     id='missingIntern'
     name='missingIntern'
-    onclick="window.location.href='/web/shoppingCart/cart.php?dec=FALSE&name=missingIntern'"'
+    onclick="window.location.href='cart.php?dec=FALSE&name=missingIntern'"'
     />
   </div>
 </div>
 <?php endif; ?>
 
     </main>
-    <a href="/web/shoppingCart/checkout.php">
+    <a href="checkout.php">
       <button class="pageBtn">CHECKOUT</button>
     </a>
   </body>

@@ -15,21 +15,21 @@ $zipCode='';
   <head>
     <title>shopping cart</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/web/shoppingCart/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <header>
       <div class="logo">
-        <a href="/web/shoppingCart/index.php" id="logoText">
+        <a href="index.php" id="logoText">
           <h1>custom cookies</h1>
         </a>
       </div>
       <nav>
         <button onclick="toggleMenu()">&#9776;</button>
         <ul id="mainNav" class="hide">
-          <li><a href="/web/shoppingCart/index.php" class="current">Home</a></li>
-          <li><a href="/web/shoppingCart/cart.php">Cart</a></li>
+          <li><a href="index.php" class="current">Home</a></li>
+          <li><a href="cart.php">Cart</a></li>
         </ul>
       </nav>
     </header>
@@ -50,7 +50,7 @@ $zipCode='';
         <!-- <h2>Here's what we have lined up for you so far:</h2><br /> -->
         <h2>Pleaese fill out the following: </h2><br />
     <!-- <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> -->
-    <form method="post" action="/web/shoppingCart/confirmation.php">
+    <form method="post" action="confirmation.php">
             <label>Full name: </label>
             <input type="text" name="name" value="<?php echo $name; ?>"/><br /><br />
             <label>Email: </label>
@@ -65,7 +65,7 @@ $zipCode='';
             <input type="text" name="state" value="<?php echo $state; ?>"/><br /><br />          
             <label>Zip code: </label>
             <input type="text" name="zipCode" value="<?php echo $zipCode; ?>"/><br /><br />
-            <a href="/web/shoppingCart/cart.php">
+            <a href="cart.php">
                 <input type="button" class="pageBtn" value="Browse">
             </a>
                 <input type="submit" name="submit" value="order" class="pageBtn">

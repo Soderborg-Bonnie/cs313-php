@@ -75,6 +75,14 @@ a.current:link,
 a.current:visited {
   color: #de6b48;
 }
+#assignments h1 {
+  padding: 1.5em;
+}
+
+#assignments li {
+  padding: 1em;
+  text-align: left;
+}
 footer{
     position: fixed;
     left: 0;

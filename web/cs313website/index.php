@@ -29,7 +29,7 @@ echo "Current date and local time on this server is $date_time";
         </ul>
       </nav>
     </header>
-    <main>
+    <main id="homeMain">
       <div id="fourPack">
         <!-- <p>CS 313</p> -->
         <img

@@ -78,11 +78,14 @@ a.current:link,
 a.current:visited {
   color: #de6b48;
 }
-main h1 {
+#homeMain {
+  padding-bottom: 1em;
+}
+#assignments h1 {
   padding: 1.5em;
 }
 
-main ul li {
+#assignments ul li {
   padding: 1em;
   text-align: left;
 }

@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-
+<?php
+        date_default_timezone_set('America/Denver');
+        
+        $timestamp = time();
+        $date_time = date("d-m-Y (D) H:i:s", $timestamp);
+        echo "Current date and local time on this server is $date_time";
+?>
 
 <html lang="en">
   <head>
@@ -9,23 +14,23 @@
   </head>
   <body>
     <header>
-      <div>
-        <img src="images/bon.jpg" alt="photo of self" />
-        <h1>Bonnie Soderborg</h1>
-        <?php
-date_default_timezone_set('America/Denver');
 
-$timestamp = time();
-$date_time = date("d-m-Y (D) H:i:s", $timestamp);
-echo "Current date and local time on this server is $date_time";
-?>
+      <div id="topOfPage">
+        <img src="images/bon.jpg" alt="photo of self" />
+        <div>
+          <h1>Bonnie Soderborg</h1>
+          <br />
+          <h3>Web Design and Development student at BYU-I</h3>
+          <br /><br />
+          <h3 id="cs313">CS 313</h3>
+        </div>
 
         <!-- <span></span> -->
       </div>
       <nav>
         <ul id="mainNav">
-          <li><a href="index.html" class="current">Home</a></li>
-          <li><a href="assignments.html">Assignments</a></li>
+          <li><a href="index.php" class="current">Home</a></li>
+          <li><a href="assignments.php">Assignments</a></li>
         </ul>
       </nav>
     </header>

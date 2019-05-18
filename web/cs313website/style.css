@@ -29,15 +29,23 @@ header {
 header h1 {
   color: #de6b48;
   font-family: "Merienda", cursive;
-  font-size: 2rem;
-  padding: 2em;
+  font-size: 2.6rem;
+  padding-left: 2em;
+  padding-top: 2em;
+}
+header h3 {
+  color: #ce8880;
+  padding-left: 4.1em;
 }
 header div img {
   display: inline;
 }
-header div {
+#topOfPage {
   display: inline-flex;
   margin-left: 200px;
+}
+#cs313 {
+  color: #7dbbc3;
 }
 nav {
   width: 100%;
@@ -79,7 +87,7 @@ a.current:visited {
   color: #de6b48;
 }
 #homeMain {
-  padding-bottom: 2em;
+  margin-top: -10em;
 }
 #assignments {
   margin-top: -10em;

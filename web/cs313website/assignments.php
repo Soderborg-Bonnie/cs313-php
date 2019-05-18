@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+        date_default_timezone_set('America/Denver');
+        
+        $timestamp = time();
+        $date_time = date("d-m-Y (D) H:i:s", $timestamp);
+        echo "Current date and local time on this server is $date_time";
+?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,7 +22,7 @@
       <nav>
         <ul id="mainNav">
           <li><a href="index.php">Home</a></li>
-          <li><a href="assignments.html" class="current">Assignments</a></li>
+          <li><a href="assignments.php" class="current">Assignments</a></li>
         </ul>
       </nav>
     </header>

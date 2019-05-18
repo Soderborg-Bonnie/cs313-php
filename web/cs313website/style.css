@@ -5,13 +5,15 @@ melon: #F4B9B2
 tea green: #DAEDBD
 moonstone blue: #7DBBC3
 https://coolors.co/de6b48-e5b181-f4b9b2-daedbd-7dbbc3 */
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Merienda');* {
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Merienda");
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: 'Fira Sans Condensed', sans-serif;  font-size: 16px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 16px;
   min-width: 420px;
   width: 100%;
   margin: 0 auto;
@@ -26,16 +28,16 @@ header {
 }
 header h1 {
   color: #de6b48;
-  font-family: 'Merienda', cursive;
+  font-family: "Merienda", cursive;
   font-size: 2rem;
   padding: 2em;
 }
-header div img{
-    display: inline;
+header div img {
+  display: inline;
 }
-header div{
-    display: inline-flex;
-    margin-left: 200px;
+header div {
+  display: inline-flex;
+  margin-left: 200px;
 }
 nav {
   width: 100%;
@@ -44,18 +46,19 @@ nav {
   height: 50px;
 }
 nav ul {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    margin: 0 auto;
-    list-style-type: none;
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 0 auto;
+  list-style-type: none;
+  overflow: hidden;
 }
 nav ul li {
-  margin: 0.1em 0.5em;
+  margin: 0.1em 1.5em;
 }
 nav ul li a {
   display: inline-block;
   padding: 1rem;
+  font-size: 1.5em;
   font-weight: 700;
   text-decoration: none;
 }
@@ -66,7 +69,7 @@ nav ul li a:visited {
   color: white;
 }
 nav ul li a:hover {
-  color: #E5B181;
+  color: #e5b181;
 }
 nav ul li a:active {
   color: #de6b48;
@@ -83,20 +86,20 @@ a.current:visited {
   padding: 1em;
   text-align: left;
 }
-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 3em;
-    color: white;
-    text-align: center;
-    background: linear-gradient(#daedbd, #7dbbc3);
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  color: white;
+  text-align: center;
+  background: linear-gradient(#daedbd, #7dbbc3);
 }
-.color{
-    z-index: 2;
-}  
-.color:hover{
-    /* visibility: hidden; */
-    filter: grayscale(100%)
+.color {
+  z-index: 2;
+}
+.color:hover {
+  /* visibility: hidden; */
+  filter: grayscale(100%);
 }

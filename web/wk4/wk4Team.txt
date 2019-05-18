@@ -1,0 +1,140 @@
+CREATE DATABASE conference;
+
+/c conference
+
+
+\dt -- Lists the tables
+eg \d public.user
+\d+ public.user -- shows the details of the user table
+\q -- quite the application and go back to prompt
+
+
+CREATE TABLE public.user
+(
+    id      SERIAL PRIMARY KEY,
+    name    TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE public.speaker
+(
+    id      SERIAL PRIMARY KEY,
+    title   TEXT NOT NULL,
+    sn      TEXT
+);
+
+CREATE TABLE public.session
+(
+    id         SERIAL PRIMARY KEY,
+    name       TEXT
+);
+
+
+CREATE TABLE public.conference
+(
+    id SERIAL PRIMARY KEY,
+    speakerId INT REFERENCES public.speaker(id), 
+    sessionId INTEGER REFERENCES session(id),
+    monthId   INTEGER REFERENCES month(id),
+    yearId    INTEGER REFERENCES year(id)
+);
+
+
+CREATE TABLE public.month (
+    id SERIAL   PRIMARY KEY,
+    name        TEXT
+);
+
+CREATE TABLE public.year (
+    id SERIAL PRIMARY KEY,
+    year      INT
+);
+
+CREATE TABLE public.notes (
+    id SERIAL    PRIMARY KEY,
+    name         TEXT,
+    note         TEXT,
+    conferenceId INTEGER REFERENCES conference(id),
+    userId       INTEGER REFERENCES users(id)
+);
+
+CREATE TABLE public.users (
+    id      SERIAL PRIMARY KEY,
+    name    TEXT
+);
+
+--SELECT STATEMENTS TO TEST WITH. 
+
+SELECT NAME
+FROM NAME A
+,    USERS B
+WHERE 1=1
+AND A.NAME = B.NAME 
+;
+
+
+
+INSERT INTO users (name) VALUES
+    ('Adam'),
+    ('George'),
+    ('Sarah');
+
+INSERT INTO month (name) VALUES
+    ('April'),
+    ('October');
+
+INSERT INTO year (year) VALUES
+    ('2019'),
+    ('2018'),
+    ('2018');
+
+INSERT INTO session (name) VALUES
+    ('Saturday Morning'),
+    ('Saturday Afternoon'),
+    ('Sunday Morning'),
+    ('Sunday Afternoon'),
+    ('Priesthood'),
+    ('Relief Society');
+
+INSERT INTO speaker (title,sn) VALUES
+    ('Elder', 'Anderson'),
+    ('Elder', 'Uchtdorf'),
+    ('Elder', 'Bednar');
+    
+INSERT INTO conference (speakerId, sessionId, monthId, yearId) VALUES
+    (1,2,1,1),
+    (2,2,2,2),
+    (3,2,2,3);
+
+INSERT INTO notes (name,note,conferenceId,userId) VALUES
+    ('Note 1','Here is a test note of the talk 1',1,1),
+    ('Note 2','Here is a test note of the talk 1',2,2),
+    ('Note 1','Here is a test note of the talk 2',1,2),
+    ('Note 2','Here is a test note of the talk 2',2,3),
+    ('Note 1','Here is a test note of the talk 3',2,3),
+    ('Note 2','Here is a test note of the talk 3',3,3);
+
+SELECT DISTINCT(*)
+FROM notes,user,conference,speaker,session
+where speaker.id = 1;
+
+SELECT * from speaker;
+
+SELECT * from notes;
+
+SELECT conference.id,speaker.title,speaker.sn,session.name
+FROM conference,speaker,session
+where conference.id = 1;
+
+SELECT conference.id,speaker.title
+FROM conference,speaker
+where conference.id = 1;
+
+
+SELECT A.id,S.title,S.sn,SS.name,N.name,N.note,U.name
+FROM conference A
+    INNER JOIN speaker S ON S.id = A.speakerId
+    INNER JOIN session SS ON SS.id = A.sessionId
+    INNER JOIN session M ON M.id = A.sessionId
+    INNER JOIN notes N ON N.conferenceId = A.id
+    INNER JOIN users U ON N.userId = U.id
+where S.id = 1;

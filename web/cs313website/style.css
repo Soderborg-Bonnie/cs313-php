@@ -43,7 +43,7 @@ nav {
   width: 100%;
   text-align: left;
   background: linear-gradient(#7dbbc3, #daedbd);
-  height: 50px;
+  height: 60px;
 }
 nav ul {
   display: grid;
@@ -53,7 +53,7 @@ nav ul {
   overflow: hidden;
 }
 nav ul li {
-  margin: 0.1em 1.5em;
+  margin: 0 1.5em;
   font-size: 1.5em;
 }
 nav ul li a {
@@ -79,7 +79,10 @@ a.current:visited {
   color: #de6b48;
 }
 #homeMain {
-  padding-bottom: 1em;
+  padding-bottom: 2em;
+}
+#assignments {
+  margin-top: -10em;
 }
 #assignments h1 {
   padding: 1.5em;
@@ -88,6 +91,7 @@ a.current:visited {
 #assignments ul li {
   padding: 1em;
   text-align: left;
+  margin-left: 50%;
 }
 footer {
   position: fixed;

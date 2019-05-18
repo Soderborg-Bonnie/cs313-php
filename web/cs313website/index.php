@@ -14,7 +14,6 @@
   </head>
   <body>
     <header>
-
       <div id="topOfPage">
         <img src="images/bon.jpg" alt="photo of self" />
         <div>
@@ -24,8 +23,6 @@
           <br /><br />
           <h3 id="cs313">CS 313</h3>
         </div>
-
-        <!-- <span></span> -->
       </div>
       <nav>
         <ul id="mainNav">
@@ -70,6 +67,7 @@
     <!-- <footer><p>&copy;2019 Bonnie Soderborg</p></footer> -->
     <footer>
       <p>&copy;2019 All rights reserved. Bonnie Soderborg</p>
+      <p> background pattern from Toptal Subtal Patterns</p>
       <span id="currentDate">Placeholder</span>
     </footer>
     <script src="main.js"></script>

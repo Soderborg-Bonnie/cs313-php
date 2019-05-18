@@ -13,15 +13,20 @@
     <link rel="stylesheet" media="screen" href="style.css" />
   </head>
   <body>
-    <header>
-      <div>
-        <!-- pic -->
-        <img src="images/bon.jpg" />
-        <h1>Bonnie Soderborg</h1>
+  <header>
+      <div id="topOfPage">
+        <img src="images/bon.jpg" alt="photo of self" />
+        <div>
+          <h1>Bonnie Soderborg</h1>
+          <br />
+          <h3>Web Design and Development student at BYU-I</h3>
+          <br /><br />
+          <h3 id="cs313">CS 313</h3>
+        </div>
       </div>
       <nav>
         <ul id="mainNav">
-          <li><a href="index.php">Home</a></li>
+          <li><a href="index.php" >Home</a></li>
           <li><a href="assignments.php" class="current">Assignments</a></li>
         </ul>
       </nav>
@@ -41,6 +46,12 @@
         </li>
       </ul>
     </main>
-    <footer><p>&copy;2019 All rights reserved. Bonnie Soderborg</p></footer>
+    <footer>
+      <p>&copy;2019 All rights reserved. Bonnie Soderborg</p>
+      <p> background pattern from Toptal Subtal Patterns</p>
+      <span id="currentDate">Placeholder</span>
+    </footer>
+    <script src="main.js"></script>
+    <script src="currentDate.js"></script>
   </body>
 </html>

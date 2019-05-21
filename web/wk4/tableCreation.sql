@@ -53,3 +53,5 @@ CREATE TABLE book_tags(
 
 ALTER TABLE isbn
 ADD COLUMN author_id INTEGER REFERENCES author(author_id);
+
+

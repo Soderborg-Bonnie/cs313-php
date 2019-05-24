@@ -52,12 +52,6 @@ session_start();
           </nav>
         </div>
       </div>
-      <!-- <nav>
-        <ul id="mainNav">
-          <li><a href="index.html" class="current">Home</a></li>
-          <li><a href="#">Other</a></li>
-        </ul>
-      </nav> -->
     </header>
     <main>
       <h2>Table o' Books</h2>
@@ -79,12 +73,6 @@ session_start();
           </tr>
         </thead>
         <tbody>
-          <?php
-          //   foreach ($db->query('SELECT book_title FROM isbn') as $row) 
-          //   { echo '<tr>'; 
-          //     echo '<td>'.$row['book_title'].'</td>
-          // </tr>';
-          ?>
         </tbody>
       </table>
     </main>

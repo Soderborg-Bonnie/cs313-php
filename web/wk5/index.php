@@ -39,7 +39,7 @@ include 'connections.php';
   <body>
     <header>
       <div id="topOfPage">
-        <img src="images/booksLeft.png" alt="photo of books" />
+        <img src="../images/booksLeft.png" alt="photo of books" />
         <div id="mainHeader">
           <h1>Finding Books</h1>
           <nav>

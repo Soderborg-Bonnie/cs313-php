@@ -77,12 +77,12 @@ include 'connections.php';
             { 
               echo '<tr>';  
               echo '<td>'.$row['book_title'].'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
+              echo '<td>'.''.'</td>';
+              echo '<td>'.''.'</td>';
+              echo '<td>'.''.'</td>';
+              echo '<td>'.''.'</td>';
+              echo '<td>'.''.'</td>';
+              echo '<td>'.''.'</td>';
 
               echo '<td>'.$row['book_number'].'</td>';
 

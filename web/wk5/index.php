@@ -73,10 +73,19 @@ include 'connections.php';
         <tbody>
         <?php 
 
-          foreach ($db->query('SELECT book_title FROM isbn LIMIT 10') as $row)  
+          foreach ($db->query('SELECT (book_title, book_number) FROM isbn LIMIT 10') as $row)  
             { 
               echo '<tr>';  
               echo '<td>'.$row['book_title'].'</td>';
+              echo '<td>''''</td>';
+              echo '<td>''''</td>';
+              echo '<td>''''</td>';
+              echo '<td>''''</td>';
+              echo '<td>''''</td>';
+              echo '<td>''''</td>';
+
+              echo '<td>'.$row['book_number'].'</td>';
+
               echo '</tr>';
             }
         ?> 

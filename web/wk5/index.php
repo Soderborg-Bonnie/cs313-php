@@ -2,7 +2,7 @@
 // <!-- $GLOBALS['search_page']='index.php';
 // $GLOBALS['details_page']='details.php'; -->
 //Get the database connection file 
-include '/connections.php'; 
+include 'connections.php'; 
 session_start();
 ?>
 
@@ -11,6 +11,8 @@ session_start();
   <head>
     <meta charset="utf-8" />
     <title>Books</title>
+    <link rel="stylesheet" media="screen" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,7 +23,6 @@ session_start();
       rel="stylesheet"
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
-    <link rel="stylesheet" media="screen" href="style.css" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -41,7 +42,7 @@ session_start();
   <body>
     <header>
       <div id="topOfPage">
-        <img src="images/booksLeft.png" alt="photo of self" />
+        <img src="images/booksLeft.png" alt="photo of books" />
         <div id="mainHeader">
           <h1>Finding Books</h1>
           <nav>

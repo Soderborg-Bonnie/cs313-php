@@ -51,7 +51,9 @@ CREATE TABLE book_tags(
     tag_id TEXT REFERENCES tags(tag_id)
 );
 
-ALTER TABLE isbn
-ADD COLUMN author_id INTEGER REFERENCES author(author_id);
+ALTER TABLE isbn 
+ADD COLUMN author_id INTEGER REFERENCES author(author_id); 
 
+ALTER TABLE media_type
+ADD COLUMN book_number TEXT REFERENCES isbn(book_number);
 

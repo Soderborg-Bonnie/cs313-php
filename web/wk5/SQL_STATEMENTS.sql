@@ -1051,7 +1051,7 @@ INSERT INTO isbn (book_number, book_title) VALUES ('B009ZLZM7Q','How To Swim Fas
 INSERT INTO isbn (book_number, book_title) VALUES ('B009ZN1UWA','35 Easy Weeknight Dinners â€“ Simple and Easy Chicken Recipes For Weeknights (Quick and Easy Dinner Recipes â€“ The Easy Weeknight Dinners Collection Book 6)');
 INSERT INTO isbn (book_number, book_title) VALUES ('B009ZT2X70','Holiday Recipes: 150 Easy Recipes and Gifts From Your Kitchen');
 INSERT INTO isbn (book_number, book_title) VALUES ('B00A13UQY6','Things My Grandmother Taught Me About Organized Living');
-INSERT INTO isbn (book_number, book_title) VALUES ('B00A1OYEWA',''wichcraft: Craft a Sandwich into a Meal--And a Meal into a Sandwich');
+INSERT INTO isbn (book_number, book_title) VALUES ('B00A1OYEWA','wichcraft: Craft a Sandwich into a Meal--And a Meal into a Sandwich');
 INSERT INTO isbn (book_number, book_title) VALUES ('B00A1OZC6M','Bobby Flay''s Barbecue Addiction');
 INSERT INTO isbn (book_number, book_title) VALUES ('B00A1PARFC','The Year of Soup');
 INSERT INTO isbn (book_number, book_title) VALUES ('B00A1SOP8Y','The Happiest Season');
@@ -5414,7 +5414,7 @@ INSERT INTO isbn (book_number, book_title) VALUES ('B076PXKGPR','CompTIA Securit
 INSERT INTO isbn (book_number, book_title) VALUES ('B07914YWRK','Russell M. Nelson (Remembering the Prophets of God Book 8)');
 INSERT INTO isbn (book_number, book_title) VALUES ('B000FC1C4Q','Anthem');
 INSERT INTO isbn (book_number, book_title) VALUES ('B000MAHBYQ','How to Become a Straight-A Student: The Unconventional Strategies Real College Students Use to Score High While Studying Less');
-INSERT INTO isbn (book_number, book_title) VALUES ('B003JTHWKU',1984);
+INSERT INTO isbn (book_number, book_title) VALUES ('B003JTHWKU','1984');
 INSERT INTO isbn (book_number, book_title) VALUES ('B003V8B5XO','Atlas Shrugged');
 INSERT INTO isbn (book_number, book_title) VALUES ('B004EWFUQ4','Classic Sourdoughs, Revised: A Home Baker''s Handbook');
 INSERT INTO isbn (book_number, book_title) VALUES ('B004J4WNL2','Quiet: The Power of Introverts in a World That Can''t Stop Talking');

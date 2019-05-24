@@ -1,13 +1,12 @@
 <?php
-<!-- $GLOBALS['search_page']='index.php';
-$GLOBALS['details_page']='details.php'; -->
-    //Get the database connection file
-include '/connections.php';
-session_start(); 
+// <!-- $GLOBALS['search_page']='index.php';
+// $GLOBALS['details_page']='details.php'; -->
+//Get the database connection file 
+include '/connections.php'; 
+session_start();
 ?>
 
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -80,20 +79,12 @@ session_start();
           </tr>
         </thead>
         <tbody>
-            <?php
-            foreach ($db->query('SELECT book_title) FROM isbn') as $row)
-            {
-                echo '<tr>';
-                
-                echo '<td>'.$row['book_title'].'</td>';
-                <!-- echo '<td>'.$row['scriptures_chapter'].'</td>';
-                echo '<td>'.$row['scriptures_verse'].'</td>';
-                echo '<td>'.$row['scriptures_content'].'</td>'; -->
-                echo '</tr>';
-              //echo '<br/>';
-            }
-        ?>
-
+          <?php
+            foreach ($db->query('SELECT book_title) FROM isbn') as $row) 
+            { echo '<tr>'; 
+              echo '<td>'.$row['book_title'].'</td>
+          </tr>';
+          ?>
         </tbody>
       </table>
     </main>

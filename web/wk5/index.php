@@ -1,3 +1,13 @@
+<?php 
+
+//Get the database connection file  
+
+include 'connections.php';  
+
+// session_start(); 
+
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,9 +74,23 @@
             <th>ISBN</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+        <?php 
+
+          foreach ($db->query('SELECT book_title FROM isbn') as $row)  
+            { 
+              echo '<tr>';  
+              echo '<td>'.$row['book_title'].'</td>';
+              echo '</tr>';
+            }
+        ?> 
+        </tbody>
       </table>
     </main>
     <footer></footer>
   </body>
 </html>
+
+                
+                
+                    

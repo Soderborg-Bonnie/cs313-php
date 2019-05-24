@@ -80,10 +80,10 @@ session_start();
         </thead>
         <tbody>
           <?php
-            foreach ($db->query('SELECT book_title FROM isbn') as $row) 
-            { echo '<tr>'; 
-              echo '<td>'.$row['book_title'].'</td>
-          </tr>';
+          //   foreach ($db->query('SELECT book_title FROM isbn') as $row) 
+          //   { echo '<tr>'; 
+          //     echo '<td>'.$row['book_title'].'</td>
+          // </tr>';
           ?>
         </tbody>
       </table>

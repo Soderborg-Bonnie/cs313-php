@@ -33,7 +33,7 @@
   <body>
     <header>
       <div id="topOfPage">
-        <img src="images/booksLeft.png" alt="photo of books" />
+        <img src="images/booksLeft.png" alt="photo of self" />
         <div id="mainHeader">
           <h1>Finding Books</h1>
           <nav>
@@ -64,8 +64,7 @@
             <th>ISBN</th>
           </tr>
         </thead>
-        <tbody>
-        </tbody>
+        <tbody></tbody>
       </table>
     </main>
     <footer></footer>

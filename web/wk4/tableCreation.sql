@@ -10,7 +10,7 @@ CREATE TABLE author
 (
     author_id SERIAL PRIMARY KEY,
     author_name TEXT,
-    book_id INTEGER REFERENCES isbn(id)
+    book_number TEXT REFERENCES isbn(book_number)
 );
 
 CREATE TABLE genre(

@@ -83,10 +83,10 @@ session_start();
           // book_title, author_id, book_number
           // INNER JOIN author WHERE isbn.book_number = author.book_number
             { 
-              // $book_number=$row['book_number'];
-              $_SESSION['book_number']=$row['book_number'];
               echo '<tr>';  
-              echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
+              echo '<td><a href="../details.php/details.php" book_number='$row['book_number']'>'.$row['book_title'].'</a></td>';
+              $_SESSION['book_number']=$row['book_number'];
+
               echo '<td>'.$row['author_name'].'</td>';
               // echo '<td>'.''.'</td>';
               // echo '<td>'.''.'</td>';

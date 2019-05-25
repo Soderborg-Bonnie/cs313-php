@@ -37,6 +37,8 @@ $book_number = $_GET['book_number'];
 $sql = 'SELECT * FROM isbn WHERE book_number='.$book_number;
 echo $sql;
 $statement = $db->query($sql);
+echo $statement;
+
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
     echo '<p>Author:</p>';

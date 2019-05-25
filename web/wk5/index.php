@@ -1,7 +1,7 @@
 <?php 
 //Get the database connection file  
 include 'connections.php';  
-// session_start(); 
+session_start(); 
 ?> 
 
 <!DOCTYPE html>
@@ -79,7 +79,7 @@ include 'connections.php';
           foreach ($db->query('SELECT book_title, book_number FROM isbn LIMIT 10') as $row)  
             { 
               echo '<tr>';  
-              echo '<td>'.$row['book_title'].'</td>';
+              echo '<a><td>'.$row['book_title'].'</td></a>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';

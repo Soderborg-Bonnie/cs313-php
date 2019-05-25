@@ -19,8 +19,8 @@ session_start();
           <h1>Finding Books</h1>
           <nav>
             <ul id="mainNav">
-              <li><a href="index.php">Home</a></li>
-              <li><a href="details.php" class="current">Details</a></li>
+              <li><a href="../index.php">Home</a></li>
+              <li><a href="../details.php" class="current">Details</a></li>
             </ul>
           </nav>
         </div>

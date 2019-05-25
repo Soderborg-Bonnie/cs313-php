@@ -76,11 +76,11 @@ session_start();
         <tbody>
         <?php 
 
-          foreach ($db->query('SELECT book_title, book_number FROM isbn LIMIT 10') as $row)('SELECT author_name FROM author WHERE isbn.author_id=author.author_id LIMIT 10') as $row2)  
+          foreach ($db->query('SELECT book_title, author_id, book_number FROM isbn INNER JOIN author WHERE isbn.book_number = author.book_number LIMIT 10') as $row)
             { 
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
-              echo '<td>'.'$row2["author_name"]'.'</td>';
+              echo '<td>'.'$row2["author.author_name"]'.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';

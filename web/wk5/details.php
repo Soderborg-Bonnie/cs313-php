@@ -29,9 +29,10 @@ session_start();
       </div>
     </header>
     <main>
+      
 <?php
     echo '<p>Author: </p>';
-    echo $book_number;
+    echo $_GET['book_number'];
 ?> 
     </main>
 

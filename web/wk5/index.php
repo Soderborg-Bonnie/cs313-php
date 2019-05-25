@@ -79,7 +79,7 @@ session_start();
           foreach ($db->query('SELECT book_title, book_number FROM isbn LIMIT 10') as $row)  
             { 
               echo '<tr>';  
-              echo '<td><a href="/details.php">'.$row['book_title'].'</a></td>';
+              echo '<td><a href="wk5/details.php">'.$row['book_title'].'</a></td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';

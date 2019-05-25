@@ -2,7 +2,7 @@
 //Get the database connection file  
 include 'connections.php';  
 session_start();
-$GLOBALS['author_id']='author_id';
+$GLOBALS['book_number']='book_number';
 
 ?> 
 
@@ -82,7 +82,7 @@ $GLOBALS['author_id']='author_id';
           // book_title, author_id, book_number
           // INNER JOIN author WHERE isbn.book_number = author.book_number
             { 
-              $author_id=author_id;
+              $book_number=$row['book_number'];
 
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';

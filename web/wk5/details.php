@@ -31,7 +31,7 @@ session_start();
     <main>
 <?php
     echo '<p>Author: </p>';
-    echo $GLOBALS['author_id'];
+    echo $GLOBALS['book_number'];
 ?> 
     </main>
 

@@ -80,7 +80,7 @@ session_start();
             { 
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
-              echo '<td>'.'$row2["author.author_name"]'.'</td>';
+              echo '<td>'.$row['author.author_name'].'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';

@@ -1,7 +1,9 @@
 <?php 
 //Get the database connection file  
 include 'connections.php';  
-session_start(); 
+session_start();
+$GLOBALS['author_id']='author_id';
+
 ?> 
 
 <!DOCTYPE html>

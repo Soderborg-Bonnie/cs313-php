@@ -2,6 +2,8 @@
 //Get the database connection file  
 include 'connections.php';  
 session_start(); 
+$GLOBALS['author_id']='author_id';
+
 ?> 
 
 <!DOCTYPE html>
@@ -27,7 +29,8 @@ session_start();
       </div>
     </header>
     <main>
-        
+<p>Author: </p>
+$author_id;
 
     </main>
 

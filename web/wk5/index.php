@@ -76,7 +76,7 @@ session_start();
           </tr>
         </thead>
         <tbody>
-        <div>
+        <!-- <div>
     <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
             <input type="text" size="10" maxlength="64" class="form-control livesearch showHide"  placeholder="pick your poison" onkeyup="showResult(this.value)"  name="q" <?php if (isset($_GET['q'])) { echo 'value="'.$_GET['q'].'"'; } ?> >
         <button class="btn btn-default livesearch" type="submit">
@@ -86,62 +86,62 @@ session_start();
 
         <div id="livesearch" class="minisearch"></div>
     </form>
-</div>
+</div> -->
 <?php
-if (isset($_GET['q']))
-{
-	$q=$_GET["q"];
-	// Cleanup	
-	$q == trim($q);
+// if (isset($_GET['q']))
+// {
+// 	$q=$_GET["q"];
+// 	// Cleanup	
+// 	$q == trim($q);
 	
-	//lookup all links from the results if length of q>0
-	if (strlen($q)>0){
-		$html='';
+// 	//lookup all links from the results if length of q>0
+// 	if (strlen($q)>0){
+// 		$html='';
 		
-		// connect to the PostgreSQL database
-		//$pdo = Connection::get()->connect();
+// 		// connect to the PostgreSQL database
+// 		//$pdo = Connection::get()->connect();
 		
-            foreach ($db->query("SELECT * FROM isbn WHERE book_title like '%".$q."%' ORDER BY book_title") as $row)
-            {
-                $item='<p>'.$row['book_title']).'</p>';
+//             foreach ($db->query("SELECT * FROM isbn WHERE book_title like '%".$q."%' ORDER BY book_title") as $row)
+//             {
+//                 $item='<p>'.$row['book_title']).'</p>';
                 
-				echo '<HR />'.$item.'<br />';
-				if ($hint==''){
-					$hint=$item;
-				}
-				else
-				{
-					$hint=$hint . $item;
-				}
-            }
+// 				echo '<HR />'.$item.'<br />';
+// 				if ($hint==''){
+// 					$hint=$item;
+// 				}
+// 				else
+// 				{
+// 					$hint=$hint . $item;
+// 				}
+//             }
 			
-			// Set output to "no suggestion" if no hint were found
-			// or to the correct values
-			if ($hint=='')
-			{
-				$response=$section.'No Results';
-			}
-			else
-			{
-				$response=$section.$hint;
-			}
-			//output the response
-			$html=$html.$response;
+// 			// Set output to "no suggestion" if no hint were found
+// 			// or to the correct values
+// 			if ($hint=='')
+// 			{
+// 				$response=$section.'No Results';
+// 			}
+// 			else
+// 			{
+// 				$response=$section.$hint;
+// 			}
+// 			//output the response
+// 			$html=$html.$response;
 		
         
-    }
-	else
-	{
-        echo 'Too few characters';
-    }
+//     }
+// 	else
+// 	{
+//         echo 'Too few characters';
+//     }
 	
-	echo 'Search for:';
-	echo $html;
-}
-else
-{
-	echo 'Error';
-}
+// 	echo 'Search for:';
+// 	echo $html;
+// }
+// else
+// {
+// 	echo 'Error';
+// }
  ?>
 
         <?php 

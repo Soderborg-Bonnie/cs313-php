@@ -76,26 +76,11 @@ session_start();
         <tbody>
         <?php 
 
-          foreach ($db->query('SELECT book_title, book_number FROM isbn LIMIT 10') as $row)  
+          foreach ($db->query('SELECT book_title, book_number FROM isbn LIMIT 10') as $row)('SELECT author_name FROM author WHERE isbn.author_id=author.author_id LIMIT 10') as $row2)  
             { 
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-
-              echo '<td>'.$row['book_number'].'</td>';
-
-              echo '</tr>';
-            }
-            foreach ($db->query('SELECT author_name FROM author WHERE isbn.author_id=author.author_id LIMIT 10') as $row)  
-            { 
-              echo '<tr>';  
-              echo '<td></td>';
-              echo '<td>'.'$row["author_name"]'.'</td>';
+              echo '<td>'.'$row2["author_name"]'.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
@@ -106,6 +91,21 @@ session_start();
 
               echo '</tr>';
             }
+            // foreach ($db->query('SELECT author_name FROM author WHERE isbn.author_id=author.author_id LIMIT 10') as $row)  
+            // { 
+            //   echo '<tr>';  
+            //   echo '<td></td>';
+            //   echo '<td>'.'$row["author_name"]'.'</td>';
+            //   echo '<td>'.''.'</td>';
+            //   echo '<td>'.''.'</td>';
+            //   echo '<td>'.''.'</td>';
+            //   echo '<td>'.''.'</td>';
+            //   echo '<td>'.''.'</td>';
+
+            //   echo '<td>'.$row['book_number'].'</td>';
+
+            //   echo '</tr>';
+            // }
 
         ?> 
         </tbody>

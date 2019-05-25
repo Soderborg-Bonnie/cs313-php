@@ -66,9 +66,8 @@ session_start();
             <th>Title</th>
             <th>Author</th>
             <th>Description</th>
-            <th>Type</th>
+            <th>Media Type</th>
             <th>Genre</th>
-            <th>Type</th>
             <th>Tags</th>
             <th>ISBN</th>
           </tr>
@@ -89,10 +88,7 @@ session_start();
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-
               echo '<td>'.$row['book_number'].'</td>';
-
               echo '</tr>';
             }
 

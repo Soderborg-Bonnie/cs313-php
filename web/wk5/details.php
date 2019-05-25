@@ -29,9 +29,10 @@ $GLOBALS['author_id']='author_id';
       </div>
     </header>
     <main>
-<p>Author: </p>
-$author_id;
-
+<?php
+    echo '<p>Author: </p>'
+    echo $author_id;
+?> 
     </main>
 
 </html>

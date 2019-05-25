@@ -84,7 +84,7 @@ session_start();
           // INNER JOIN author WHERE isbn.book_number = author.book_number
             { 
               // $book_number=$row['book_number'];
-              $_SESSION['book_number']='hi';
+              $_SESSION['book_number']='book_number';
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
               echo '<td>'.$row['author_name'].'</td>';

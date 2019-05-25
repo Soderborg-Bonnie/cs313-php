@@ -2,7 +2,7 @@
 //Get the database connection file  
 include 'connections.php';  
 session_start(); 
-$author_id ='author_id';
+// $author_id ='author_id';
 
 ?> 
 
@@ -31,7 +31,7 @@ $author_id ='author_id';
     <main>
 <?php
     echo '<p>Author: </p>';
-    echo $author_id;
+    $GLOBALS['author_id'];
 ?> 
     </main>
 

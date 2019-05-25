@@ -36,11 +36,12 @@ session_start();
 $book_number = $_GET['book_number'];
 $sql = 'SELECT * FROM isbn WHERE book_number='.$book_number;
 $statement = $db->query($sql);
-$row = $statement->fetch(PDO::FETCH_ASSOC)
-
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
     echo '<p>Author:</p>';
     echo '<p>'.$row['book_number'].'</p>';
-
+}
+echo 'ugh';
 // $db->query('SELECT * FROM isbn WHERE book_number='.$book_number) as $row;
 //     echo '<p>Author: </p>';
 //     echo '<p>'.$row['book_number'].'</p>';

@@ -65,10 +65,10 @@ session_start();
           <tr>
             <th>Title</th>
             <th>Author</th>
-            <th>Description</th>
+            <!-- <th>Description</th>
             <th>Media Type</th>
             <th>Genre</th>
-            <th>Tags</th>
+            <th>Tags</th> -->
             <th>ISBN</th>
           </tr>
         </thead>
@@ -84,10 +84,10 @@ session_start();
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
               echo '<td>'.$row['author_name'].'</td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
-              echo '<td>'.''.'</td>';
+              // echo '<td>'.''.'</td>';
+              // echo '<td>'.''.'</td>';
+              // echo '<td>'.''.'</td>';
+              // echo '<td>'.''.'</td>';
               echo '<td>'.$row['book_number'].'</td>';
               echo '</tr>';
             }

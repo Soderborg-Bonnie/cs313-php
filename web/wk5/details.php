@@ -26,5 +26,9 @@ session_start();
         </div>
       </div>
     </header>
+    <main>
+        
+
+    </main>
 
 </html>

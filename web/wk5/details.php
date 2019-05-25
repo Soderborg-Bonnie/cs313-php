@@ -50,10 +50,10 @@ $book_number = $_GET['book_number'];
 // echo $book_number;
 // foreach ($db->query('SELECT book_title FROM isbn WHERE book_number='.$book_number) as $row){
     // foreach ($db->query('SELECT book_title FROM isbn WHERE book_number="B008TT5Q1M"') as $row){
-    foreach ($db->query("SELECT * FROM isbn, author WHERE book_number='$book_number'") as $row){
+    foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
 
 // $db->query('SELECT * FROM isbn WHERE book_number='.$book_number) as $row;
-    echo '<p>Author: '.$row['book_title'].'</p>';
+    echo '<p>Title: '.$row['book_title'].'</p>';
     // echo '<p>'.$row['book_title'].'</p>';
     // echo $book_number;
 }

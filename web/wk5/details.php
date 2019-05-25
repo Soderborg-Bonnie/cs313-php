@@ -30,7 +30,7 @@ $GLOBALS['author_id']='author_id';
     </header>
     <main>
 <?php
-    echo '<p>Author: </p>'
+    echo '<p>Author: </p>';
     echo $author_id;
 ?> 
     </main>

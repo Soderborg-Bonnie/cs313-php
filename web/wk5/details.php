@@ -45,12 +45,13 @@ session_start();
 
 $book_number = $_GET['book_number'];
 echo $book_number;
-foreach ($db->query('SELECT book_title FROM isbn WHERE book_number='.$book_number) as $row){
+// foreach ($db->query('SELECT book_title FROM isbn WHERE book_number='.$book_number) as $row){
+    foreach ($db->query('SELECT book_title FROM isbn WHERE book_number="B008TT5Q1M"') as $row){
 
 // $db->query('SELECT * FROM isbn WHERE book_number='.$book_number) as $row;
     echo '<p>Author: </p>';
-    echo '<p>'.$row['book_number'].'</p>';
-    echo $book_number;
+    echo '<p>'.$row['book_title'].'</p>';
+    // echo $book_number;
 }
 // ?> 
     </main>

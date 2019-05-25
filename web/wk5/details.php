@@ -31,7 +31,7 @@ session_start();
     <main>
 <?php
     echo '<p>Author: </p>';
-    echo $_SESSION['book_number'];
+    echo $book_number;
 ?> 
     </main>
 

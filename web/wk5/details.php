@@ -34,8 +34,9 @@ session_start();
 $book_number = $_GET['book_number'];
 $db->query('SELECT * FROM isbn WHERE isbn.book_number =' $book_number as $row);
     echo '<p>Author: </p>';
-    // echo '<p>'.$row['book_number'].'</p>';
-    echo $book_number;
+    echo '<p>'.$row['book_number'].'</p>';
+    // echo $book_number;
+
 ?> 
     </main>
 

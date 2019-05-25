@@ -85,7 +85,7 @@ session_start();
             { 
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
-              // echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
+              echo '<td><a href="../details.php/details.php?book_number=" '.$row['book_number']'>'.$row['book_title'].'</a></td>';
 
               $_SESSION['book_number']=$row['book_number'];
 

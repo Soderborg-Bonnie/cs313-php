@@ -48,7 +48,7 @@ session_start();
           <nav>
             <ul id="mainNav">
               <li><a href="index.html" class="current">Home</a></li>
-              <li><a href="#">Other</a></li>
+              <li><a href="details.php">Details</a></li>
             </ul>
           </nav>
         </div>
@@ -79,7 +79,7 @@ session_start();
           foreach ($db->query('SELECT book_title, book_number FROM isbn LIMIT 10') as $row)  
             { 
               echo '<tr>';  
-              echo '<a><td>'.$row['book_title'].'</td></a>';
+              echo '<a href="../details.php"><td>'.$row['book_title'].'</td></a>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';
               echo '<td>'.''.'</td>';

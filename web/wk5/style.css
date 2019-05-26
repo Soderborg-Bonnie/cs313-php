@@ -109,3 +109,6 @@ td {
 #detailsMain h3 {
   padding: 1em;
 }
+#bookTable {
+  width: 100%;
+}

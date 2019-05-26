@@ -79,7 +79,6 @@ session_start();
       <table
         id="bookTable"
         class="table table-striped table-bordered"
-        style="width:90%"
       >
         <thead>
           <tr>

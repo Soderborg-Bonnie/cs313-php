@@ -101,8 +101,11 @@ td {
   text-align: left;
   width: 15em;
 }
-#detailsMain{
+#detailsMain {
   text-align: left;
   padding-left: 15em;
   padding-top: 2em;
+}
+#detailsMain h3 {
+  padding: 1em;
 }

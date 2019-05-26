@@ -97,6 +97,7 @@ main h2 {
 main {
   padding-top: 2em;
   width: 90%;
+  margin: 0 auto;
 }
 td {
   text-align: left;

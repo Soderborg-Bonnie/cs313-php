@@ -59,7 +59,7 @@ session_start();
     </header>
     <main>
     <div class="nav-item search">
-					<form action="/q/" method="get">
+					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
 						<input type="text" name="q" placeholder="Search . . ." autocomplete="off">
 					</form>
 				</div>

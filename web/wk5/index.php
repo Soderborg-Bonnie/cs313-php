@@ -60,7 +60,7 @@ session_start();
     <main>
     <div class="nav-item search">
 					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
-						<input type="text" name="q" placeholder="Search . . ." autocomplete="off">
+						<input type="text" name="q" placeholder="Search . . ." autocomplete="off" <?php if (isset($_GET['q'])) { echo 'value="'.$_GET['q'].'"'; } ?>>
 					</form>
 				</div>
         <!-- <div>

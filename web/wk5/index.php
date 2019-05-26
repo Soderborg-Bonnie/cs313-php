@@ -58,12 +58,12 @@ session_start();
       </div>
     </header>
     <main>
-    <!-- <div class="nav-item search">
+    <div class="nav-item search">
 					<form action="/q/" method="get">
 						<input type="text" name="q" placeholder="Search . . ." autocomplete="off">
 					</form>
-				</div> -->
-        <div>
+				</div>
+        <!-- <div>
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
                 <input type="text" size="10" maxlength="64" class="form-control livesearch showHide"  placeholder="pick your poison..." onkeyup="showResult(this.value)"  name="q" <?php if (isset($_GET['q'])) { echo 'value="'.$_GET['q'].'"'; } ?> >
             <button class="btn btn-default livesearch" type="submit">
@@ -73,7 +73,7 @@ session_start();
 
             <div id="livesearch" class="minisearch"></div>
         </form>
-    </div>
+    </div> -->
 
       <h2>Table o' Books</h2>
       <table

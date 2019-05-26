@@ -28,7 +28,7 @@ session_start();
         </div>
       </div>
     </header>
-    <main>
+    <main id="detailsMain">
       
 <?php
 
@@ -53,8 +53,13 @@ $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
         foreach ($db->query("SELECT * FROM author WHERE book_number='$book_number'") as $row2){
             // $db->query('SELECT * FROM isbn WHERE book_number='.$book_number) as $row;
-    echo '<p>Title: '.$row['book_title'].'</p>';
-    echo '<p>Author: '.$row2['author_name'].'</p>';
+    echo '<h3>Title: '.$row['book_title'].'</h3>';
+    echo '<h3>Author: '.$row2['author_name'].'</h3>';
+    echo '<h3>Description</h3>';
+    echo '<h3>Media Type</h3>';
+    echo '<h3>Genre</h3>';
+    echo '<h3>Tags</h3>';
+
     // echo '<p>'.$row['book_title'].'</p>';
     // echo $book_number;
 }}

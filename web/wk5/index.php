@@ -58,6 +58,12 @@ session_start();
       </div>
     </header>
     <main>
+    <div class="nav-item search">
+					<form action="/q/" method="get">
+						<input type="text" name="q" placeholder="Search . . ." autocomplete="off">
+					</form>
+				</div>
+
       <h2>Table o' Books</h2>
       <table
         id="bookTable"

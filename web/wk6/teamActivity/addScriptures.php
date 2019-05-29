@@ -15,21 +15,21 @@ session_start();
     <form>
         <label>Book: 
             <input type="text">
-        </label><br>
+        </label><br><br>
         <label>Chapter: 
             <input type="text">
-        </label><br>
+        </label><br><br>
         <label>Verse: 
             <input type="text">
-        </label><br>
+        </label><br><br>
         <label>Content: 
             <input type="text">
-        </label><br>
+        </label><br><br>
         
         <?php
-            // foreach ($db->query('SELECT * FROM topic') as $row){
-            // echo '<input type="checkbox" name="topic" value="topic">'.$row[name];<br>
-            // }
+            foreach ($db->query('SELECT * FROM topic') as $row){
+                echo '<input type="checkbox" name="topic" value="topic">  '.$row[name];.'<br><br>'
+            }
         ?>
          
         

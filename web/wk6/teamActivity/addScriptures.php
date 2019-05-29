@@ -27,9 +27,9 @@ session_start();
         </label><br>
         
         <?php
-            foreach ($db->query('SELECT * FROM topic') as $row){
-            echo '<input type="checkbox" name="topic" value="topic">'.$row[name];<br>
-            }
+            // foreach ($db->query('SELECT * FROM topic') as $row){
+            // echo '<input type="checkbox" name="topic" value="topic">'.$row[name];<br>
+            // }
         ?>
          
         

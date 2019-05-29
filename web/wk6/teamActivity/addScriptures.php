@@ -28,7 +28,7 @@ session_start();
         
         <?php
             foreach ($db->query('SELECT * FROM topic') as $row)
-            <input type="checkbox" name="topic" value="topic"><br>
+            echo '<input type="checkbox" name="topic" value="topic">'.$row[name];<br>
         ?>
          
         

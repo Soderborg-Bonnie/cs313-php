@@ -15,12 +15,12 @@ session_start();
 </head>
 <body>
     <header>
-      <div id="topOfPage">
+      <div class="topOfPage">
         <img src="../images/booksLeft.png" alt="photo of books" />
-        <div id="mainHeader">
+        <div class="mainHeader">
           <h1>Finding Books</h1>
           <nav>
-            <ul id="mainNav">
+            <ul class="mainNav">
               <li><a href="../index.php/index.php">Home</a></li>
               <li><a href="../details.php/details.php" class="current">Details</a></li>
             </ul>

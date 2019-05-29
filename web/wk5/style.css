@@ -37,16 +37,16 @@ header {
   grid-template-rows: 1fr;
   border-bottom: 1px solid #4281a4;
 }
-#topOfPage {
+.topOfPage {
   display: inline-flex;
   margin-left: 0px;
   background-color: #ead2ac;
 }
-#mainHeader {
+.mainHeader {
   display: grid;
   grid-template-rows: 1fr 1fr;
 }
-#mainNav {
+.mainNav {
   padding-top: 5em;
 }
 nav {

@@ -44,12 +44,12 @@ session_start();
   </head>
   <body>
     <header>
-      <div id="topOfPage">
+      <div class="topOfPage">
         <img src="../images/booksLeft.png" alt="photo of books" />
-        <div id="mainHeader">
+        <div class="mainHeader">
           <h1>Finding Books</h1>
           <nav>
-            <ul id="mainNav">
+            <ul class="mainNav">
               <li><a href="/wk5/index.php/index.php" class="current">Home</a></li>
               <li><a href="/wk5/details.php/details.php">Details</a></li>
             </ul>
@@ -58,22 +58,6 @@ session_start();
       </div>
     </header>
     <main>
-    <!-- <div class="nav-item search">
-					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
-						<input type="text" name="q" placeholder="Search . . ." autocomplete="off" <?php if (isset($_GET['q'])) { echo 'value="'.$_GET['q'].'"'; } ?>>
-					</form>
-				</div> -->
-        <!-- <div>
-        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
-                <input type="text" size="10" maxlength="64" class="form-control livesearch showHide"  placeholder="pick your poison..." onkeyup="showResult(this.value)"  name="q" <?php if (isset($_GET['q'])) { echo 'value="'.$_GET['q'].'"'; } ?> >
-            <button class="btn btn-default livesearch" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-            
-
-            <div id="livesearch" class="minisearch"></div>
-        </form>
-    </div> -->
 
       <h2>Table o' Books</h2>
       <table
@@ -94,19 +78,10 @@ session_start();
         <tbody>
         <?php 
 
-          // foreach ($db->query('SELECT book_title, author_id, book_number FROM isbn INNER JOIN author WHERE isbn.book_number = author.book_number LIMIT 10') as $row)
-          // foreach ($db->query('SELECT * FROM isbn, author WHERE isbn.book_number = author.book_number LIMIT 10') as $row)
           foreach ($db->query('SELECT * FROM isbn, author WHERE isbn.book_number = author.book_number') as $row)
-
-          // book_title, author_id, book_number
-          // INNER JOIN author WHERE isbn.book_number = author.book_number
             { 
               echo '<tr>';  
-              // echo '<td><a href="../details.php/details.php">'.$row['book_title'].'</a></td>';
               echo '<td><a href="../details.php/details.php?book_number='.$row['book_number'].'">'.$row['book_title'].'</a></td>';
-
-              $_SESSION['book_number']=$row['book_number'];
-
               echo '<td>'.$row['author_name'].'</td>';
               // echo '<td>'.''.'</td>';
               // echo '<td>'.''.'</td>';
@@ -115,7 +90,7 @@ session_start();
               echo '<td>'.$row['book_number'].'</td>';
               echo '</tr>';
             }
-
+            $_SESSION['book_number']=$row['book_number'];
         ?> 
         </tbody>
       </table>

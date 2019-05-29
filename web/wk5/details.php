@@ -2,8 +2,6 @@
 //Get the database connection file  
 include 'connections.php';  
 session_start(); 
-// $author_id ='author_id';
-
 ?> 
 
 <!DOCTYPE html>
@@ -32,36 +30,15 @@ session_start();
       
 <?php
 
-
-// $book_number = $_GET['book_number'];
-// $sql = 'SELECT * FROM isbn WHERE book_number='."'".$book_number."'";
-// echo $sql;
-// $statement = $db->query($sql);
-// echo $statement;
-
-// while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-// {
-//     echo '<p>Author:</p>';
-//     echo '<p>'.$row['book_number'].'</p>';
-// }
-// echo '<p>ugh</p>';
-
 $book_number = $_GET['book_number'];
-// echo $book_number;
-// foreach ($db->query('SELECT book_title FROM isbn WHERE book_number='.$book_number) as $row){
-    // foreach ($db->query('SELECT book_title FROM isbn WHERE book_number="B008TT5Q1M"') as $row){
     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
         foreach ($db->query("SELECT * FROM author WHERE book_number='$book_number'") as $row2){
-            // $db->query('SELECT * FROM isbn WHERE book_number='.$book_number) as $row;
     echo '<h3>Title: '.$row['book_title'].'</h3>';
     echo '<h3>Author: '.$row2['author_name'].'</h3>';
     echo '<h3>Description: </h3>';
     echo '<h3>Media Type: </h3>';
     echo '<h3>Genre: </h3>';
     echo '<h3>Tags: </h3>';
-
-    // echo '<p>'.$row['book_title'].'</p>';
-    // echo $book_number;
 }}
 // ?> 
     </main>

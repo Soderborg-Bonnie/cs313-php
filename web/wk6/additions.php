@@ -11,7 +11,7 @@ session_start();
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Books</title>
+    <title>Add a book</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

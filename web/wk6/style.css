@@ -1,0 +1,119 @@
+/* colors***************************************************/
+/* 
+tulip: #FE938C
+pale gold: #E6B89C
+desert sand: #EAD2AC
+pewter blue: #9CAFB7
+steel blue: #4281A4
+https://coolors.co/fe938c-e6b89c-ead2ac-9cafb7-4281a4 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@import url("https://fonts.googleapis.com/css?family=Neucha|Pontano+Sans&display=swap");
+body {
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 16px;
+  min-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+header img {
+  /* display: inline; */
+}
+header h1 {
+  color: #4281a4;
+  font-family: "Neucha", cursive;
+  font-size: 2.6rem;
+  padding-left: 8em;
+  padding-top: 2em;
+}
+header {
+  display: grid;
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid #4281a4;
+}
+.topOfPage {
+  display: inline-flex;
+  margin-left: 0px;
+  background-color: #ead2ac;
+}
+.mainHeader {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.mainNav {
+  padding-top: 5em;
+}
+nav {
+  width: 100%;
+  text-align: left;
+  height: 60px;
+}
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+  list-style-type: none;
+  overflow: hidden;
+}
+nav ul li {
+  margin: 0 1.5em;
+  font-size: 1.5em;
+}
+nav ul li a {
+  display: inline-block;
+  padding: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+nav ul li a:link {
+  color: white;
+}
+nav ul li a:visited {
+  color: white;
+}
+nav ul li a:hover {
+  color: #fe938c;
+}
+nav ul li a:active {
+  color: #4281a4;
+}
+a.current:link,
+a.current:visited {
+  color: #4281a4;
+}
+#bookTable {
+  color: #4281a4;
+}
+main h2 {
+  color: #4281a4;
+  font-family: "Neucha", cursive;
+}
+main {
+  padding-top: 2em;
+  width: 90%;
+  margin: 0 auto;
+}
+td {
+  text-align: left;
+  width: 15em;
+}
+#detailsMain {
+  text-align: left;
+  padding-left: 15em;
+  padding-top: 2em;
+}
+#detailsMain h3 {
+  padding: 1em;
+}
+#bookTable {
+  width: 100%;
+}
+#newBook {
+  color: #FE938C;
+}

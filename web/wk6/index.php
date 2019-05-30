@@ -3,7 +3,7 @@
 $GLOBALS['book_number']='book_number';
 
 //Get the database connection file  
-include 'connections.php';  
+require 'connections.php';  
 session_start();
 ?> 
 
@@ -23,6 +23,7 @@ session_start();
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
     <link rel="stylesheet" media="screen" href="../style.css" />
+    <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
@@ -59,6 +60,7 @@ session_start();
     <main>
 
       <h2>Table o' Books</h2>
+      <h3 id="newBook" href="/additions.php">Add new book</h3>
       <table
         id="bookTable"
         class="table table-striped table-bordered"

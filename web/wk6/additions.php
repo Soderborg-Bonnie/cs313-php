@@ -74,7 +74,8 @@ session_start();
 ?>
 
       <form action="index.php" method="POST">
-                            <h2>Add a book</h2><br />                            
+                            <h2>Add a book</h2><br /> 
+                            <div id="inputForm">                           
                             <label>Title:  </label>
                             <!-- <br /> -->
                             <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
@@ -99,7 +100,7 @@ session_start();
                             <!-- <br /> -->
                             <input type="text" name="isbn" id="isbn"  value="<?php echo $isbn; ?>"/><br />
                             <br /><br />
-
+                    </div>
                             <?php
                                 // $sql = "SELECT id, name FROM topic";
                                 // //echo $sql.'<hr />';

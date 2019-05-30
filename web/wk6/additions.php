@@ -74,7 +74,7 @@ session_start();
 ?>
 
       <form action="index.php" method="POST">
-                            <h2>Add a book</h2>                            
+                            <h2>Add a book</h2><br />                            
                             <label>Title:  </label>
                             <!-- <br /> -->
                             <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
@@ -84,7 +84,7 @@ session_start();
                             <input type="text" name="author" id="author"  value="<?php echo $author; ?>"/><br />
                             <label>Description:  </label>
                             <!-- <br /> -->
-                            <textarea rows="4" cols="50" name="description" id="description">  <?php echo $description; ?> </textarea>                          
+                            <textarea rows="4" cols="50" name="description" id="description">  <?php echo $description; ?> </textarea><br />                          
                             <label>Media type:  </label>
                             <!-- <br /> -->
                             <input type="text" name="media" id="media"  value="<?php echo $media; ?>"/>

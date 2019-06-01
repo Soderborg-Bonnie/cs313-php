@@ -26,7 +26,7 @@ CREATE TABLE book_genre(
 CREATE TABLE words
 (
     words_id SERIAL PRIMARY KEY,
-    book_number INTEGER REFERENCES isbn(id),
+    book_number TEXT REFERENCES isbn(book_number),
     words TEXT, 
     comments TEXT
 );
@@ -35,10 +35,10 @@ CREATE TABLE media_type(
     media_type TEXT PRIMARY KEY
 );
 
-CREATE TABLE book_media_type(
-    book_media_id SERIAL PRIMARY KEY,
-    book_id INTEGER REFERENCES isbn(id),
-    media_type TEXT REFERENCES media_type(media_type)
+CREATE TABLE media(
+    media_id SERIAL PRIMARY KEY,
+    book_number TEXT REFERENCES isbn(book_number),
+    media TEXT REFERENCES media_type(media_type)
 );
 
 CREATE TABLE tags(

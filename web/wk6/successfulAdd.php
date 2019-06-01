@@ -62,12 +62,12 @@ session_start();
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':words', $words);
                           $statement->execute();
-// echo 'after description';
+echo 'before media';
                           $statement = $db->prepare("INSERT INTO media (book_number, media) VALUES (:isbn, :media)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':media', $media);
                           $statement->execute();
-
+                          echo 'after media';
 
                       }
 

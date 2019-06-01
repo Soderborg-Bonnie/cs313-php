@@ -84,6 +84,7 @@ session_start();
                             <label>Author:  </label>
                             <!-- <br /> -->
                             <input type="text" name="author" id="author"  value="<?php echo $author; ?>"/><br />
+                            
                             <label>Description:  </label>
                             <!-- <br /> -->
                             <textarea rows="4" cols="50" name="words" id="words">  <?php echo $words; ?> </textarea><br />                          
@@ -108,27 +109,6 @@ session_start();
                             <hr />
                             <input type="submit" class="btn btn-info" value="Submit Button" id="update">
                         </form>
-
-                        <?php
-                        // $title = ($_POST['title']);
-                        // $isbn = ($_POST['isbn']);
-                        // echo "$title\n";
-                        // echo "$isbn";
-
-                        // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        //     echo 'POSTING!<br />';        
-                        //     $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
-                        
-                        //     echo 'After Statement!<br />';
-
-                        //     $statement->bindValue(':isbn', $isbn);
-                        //     $statement->bindValue(':title', $title);
-                            
-                        //     echo 'After Bind!<br />';
-                        //     $statement->execute();
-                        // }
-                        
-                        ?>
     </main>
   </body>
 </html>

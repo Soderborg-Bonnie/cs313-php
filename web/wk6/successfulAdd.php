@@ -60,10 +60,15 @@ session_start();
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':author', $author);
                           $statement->execute();
-
+echo 'before description';
                           $statement = $db->prepare("INSERT INTO words (book_number, words) VALUES (:isbn, :words)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':words', $words);
+                          $statement->execute();
+echo 'after description';
+                          $statement = $db->prepare("INSERT INTO book_media_type (book_id, media_type) VALUES (:isbn, :media)");
+                          $statement->bindValue(':isbn', $isbn);
+                          $statement->bindValue(':media', $media);
                           $statement->execute();
 
 

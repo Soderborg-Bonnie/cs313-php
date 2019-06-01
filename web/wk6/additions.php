@@ -72,7 +72,7 @@ session_start();
 
 ?>
 
-      <form action="/wk6/successfulAdd.php/successfulAdd.php" method="POST">
+      <form action="/wk6/additions.php/additions.php" method="POST">
                             <h2>Add a book</h2><br /> 
                             <div id="inputForm">                           
                             <label>Title:  </label>

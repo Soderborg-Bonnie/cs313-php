@@ -38,7 +38,7 @@ CREATE TABLE media_type(
 CREATE TABLE media(
     media_id SERIAL PRIMARY KEY,
     book_number TEXT REFERENCES isbn(book_number),
-    media TEXT REFERENCES media_type(media_type)
+    media TEXT 
 );
 
 CREATE TABLE tags(

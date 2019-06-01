@@ -109,12 +109,12 @@ session_start();
                         
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo 'POSTING!<br />';        
-                            $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:title, :isbn)");
+                            $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                         
                             echo 'After Statement!<br />';
 
-                            $statement->bindValue(':title', $title);
                             $statement->bindValue(':isbn', $isbn);
+                            $statement->bindValue(':title', $title);
                             
                             echo 'After Bind!<br />';
                             $statement->execute();

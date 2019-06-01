@@ -37,7 +37,7 @@ session_start();
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
                         $author = ($_POST['author']);
-                        $description = ($_POST['description']);
+                        $words = ($_POST['words']);
                         $media = ($_POST['media']);
                         $genre = ($_POST['genre']);
                             
@@ -61,9 +61,9 @@ session_start();
                           $statement->bindValue(':author', $author);
                           $statement->execute();
 
-                          $statement = $db->prepare("INSERT INTO description (isbn_id, description) VALUES (:isbn, :description)");
+                          $statement = $db->prepare("INSERT INTO words (book_number, words) VALUES (:isbn, :words)");
                           $statement->bindValue(':isbn', $isbn);
-                          $statement->bindValue(':description', $description);
+                          $statement->bindValue(':words', $words);
                           $statement->execute();
 
 

@@ -64,7 +64,7 @@ session_start();
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $title = test_input($_POST['title']);
                             $author = test_input($_POST['author']);
-                            $description = test_input($_POST['description']);
+                            $words = test_input($_POST['words']);
                             $media = test_input($_POST['media']);
                             $genre = test_input ($_POST['tags']);
                             $isbn = test_input ($_POST['isbn']);
@@ -86,7 +86,7 @@ session_start();
                             <input type="text" name="author" id="author"  value="<?php echo $author; ?>"/><br />
                             <label>Description:  </label>
                             <!-- <br /> -->
-                            <textarea rows="4" cols="50" name="description" id="description">  <?php echo $description; ?> </textarea><br />                          
+                            <textarea rows="4" cols="50" name="words" id="words">  <?php echo $words; ?> </textarea><br />                          
                             <label>Media type:  </label>
                             <!-- <br /> -->
                             <input type="text" name="media" id="media"  value="<?php echo $media; ?>"/>

@@ -23,11 +23,11 @@ CREATE TABLE book_genre(
     genre TEXT REFERENCES genre(genre_name)
 );
 
-CREATE TABLE description
+CREATE TABLE words
 (
-    description_id SERIAL PRIMARY KEY,
-    isbn_id INTEGER REFERENCES isbn(id),
-    description TEXT, 
+    words_id SERIAL PRIMARY KEY,
+    book_number INTEGER REFERENCES isbn(id),
+    words TEXT, 
     comments TEXT
 );
 

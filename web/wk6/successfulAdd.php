@@ -33,5 +33,12 @@ session_start();
       </div>
     </header>
     <h2>Your addition of a new book was successful!</h2>
+    <?php
+                        $title = ($_POST['title']);
+                        $isbn = ($_POST['isbn']);
+                        echo "$title has been added.\n";
+                        echo "It's ISBN number is: $isbn";
+      ?>
+
 </body>
 </html>

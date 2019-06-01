@@ -61,12 +61,6 @@ session_start();
 
       <h2>Table o' Books</h2>
       <a href="/wk6/additions.php/additions.php"><h3 id="newBook">Add new book</h3></a>
-      <?php
-                        $title = ($_POST['title']);
-                        $isbn = ($_POST['isbn']);
-                        echo "$title\n";
-                        echo "$isbn";
-      ?>
       <table
         id="bookTable"
         class="table table-striped table-bordered"

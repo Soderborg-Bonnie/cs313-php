@@ -218,14 +218,16 @@ function test_input($data) {
                         
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo 'POSTING!<br />';        
-                            $statement = $db->prepare("INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, 'pink')");
+                            $statement = $db->prepare("INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, ':content')");
                         
                             echo 'After Statement!<br />';
 
                             $statement->bindValue(':book', $book);
                             $statement->bindValue(':chapter', $chapter);
                             $statement->bindValue(':verse', $verse);
-                            $statement->bindValue(':content', $content);
+                            // $statement->bindValue(':content', $content);
+                            $statement->bindValue(':content', 'pink');
+
                             
                             echo 'After Bind!<br />';
 

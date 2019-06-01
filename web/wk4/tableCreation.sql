@@ -57,3 +57,7 @@ ADD COLUMN author_id INTEGER REFERENCES author(author_id);
 ALTER TABLE media_type
 ADD COLUMN book_number TEXT REFERENCES isbn(book_number);
 
+UPDATE isbn
+SET author_id = author.author_id
+FROM author 
+WHERE author.book_number = isbn.book_number;

@@ -66,9 +66,8 @@ session_start();
                             $author = test_input($_POST['author']);
                             $description = test_input($_POST['description']);
                             $media = test_input($_POST['media']);
-                            $genre = $_POST['genre'];
-                            $tags = $_POST['tags'];
-                            $isbn = $_POST['isbn'];
+                            $genre = test_input ($_POST['tags']);
+                            $isbn = test_input ($_POST['isbn']);
                         }
 
 ?>
@@ -135,20 +134,18 @@ session_start();
 
                         <?php
                         
-//                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//                             echo 'POSTING!<br />';        
-//                             $statement = $db->prepare("INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            echo 'POSTING!<br />';        
+                            $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:title, :isbn)");
                         
-//                             echo 'After Statement!<br />';
+                            echo 'After Statement!<br />';
 
-//                             $statement->bindValue(':book', $book);
-//                             $statement->bindValue(':chapter', $chapter);
-//                             $statement->bindValue(':verse', $verse);
-//                             $statement->bindValue(':content', $content);
+                            $statement->bindValue(':title', $title);
+                            $statement->bindValue(':isbn', $isbn);
                             
-//                             echo 'After Bind!<br />';
-
-//                             $statement->execute();
+                            echo 'After Bind!<br />';
+                            $statement->execute();
+                        }
 // /*
 //                             echo 'After Execute!<br />';
 //                             $newId = $pdo->lastInsertId('scripture_id_seq');

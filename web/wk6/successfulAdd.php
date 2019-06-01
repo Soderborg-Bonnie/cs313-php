@@ -61,6 +61,12 @@ session_start();
                           $statement->bindValue(':author', $author);
                           $statement->execute();
 
+                          $statement = $db->prepare("INSERT INTO description (isbn_id, description) VALUES (:isbn, :description)");
+                          $statement->bindValue(':isbn', $isbn);
+                          $statement->bindValue(':description', $description);
+                          $statement->execute();
+
+
                       }
 
       ?>

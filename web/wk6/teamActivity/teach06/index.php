@@ -225,8 +225,7 @@ function test_input($data) {
                             $statement->bindValue(':book', $book);
                             $statement->bindValue(':chapter', $chapter);
                             $statement->bindValue(':verse', $verse);
-                            // $statement->bindValue(':content', $content);
-                            $statement->bindValue(':content', 'pink');
+                            $statement->bindValue(':content', $content);
 
                             
                             echo 'After Bind!<br />';

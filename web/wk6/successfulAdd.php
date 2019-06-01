@@ -40,6 +40,7 @@ session_start();
                         $words = ($_POST['words']);
                         $media = ($_POST['media']);
                         $genre = ($_POST['genre']);
+                        $tags = ($_POST['tags']);
                             
                         echo "'$title' has been added."."<br>";
                         echo "It's ISBN number is: $isbn";
@@ -62,14 +63,23 @@ session_start();
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':words', $words);
                           $statement->execute();
-echo 'before media';
+// echo 'before media';
                           $statement = $db->prepare("INSERT INTO media (book_number, media) VALUES (:isbn, :media)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':media', $media);
                           $statement->execute();
-                          echo 'after media';
+                          // echo 'after media';
+                          $statement = $db->prepare("INSERT INTO genre (book_number, genre) VALUES (:isbn, :genre)");
+                          $statement->bindValue(':isbn', $isbn);
+                          $statement->bindValue(':genre', $genre);
+                          $statement->execute();
 
-                      }
+                          $statement = $db->prepare("INSERT INTO tags (book_number, tags) VALUES (:isbn, :tags)");
+                          $statement->bindValue(':isbn', $isbn);
+                          $statement->bindValue(':tags', $tags);
+                          $statement->execute();
+
+                        }
 
       ?>
 

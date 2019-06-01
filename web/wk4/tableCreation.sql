@@ -17,10 +17,10 @@ CREATE TABLE genre(
     genre_name TEXT PRIMARY KEY
 );
 
-CREATE TABLE book_genre(
-    book_genre_id SERIAL PRIMARY KEY,
-    book_id INTEGER REFERENCES isbn(id),
-    genre TEXT REFERENCES genre(genre_name)
+CREATE TABLE genre(
+    genre_id SERIAL PRIMARY KEY,
+    book_number TEXT REFERENCES isbn(book_number),
+    genre TEXT 
 );
 
 CREATE TABLE words
@@ -45,10 +45,10 @@ CREATE TABLE tags(
     tag_id TEXT UNIQUE PRIMARY KEY
 );
 
-CREATE TABLE book_tags(
-    book_tags_id SERIAL PRIMARY KEY,
-    book_id INTEGER REFERENCES isbn(id),
-    tag_id TEXT REFERENCES tags(tag_id)
+CREATE TABLE tags(
+    tags_id SERIAL PRIMARY KEY,
+    book_number TEXT REFERENCES isbn(book_number),
+    tags TEXT
 );
 
 ALTER TABLE isbn 

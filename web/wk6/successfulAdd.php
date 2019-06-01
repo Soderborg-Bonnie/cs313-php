@@ -38,6 +38,20 @@ session_start();
                         $isbn = ($_POST['isbn']);
                         echo "'$title' has been added."."<br>";
                         echo "It's ISBN number is: $isbn";
+                        
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                          echo 'POSTING!<br />';        
+                          $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
+                      
+                          echo 'After Statement!<br />';
+
+                          $statement->bindValue(':isbn', $isbn);
+                          $statement->bindValue(':title', $title);
+                          
+                          echo 'After Bind!<br />';
+                          $statement->execute();
+                      }
+
       ?>
 
 </body>

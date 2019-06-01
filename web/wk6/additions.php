@@ -110,23 +110,23 @@ session_start();
                         </form>
 
                         <?php
-                        $title = ($_POST['title']);
-                        $isbn = ($_POST['isbn']);
-                        echo "$title\n";
-                        echo "$isbn";
+                        // $title = ($_POST['title']);
+                        // $isbn = ($_POST['isbn']);
+                        // echo "$title\n";
+                        // echo "$isbn";
 
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            echo 'POSTING!<br />';        
-                            $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
+                        // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        //     echo 'POSTING!<br />';        
+                        //     $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                         
-                            echo 'After Statement!<br />';
+                        //     echo 'After Statement!<br />';
 
-                            $statement->bindValue(':isbn', $isbn);
-                            $statement->bindValue(':title', $title);
+                        //     $statement->bindValue(':isbn', $isbn);
+                        //     $statement->bindValue(':title', $title);
                             
-                            echo 'After Bind!<br />';
-                            $statement->execute();
-                        }
+                        //     echo 'After Bind!<br />';
+                        //     $statement->execute();
+                        // }
                         
                         ?>
     </main>

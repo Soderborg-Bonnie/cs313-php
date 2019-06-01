@@ -72,7 +72,7 @@ session_start();
 
 ?>
 
-      <form action="index.php" method="POST">
+      <form action="/wk6/successfulAdd/successfulAdd.php" method="POST">
                             <h2>Add a book</h2><br /> 
                             <div id="inputForm">                           
                             <label>Title:  </label>
@@ -100,33 +100,6 @@ session_start();
                             <input type="text" name="isbn" id="isbn"  value="<?php echo $isbn; ?>"/><br />
                             <br /><br />
                     </div>
-                            <?php
-                                // $sql = "SELECT id, name FROM topic";
-                                // //echo $sql.'<hr />';
-                                // $statement = $db->prepare($sql);
-                                // $statement->execute();
-                                // // Go through each result
-                                // while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-                                // {
-                                //     $topic_id = $row['id'];
-                                //     $topic_name = $row['name'];
-                                //     echo '<input type="checkbox" name="topic_id[]" value="'.$topic_id.'"';
-                                //     foreach ($topics as $topic)
-                                //     {
-                                //         if ($row['id']==$topic)
-                                //         {
-                                //             echo ' checked ';
-                                //         }
-                                //     }
-                                //     echo ' >'.$topic_name . '<br />';
-                                // }
-                                
-                                // echo '<input type="checkbox" name="topic_id[]" value="Other">Other - ';
-                                // echo '<input type="text" name="Other" ><br />';
-                                
-                                
-                                // print_r($topics);
-                            ?>
                             <br /><br />
                             <hr />
                             <input type="submit" class="btn btn-info" value="Submit Button" id="update">
@@ -146,55 +119,6 @@ session_start();
                             echo 'After Bind!<br />';
                             $statement->execute();
                         }
-// /*
-//                             echo 'After Execute!<br />';
-//                             $newId = $pdo->lastInsertId('scripture_id_seq');
-
-//                             $sql = 'INSERT INTO lookup(scripture,topic) VALUES(:script_id, :topic_id)';
-//                             echo $sql;
-//                             foreach ($topics as $topic_id)
-//                             {
-//                                 echo 'Adding ' . $topic_id . ' for '. $newid . '<br />';
-//                                 $statement = $db->prepare($sql);
-                                
-//                                 //Bind
-//                                 $statement->bindValue(':script_id',$newId);
-//                                 $statement->bindValue(':topic_id',$topic_id);
-
-//                                 $statement->execute();
-
-//                             }
-
-// */
-
-//                         // get the new id
-//                         $scriptureId = $db->lastInsertId("scripture_id_seq");
-//                         // Now go through each topic id in the list from the user's checkboxes
-//                         foreach ($topics as $topicId)
-//                         {
-//                             if ($topic=='Other')
-//                             {
-//                                 // Again, first prepare the statement
-//                                 $statement = $db->prepare('INSERT INTO topic(name) VALUES(:name)');
-//                                 // Then, bind the values
-//                                 $statement->bindValue(':name', $other_topic);
-//                                 $statement->execute();
-//                                 $topicId = $db->lastInsertId("topic_id_seq");
-//                             }
-
-
-//                             echo "ScriptureId: $scriptureId, topicId: $topicId";
-//                                 // Again, first prepare the statement
-//                                 $statement = $db->prepare('INSERT INTO lookup(scripture, topic) VALUES(:scripture_id, :topic_id)');
-//                                 // Then, bind the values
-//                                 $statement->bindValue(':scripture_id', $scriptureId);
-//                                 $statement->bindValue(':topic_id', $topicId);
-//                                 $statement->execute();
-                            
-//                         }
-
-
-//                         }
                         
                         ?>
     </main>

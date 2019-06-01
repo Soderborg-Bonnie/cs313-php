@@ -36,20 +36,31 @@ session_start();
     <?php
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
+                        $author = ($_POST['author']);
+                        $description = ($_POST['description']);
+                        $media = ($_POST['media']);
+                        $genre = ($_POST['genre']);
+                            
                         echo "'$title' has been added."."<br>";
                         echo "It's ISBN number is: $isbn";
-                        
+
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                          echo 'POSTING!<br />';        
+                          // echo 'POSTING!<br />';        
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                       
-                          echo 'After Statement!<br />';
+                          // echo 'After Statement!<br />';
 
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
                           
-                          echo 'After Bind!<br />';
+                          // echo 'After Bind!<br />';
                           $statement->execute();
+
+                          $statement = $db->prepare("INSERT INTO author (book_number, author_name) VALUES (:isbn, :author)");
+                          $statement->bindValue(':isbn', $isbn);
+                          $statement->bindValue(':author', $author);
+                          $statement->execute();
+
                       }
 
       ?>

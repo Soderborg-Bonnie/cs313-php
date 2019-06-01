@@ -53,15 +53,7 @@ session_start();
                           $statement->bindValue(':title', $title);
                           // echo 'After Bind!<br />';
                           $statement->execute();
-
-                          $statement = $db->prepare("UPDATE isbn
-                          SET author_id = author.author_id
-                          FROM author 
-                          WHERE author.book_number = isbn.book_number;");
-                          $statement->bindValue(':author_id', $author_id);
-                          $statement->execute();
-
-
+                          
                           $statement = $db->prepare("INSERT INTO author (book_number, author_name) VALUES (:isbn, :author)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':author', $author);

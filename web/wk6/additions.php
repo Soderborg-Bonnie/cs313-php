@@ -92,9 +92,11 @@ session_start();
                             <label>Genre:  </label>
                             <!-- <br /> -->
                             <input type="text" name="genre" id="genre"  value="<?php echo $genre; ?>"/><br />
+
                             <label>Tags:  </label>
                             <!-- <br /> -->
                             <input type="text" name="tags" id="tags"  value="<?php echo $tags; ?>"/><br />
+
                             <label>ISBN:  </label>
                             <!-- <br /> -->
                             <input type="text" name="isbn" id="isbn"  value="<?php echo $isbn; ?>"/><br />
@@ -106,7 +108,11 @@ session_start();
                         </form>
 
                         <?php
-                        
+                        $title = ($_POST['title']);
+                        $isbn = ($_POST['isbn']);
+                        echo "$title\n";
+                        echo "$isbn";
+
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo 'POSTING!<br />';        
                             $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");

@@ -218,7 +218,7 @@ function test_input($data) {
                         
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo 'POSTING!<br />';        
-                            $statement = $db->prepare("INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, ':content')");
+                            $statement = $db->prepare("INSERT INTO scripture (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
                         
                             echo 'After Statement!<br />';
 

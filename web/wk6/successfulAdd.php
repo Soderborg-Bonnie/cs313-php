@@ -36,7 +36,7 @@ session_start();
     <?php
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
-                        echo "'$title' has been added.<br>";
+                        echo "'$title' has been added."."<br>";
                         echo "It's ISBN number is: $isbn";
       ?>
 

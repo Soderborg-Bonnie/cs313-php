@@ -44,7 +44,7 @@ $book_number = $_GET['book_number'];
     echo '<h3>Media Type: '.$row4['media'].'</h3>';
     echo '<h3>Genre: '.$row5['genre'].'</h3>';
     echo '<h3>Tags: '.$row6['tags'].'</h3>';
-}}
+}}}}}}
 // ?> 
     </main>
 

@@ -63,7 +63,7 @@ session_start();
                           $statement->bindValue(':words', $words);
                           $statement->execute();
 // echo 'after description';
-                          $statement = $db->prepare("INSERT INTO media (book_id, media) VALUES (:isbn, :media)");
+                          $statement = $db->prepare("INSERT INTO media (book_number, media) VALUES (:isbn, :media)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':media', $media);
                           $statement->execute();

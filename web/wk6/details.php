@@ -40,6 +40,11 @@ $book_number = $_GET['book_number'];
 
     echo '<h3>Title: '.$row['book_title'].'</h3>';
     echo '<h3>Author: '.$row2['author_name'].'</h3>';
+    echo '<h3>Description: </h3>';
+    echo '<h3>Media Type: </h3>';
+    echo '<h3>Genre: </h3>';
+    echo '<h3>Tags: </h3>';
+
     // echo '<h3>Description: '.$row3['words'].'</h3>';
     // echo '<h3>Media Type: '.$row4['media'].'</h3>';
     // echo '<h3>Genre: '.$row5['genre'].'</h3>';

@@ -65,51 +65,18 @@ $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM media WHERE book_number='$book_number'") as $row4){
     foreach ($db->query("SELECT * FROM genre WHERE book_number='$book_number'") as $row5){
     foreach ($db->query("SELECT * FROM tags WHERE book_number='$book_number'") as $row6){
-
-
-    }}}}}}
+    echo '<form action="../index.php/index.php" method="POST">';
+    echo '<h2>Details</h2><br />';
+    echo '<label>Title:  </label>';
+    echo '<input type="text" name="title" id="title" value="'.$row['book_title'].'"/><br />';
+    echo '<label>Author:  </label>';
+    echo '<label>Description:  </label>';
+    echo '<label>Media type:  </label>';
+    echo '<label>Genre:  </label>';
+    echo '<label>Tags:  </label>';
+    echo '</form>'
+  }}}}}}
     ?> 
-        <form action="../index.php/index.php" method="POST">
-    <h2>Details</h2><br /> 
-                            <div id="inputForm">                           
-                            <label>Title:  </label>
-                            <!-- <br /> -->
-                            
-                            <!-- <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br /> -->
-                            <input type="text" name="title" id="title" value="<?php echo $row['book_title']; ?>"/><br />
-
-                            <!-- <br /> -->
-
-                            <label>Author:  </label>
-                            <!-- <br /> -->
-                            <input type="text" name="author" id="author"  value="<?php echo $author; ?>"/><br />
-                            
-                            <label>Description:  </label>
-                            <!-- <br /> -->
-                            <textarea rows="4" cols="50" name="words" id="words">  <?php echo $words; ?> </textarea><br />                          
-                            <label>Media type:  </label>
-                            <!-- <br /> -->
-                            <input type="text" name="media" id="media"  value="<?php echo $media; ?>"/>
-                            <br />                            
-                            <label>Genre:  </label>
-                            <!-- <br /> -->
-                            <input type="text" name="genre" id="genre"  value="<?php echo $genre; ?>"/><br />
-
-                            <label>Tags:  </label>
-                            <!-- <br /> -->
-                            <input type="text" name="tags" id="tags"  value="<?php echo $tags; ?>"/><br />
-
-                            <label>ISBN:  </label>
-                            <!-- <br /> -->
-                            <input type="text" name="isbn" id="isbn"  value="<?php echo $isbn; ?>"/><br />
-                            <br /><br />
-                    </div>
-                            <br /><br />
-                            <hr />
-                            <input type="submit" class="btn btn-info" value="Submit Button" id="update">
-
-
-    </form>
       
 <?php
 

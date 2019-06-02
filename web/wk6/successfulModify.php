@@ -37,7 +37,7 @@ session_start();
         $book_number = $_GET['book_number'];
 
                         $title = ($_POST['title']);
-                        echo $title.' was modified.';
+                        // echo $title.' was modified.';
                         $isbn = ($_POST['isbn']);
                         $author = ($_POST['author']);
                         $words = ($_POST['words']);

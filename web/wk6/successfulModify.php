@@ -69,8 +69,8 @@ session_start();
                           $statement->bindValue(':genre', $genre);
                           $statement->execute();
 
-                          $statement = $db->prepare("UPDATE tags SET book_title = :title WHERE book_number = '$book_number'");
-                          $statement->bindValue(':title', $title);
+                          $statement = $db->prepare("UPDATE tags SET tags = :tags WHERE book_number = '$book_number'");
+                          $statement->bindValue(':tags', $tags);
                           $statement->execute();
 
 //                           $statement = $db->prepare("INSERT INTO author (book_number, author_name) VALUES (:isbn, :author)");

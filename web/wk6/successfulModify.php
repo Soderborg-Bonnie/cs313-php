@@ -50,7 +50,7 @@ session_start();
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           // echo 'POSTING!<br />';        
-                          $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
+                          $statement = $db->prepare("UPDATE isbn SET book_title = ':title' WHERE book_number = '$book_number'");
                           // echo 'After Statement!<br />';
                         //   $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);

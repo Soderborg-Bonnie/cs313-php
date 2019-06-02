@@ -32,7 +32,7 @@ session_start();
         </div>
       </div>
     </header>
-    <h2>Your modification was successful!</h2><br><br>
+    <!-- <h2>Your modification was successful!</h2><br><br> -->
     <?php
         $book_number = $_GET['book_number'];
 
@@ -48,6 +48,8 @@ session_start();
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if (isset($_POST['save'])) {
+                                echo '<h2>Your modification was successful!</h2><br><br>';
+                                echo $title.' was modified.';
 
                                 $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
                                 $statement->bindValue(':title', $title);
@@ -74,7 +76,9 @@ session_start();
                                 $statement->execute();
                             }
                             elseif (isset($_POST['delete'])){
-                                // echo 'POSTING!<br />';        
+                                echo '<h2>Your deletion was successful :(</h2><br><br>';
+                                echo $title.' was deleted.';
+
                                 $statement = $db->prepare("DELETE FROM tags WHERE book_number = '$book_number'");
                                 $statement->execute();
                                 

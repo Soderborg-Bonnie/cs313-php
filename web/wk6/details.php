@@ -59,7 +59,6 @@ session_start();
 
 $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
-    foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row1){ 
     foreach ($db->query("SELECT * FROM author WHERE book_number='$book_number'") as $row2){
     foreach ($db->query("SELECT * FROM words WHERE book_number='$book_number'") as $row3){
     foreach ($db->query("SELECT * FROM media WHERE book_number='$book_number'") as $row4){

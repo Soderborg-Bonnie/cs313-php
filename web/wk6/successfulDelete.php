@@ -46,12 +46,12 @@ session_start();
                         $author_id =  ($_POST['author_id']);
                         //     echo '<h3>Title: '.$row['book_title'].'</h3>';
 
-                        echo $title.' has been deleted.<br>';
+                        echo $title;
                         echo $book_number;
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           // echo 'POSTING!<br />';        
-                          $statement = $db->prepare("DELETE FROM media WHERE book_number = $book_number");
+                          $statement = $db->prepare("DELETE FROM media WHERE book_number = '$book_number'");
                           // echo 'After Statement!<br />';
                         //   $statement->bindValue(':isbn', $isbn);
                         //   $statement->bindValue(':title', $title);

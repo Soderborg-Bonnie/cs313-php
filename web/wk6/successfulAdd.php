@@ -46,7 +46,6 @@ session_start();
                         echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                          if (isset($_POST['save'])) {
                           // echo 'POSTING!<br />';        
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           // echo 'After Statement!<br />';
@@ -80,10 +79,6 @@ session_start();
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
 
-                        }
-                        elseif (isset($_POST['delete'])){
-                          echo 'delete';
-                        }
                       }
 
       ?>

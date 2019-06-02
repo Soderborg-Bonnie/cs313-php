@@ -47,29 +47,36 @@ session_start();
                         $author_id =  ($_POST['author_id']);
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                          $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
-                          $statement->bindValue(':title', $title);
-                          $statement->execute();
+                            if (isset($_POST['save'])) {
 
-                          $statement = $db->prepare("UPDATE author SET author_name = :author WHERE book_number = '$book_number'");
-                          $statement->bindValue(':author', $author);
-                          $statement->execute();
+                                $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
+                                $statement->bindValue(':title', $title);
+                                $statement->execute();
 
-                          $statement = $db->prepare("UPDATE words SET words = :words WHERE book_number = '$book_number'");
-                          $statement->bindValue(':words', $words);
-                          $statement->execute();
+                                $statement = $db->prepare("UPDATE author SET author_name = :author WHERE book_number = '$book_number'");
+                                $statement->bindValue(':author', $author);
+                                $statement->execute();
 
-                          $statement = $db->prepare("UPDATE media SET media = :media WHERE book_number = '$book_number'");
-                          $statement->bindValue(':media', $media);
-                          $statement->execute();
+                                $statement = $db->prepare("UPDATE words SET words = :words WHERE book_number = '$book_number'");
+                                $statement->bindValue(':words', $words);
+                                $statement->execute();
 
-                          $statement = $db->prepare("UPDATE genre SET genre = :genre WHERE book_number = '$book_number'");
-                          $statement->bindValue(':genre', $genre);
-                          $statement->execute();
+                                $statement = $db->prepare("UPDATE media SET media = :media WHERE book_number = '$book_number'");
+                                $statement->bindValue(':media', $media);
+                                $statement->execute();
 
-                          $statement = $db->prepare("UPDATE tags SET tags = :tags WHERE book_number = '$book_number'");
-                          $statement->bindValue(':tags', $tags);
-                          $statement->execute();
+                                $statement = $db->prepare("UPDATE genre SET genre = :genre WHERE book_number = '$book_number'");
+                                $statement->bindValue(':genre', $genre);
+                                $statement->execute();
+
+                                $statement = $db->prepare("UPDATE tags SET tags = :tags WHERE book_number = '$book_number'");
+                                $statement->bindValue(':tags', $tags);
+                                $statement->execute();
+                            }
+                            elseif (isset($_POST['delete'])){
+                                echo 'delete';
+                            }
+
                         }
 
       ?>

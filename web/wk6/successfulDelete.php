@@ -47,7 +47,7 @@ session_start();
                         //     echo '<h3>Title: '.$row['book_title'].'</h3>';
 
                         echo $title.' has been deleted.<br>';
-                        echo 'It''s ISBN number is: '.$book_number;
+                        echo $book_number;
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           // echo 'POSTING!<br />';        

@@ -86,10 +86,10 @@ $book_number = $_GET['book_number'];
     echo '<input type="text" name="tags" id="tags" value="'.$row6['tags'].'"/><br />';
     
     echo '<br><br>';
-    echo '<input type="submit" class="btn btn-primary" value="Save" id="save">';
+    echo '<input type="submit" class="btn btn-primary" name="save" value="Save" id="save">';
     echo '<br><br>';
 
-    echo '<input type="submit" class="btn btn-danger" value="Delete" id="delete">';
+    echo '<input type="submit" class="btn btn-danger" name="delete" value="Delete" id="delete">';
     echo '<h1>DELETE REALLY MEANS DELETE. NO GOING BACK.</h1>';
   
     echo '</form>';

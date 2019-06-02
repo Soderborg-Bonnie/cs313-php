@@ -46,7 +46,6 @@ session_start();
                         $author_id =  ($_POST['author_id']);
                         //     echo '<h3>Title: '.$row['book_title'].'</h3>';
 
-                        echo $title;
                         echo $book_number;
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {

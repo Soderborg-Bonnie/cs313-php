@@ -70,3 +70,9 @@ FROM isbn;
 INSERT INTO tags(book_number)
 SELECT book_number 
 FROM isbn;
+
+DELETE FROM words WHERE book_number = 'B01EI2IMQO';
+DELETE FROM author WHERE book_number = 'B01EI2IMQO';
+DELETE FROM genre WHERE book_number = 'B01EI2IMQO';
+DELETE FROM tags WHERE book_number = 'B01EI2IMQO';
+DELETE FROM isbn WHERE book_number = 'B01EI2IMQO';

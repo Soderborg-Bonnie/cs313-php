@@ -34,6 +34,8 @@ session_start();
     </header>
     <h2>Your deletion of a book was successful :(</h2><br><br>
     <?php
+    $book_number = $_GET['book_number'];
+
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
                         $author = ($_POST['author']);
@@ -42,12 +44,14 @@ session_start();
                         $genre = ($_POST['genre']);
                         $tags = ($_POST['tags']);
                         $author_id =  ($_POST['author_id']);
+                        //     echo '<h3>Title: '.$row['book_title'].'</h3>';
+
                         echo $title.' has been deleted.<br>';
                         echo "It's ISBN number is: ".$isbn;
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           // echo 'POSTING!<br />';        
-                          $statement = $db->prepare("DELETE FROM media WHERE book_number = $isbn");
+                          $statement = $db->prepare("DELETE FROM media WHERE book_number = $book_number");
                           // echo 'After Statement!<br />';
                         //   $statement->bindValue(':isbn', $isbn);
                         //   $statement->bindValue(':title', $title);

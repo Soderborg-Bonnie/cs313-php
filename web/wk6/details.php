@@ -55,8 +55,7 @@ session_start();
       </div>
     </header>
     <main id="detailsMain">
-      
-<?php
+    <?php
 
 $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
@@ -65,13 +64,62 @@ $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM media WHERE book_number='$book_number'") as $row4){
     foreach ($db->query("SELECT * FROM genre WHERE book_number='$book_number'") as $row5){
     foreach ($db->query("SELECT * FROM tags WHERE book_number='$book_number'") as $row6){
+    }}}}}}
+    ?> 
+        <form action="../index.php/index.php" method="POST">
+    <h2>Details</h2><br /> 
+                            <div id="inputForm">                           
+                            <label>Title:  </label>
+                            <!-- <br /> -->
+                            <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
+                            <!-- <br /> -->
+                            <label>Author:  </label>
+                            <!-- <br /> -->
+                            <input type="text" name="author" id="author"  value="<?php echo $author; ?>"/><br />
+                            
+                            <label>Description:  </label>
+                            <!-- <br /> -->
+                            <textarea rows="4" cols="50" name="words" id="words">  <?php echo $words; ?> </textarea><br />                          
+                            <label>Media type:  </label>
+                            <!-- <br /> -->
+                            <input type="text" name="media" id="media"  value="<?php echo $media; ?>"/>
+                            <br />                            
+                            <label>Genre:  </label>
+                            <!-- <br /> -->
+                            <input type="text" name="genre" id="genre"  value="<?php echo $genre; ?>"/><br />
 
-    echo '<h3>Title: '.$row['book_title'].'</h3>';
-    echo '<h3>Author: '.$row2['author_name'].'</h3>';
-    echo '<h3>Description: '.$row3['words'].'</h3>';
-    echo '<h3>Media Type: '.$row4['media'].'</h3>';
-    echo '<h3>Genre: '.$row5['genre'].'</h3>';
-    echo '<h3>Tags: '.$row6['tags'].'</h3>';
+                            <label>Tags:  </label>
+                            <!-- <br /> -->
+                            <input type="text" name="tags" id="tags"  value="<?php echo $tags; ?>"/><br />
+
+                            <label>ISBN:  </label>
+                            <!-- <br /> -->
+                            <input type="text" name="isbn" id="isbn"  value="<?php echo $isbn; ?>"/><br />
+                            <br /><br />
+                    </div>
+                            <br /><br />
+                            <hr />
+                            <input type="submit" class="btn btn-info" value="Submit Button" id="update">
+
+
+    </form>
+      
+<?php
+
+// $book_number = $_GET['book_number'];
+//     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
+//     foreach ($db->query("SELECT * FROM author WHERE book_number='$book_number'") as $row2){
+//     foreach ($db->query("SELECT * FROM words WHERE book_number='$book_number'") as $row3){
+//     foreach ($db->query("SELECT * FROM media WHERE book_number='$book_number'") as $row4){
+//     foreach ($db->query("SELECT * FROM genre WHERE book_number='$book_number'") as $row5){
+//     foreach ($db->query("SELECT * FROM tags WHERE book_number='$book_number'") as $row6){
+
+//     echo '<h3>Title: '.$row['book_title'].'</h3>';
+//     echo '<h3>Author: '.$row2['author_name'].'</h3>';
+//     echo '<h3>Description: '.$row3['words'].'</h3>';
+//     echo '<h3>Media Type: '.$row4['media'].'</h3>';
+//     echo '<h3>Genre: '.$row5['genre'].'</h3>';
+//     echo '<h3>Tags: '.$row6['tags'].'</h3>';
     }}}}}}
 ?> 
 <br><br>

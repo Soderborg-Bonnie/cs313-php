@@ -75,7 +75,6 @@ $book_number = $_GET['book_number'];
     }}}}}}
 ?> 
 <br><br>
-<input type="submit" class="btn btn-info" value="Submit Button" id="update">
 
 <input type="button" class="btn btn-danger" value="Delete" id="delete">
 </main>

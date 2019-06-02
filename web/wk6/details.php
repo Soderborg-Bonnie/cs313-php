@@ -74,7 +74,8 @@ $book_number = $_GET['book_number'];
     echo '<h3>Tags: '.$row6['tags'].'</h3>';
     }}}}}}
 ?> 
-<button type="button" class="btn btn-danger">Delete</button>  
+<br><br>
+<input type="button" class="btn btn-danger">Delete 
 </main>
 
 </html>

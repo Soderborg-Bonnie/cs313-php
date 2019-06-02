@@ -31,12 +31,6 @@ session_start();
 <?php
 
 $book_number = $_GET['book_number'];
-// $row['author_name'] = '';
-// $row2['words'] = '';
-// $row3['book_title'] = '';
-// $row4['media'] = '';
-// $row5['genre'] = '';
-// $row6['tags'] = '';
     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
     foreach ($db->query("SELECT * FROM author WHERE book_number='$book_number'") as $row2){
     foreach ($db->query("SELECT * FROM words WHERE book_number='$book_number'") as $row3){
@@ -50,10 +44,9 @@ $book_number = $_GET['book_number'];
     echo '<h3>Media Type: '.$row4['media'].'</h3>';
     echo '<h3>Genre: '.$row5['genre'].'</h3>';
     echo '<h3>Tags: '.$row6['tags'].'</h3>';
-}}
-// }}
-}}}}
-// ?> 
-    </main>
+    }}}}}}
+?> 
+<button type="button" class="btn btn-danger">Delete</button>  
+</main>
 
 </html>

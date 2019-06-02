@@ -73,7 +73,10 @@ $book_number = $_GET['book_number'];
     echo '<label>Media type:  </label>';
     echo '<label>Genre:  </label>';
     echo '<label>Tags:  </label>';
-    echo '</form>'
+    echo '<br><br>';
+    echo '<input type="button" class="btn btn-danger" value="Delete" id="delete">';
+  
+    echo '</form>';
   }}}}}}
     ?> 
       
@@ -97,7 +100,7 @@ $book_number = $_GET['book_number'];
 ?> 
 <br><br>
 
-<input type="button" class="btn btn-danger" value="Delete" id="delete">
+<!-- <input type="button" class="btn btn-danger" value="Delete" id="delete"> -->
 </main>
 
 </html>

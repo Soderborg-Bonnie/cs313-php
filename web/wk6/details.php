@@ -86,7 +86,7 @@ $book_number = $_GET['book_number'];
     echo '<input type="text" name="tags" id="tags" value="'.$row6['tags'].'"/><br />';
     
     echo '<br><br>';
-    echo '<input type="submit" class="btn btn-primary" value="Modify" id="modify">';
+    echo '<input type="submit" class="btn btn-primary" value="Save" id="save">';
     echo '<br><br>';
 
     echo '<input type="submit" class="btn btn-danger" value="Delete" id="delete">';

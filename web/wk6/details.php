@@ -65,7 +65,7 @@ $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM genre WHERE book_number='$book_number'") as $row5){
     foreach ($db->query("SELECT * FROM tags WHERE book_number='$book_number'") as $row6){
     // echo '<form action="../successfulDelete.php/successfulDelete.php" method="POST">';
-    echo '<form action="../successfulDelete.php/successfulDelete.php?book_number="'.$row['book_number'].'" method="POST">';
+    echo '<form action="../successfulDelete.php/successfulDelete.php?book_number='.$row['book_number'].'" method="POST">';
 
     // ?book_number='.$row['book_number']
     echo '<h2>Details</h2><br />';

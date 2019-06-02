@@ -42,8 +42,8 @@ session_start();
                         $genre = ($_POST['genre']);
                         $tags = ($_POST['tags']);
                         $author_id =  ($_POST['author_id']);
-                        echo "'$title' has been deleted."."<br>";
-                        echo "It's ISBN number is: $isbn";
+                        echo $title.' has been deleted.<br>';
+                        echo "It's ISBN number is: ".$isbn;
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           // echo 'POSTING!<br />';        

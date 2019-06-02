@@ -50,13 +50,24 @@ session_start();
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           // echo 'POSTING!<br />';        
-                          $statement = $db->prepare("DELETE FROM media WHERE book_number = '$book_number'");
-                          // echo 'After Statement!<br />';
-                        //   $statement->bindValue(':isbn', $isbn);
-                        //   $statement->bindValue(':title', $title);
-                          // echo 'After Bind!<br />';
+                          $statement = $db->prepare("DELETE FROM tags WHERE book_number = '$book_number'");
                           $statement->execute();
                           
+                          $statement = $db->prepare("DELETE FROM genre WHERE book_number = '$book_number'");
+                          $statement->execute();
+
+                          $statement = $db->prepare("DELETE FROM media WHERE book_number = '$book_number'");
+                          $statement->execute();
+
+                          $statement = $db->prepare("DELETE FROM words WHERE book_number = '$book_number'");
+                          $statement->execute();
+
+                          $statement = $db->prepare("DELETE FROM author WHERE book_number = '$book_number'");
+                          $statement->execute();
+
+                          $statement = $db->prepare("DELETE FROM isbn WHERE book_number = '$book_number'");
+                          $statement->execute();
+
 
                         }
 

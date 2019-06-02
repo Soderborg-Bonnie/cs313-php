@@ -76,3 +76,6 @@ DELETE FROM author WHERE book_number = 'B01EI2IMQO';
 DELETE FROM genre WHERE book_number = 'B01EI2IMQO';
 DELETE FROM tags WHERE book_number = 'B01EI2IMQO';
 DELETE FROM isbn WHERE book_number = 'B01EI2IMQO';
+
+ALTER TABLE isbn
+DROP CONSTRAINT isbn_author_id_fkey;

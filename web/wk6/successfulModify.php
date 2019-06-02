@@ -49,14 +49,30 @@ session_start();
                         // echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                          // echo 'POSTING!<br />';        
                           $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
-                          // echo 'After Statement!<br />';
-                        //   $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
-                          // echo 'After Bind!<br />';
                           $statement->execute();
-                          
+
+                          $statement = $db->prepare("UPDATE author SET author_name = :author WHERE book_number = '$book_number'");
+                          $statement->bindValue(':author', $author);
+                          $statement->execute();
+
+                          $statement = $db->prepare("UPDATE words SET words = :words WHERE book_number = '$book_number'");
+                          $statement->bindValue(':words', $words);
+                          $statement->execute();
+
+                          $statement = $db->prepare("UPDATE media SET media = :media WHERE book_number = '$book_number'");
+                          $statement->bindValue(':media', $media);
+                          $statement->execute();
+
+                          $statement = $db->prepare("UPDATE genre SET genre = :genre WHERE book_number = '$book_number'");
+                          $statement->bindValue(':genre', $genre);
+                          $statement->execute();
+
+                          $statement = $db->prepare("UPDATE tags SET book_title = :title WHERE book_number = '$book_number'");
+                          $statement->bindValue(':title', $title);
+                          $statement->execute();
+
 //                           $statement = $db->prepare("INSERT INTO author (book_number, author_name) VALUES (:isbn, :author)");
 //                           $statement->bindValue(':isbn', $isbn);
 //                           $statement->bindValue(':author', $author);

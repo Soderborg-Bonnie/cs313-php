@@ -32,11 +32,12 @@ session_start();
         </div>
       </div>
     </header>
-    <h2>Your addition of a new book was successful!</h2><br><br>
+    <h2>Your modification was successful!</h2><br><br>
     <?php
         $book_number = $_GET['book_number'];
 
                         $title = ($_POST['title']);
+                        echo $title;
                         $isbn = ($_POST['isbn']);
                         $author = ($_POST['author']);
                         $words = ($_POST['words']);

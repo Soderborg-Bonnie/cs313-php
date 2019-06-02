@@ -59,11 +59,14 @@ session_start();
 
 $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
+    foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row1){ 
     foreach ($db->query("SELECT * FROM author WHERE book_number='$book_number'") as $row2){
     foreach ($db->query("SELECT * FROM words WHERE book_number='$book_number'") as $row3){
     foreach ($db->query("SELECT * FROM media WHERE book_number='$book_number'") as $row4){
     foreach ($db->query("SELECT * FROM genre WHERE book_number='$book_number'") as $row5){
     foreach ($db->query("SELECT * FROM tags WHERE book_number='$book_number'") as $row6){
+
+
     }}}}}}
     ?> 
         <form action="../index.php/index.php" method="POST">
@@ -71,8 +74,12 @@ $book_number = $_GET['book_number'];
                             <div id="inputForm">                           
                             <label>Title:  </label>
                             <!-- <br /> -->
-                            <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
+                            
+                            <!-- <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br /> -->
+                            <input type="text" name="title" id="title" value="<?php echo $row['book_title']; ?>"/><br />
+
                             <!-- <br /> -->
+
                             <label>Author:  </label>
                             <!-- <br /> -->
                             <input type="text" name="author" id="author"  value="<?php echo $author; ?>"/><br />
@@ -120,7 +127,7 @@ $book_number = $_GET['book_number'];
 //     echo '<h3>Media Type: '.$row4['media'].'</h3>';
 //     echo '<h3>Genre: '.$row5['genre'].'</h3>';
 //     echo '<h3>Tags: '.$row6['tags'].'</h3>';
-    }}}}}}
+    // }}}}}}
 ?> 
 <br><br>
 

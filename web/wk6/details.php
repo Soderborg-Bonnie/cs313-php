@@ -73,17 +73,17 @@ $book_number = $_GET['book_number'];
     echo '<label>Title:  </label>';
     echo '<input type="text" name="title" id="title" value="'.$row['book_title'].'"/><br />';
     echo '<label>Author:  </label>';
-    echo '<input type="text" name="title" id="author" value="'.$row2['author_name'].'"/><br />';
+    echo '<input type="text" name="author" id="author" value="'.$row2['author_name'].'"/><br />';
     echo '<label>Description:  </label>';
     echo '<textarea rows="4" cols="50" name="words" id="words">'.$row3['words'].'</textarea><br />';                          
 
     // echo '<input type="text" name="title" id="words" value="'.$row3['words'].'"/><br />';
     echo '<label>Media type:  </label>';
-    echo '<input type="text" name="title" id="media" value="'.$row4['media'].'"/><br />';
+    echo '<input type="text" name="media" id="media" value="'.$row4['media'].'"/><br />';
     echo '<label>Genre:  </label>';
-    echo '<input type="text" name="title" id="genre" value="'.$row5['genre'].'"/><br />';
+    echo '<input type="text" name="genre" id="genre" value="'.$row5['genre'].'"/><br />';
     echo '<label>Tags:  </label>';
-    echo '<input type="text" name="title" id="tags" value="'.$row6['tags'].'"/><br />';
+    echo '<input type="text" name="tags" id="tags" value="'.$row6['tags'].'"/><br />';
     
     echo '<br><br>';
     echo '<input type="submit" class="btn btn-primary" value="Modify" id="modify">';

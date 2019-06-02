@@ -74,8 +74,27 @@ session_start();
                                 $statement->execute();
                             }
                             elseif (isset($_POST['delete'])){
-                                echo 'delete';
-                            }
+                                // echo 'POSTING!<br />';        
+                                $statement = $db->prepare("DELETE FROM tags WHERE book_number = '$book_number'");
+                                $statement->execute();
+                                
+                                $statement = $db->prepare("DELETE FROM genre WHERE book_number = '$book_number'");
+                                $statement->execute();
+      
+                                $statement = $db->prepare("DELETE FROM media WHERE book_number = '$book_number'");
+                                $statement->execute();
+      
+                                $statement = $db->prepare("DELETE FROM words WHERE book_number = '$book_number'");
+                                $statement->execute();
+      
+                                $statement = $db->prepare("DELETE FROM author WHERE book_number = '$book_number'");
+                                $statement->execute();
+      
+                                $statement = $db->prepare("DELETE FROM isbn WHERE book_number = '$book_number'");
+                                $statement->execute();
+      
+      
+                              }
 
                         }
 

@@ -37,7 +37,7 @@ session_start();
         $book_number = $_GET['book_number'];
 
                         $title = ($_POST['title']);
-                        echo $title;
+                        echo $title ' was modified.';
                         $isbn = ($_POST['isbn']);
                         $author = ($_POST['author']);
                         $words = ($_POST['words']);
@@ -45,8 +45,6 @@ session_start();
                         $genre = ($_POST['genre']);
                         $tags = ($_POST['tags']);
                         $author_id =  ($_POST['author_id']);
-                        // echo "'$title' has been added."."<br>";
-                        // echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
@@ -72,32 +70,6 @@ session_start();
                           $statement = $db->prepare("UPDATE tags SET tags = :tags WHERE book_number = '$book_number'");
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
-
-//                           $statement = $db->prepare("INSERT INTO author (book_number, author_name) VALUES (:isbn, :author)");
-//                           $statement->bindValue(':isbn', $isbn);
-//                           $statement->bindValue(':author', $author);
-//                           $statement->execute();
-// // echo 'before description';
-//                           $statement = $db->prepare("INSERT INTO words (book_number, words) VALUES (:isbn, :words)");
-//                           $statement->bindValue(':isbn', $isbn);
-//                           $statement->bindValue(':words', $words);
-//                           $statement->execute();
-// // echo 'before media';
-//                           $statement = $db->prepare("INSERT INTO media (book_number, media) VALUES (:isbn, :media)");
-//                           $statement->bindValue(':isbn', $isbn);
-//                           $statement->bindValue(':media', $media);
-//                           $statement->execute();
-//                           // echo 'after media';
-//                           $statement = $db->prepare("INSERT INTO genre (book_number, genre) VALUES (:isbn, :genre)");
-//                           $statement->bindValue(':isbn', $isbn);
-//                           $statement->bindValue(':genre', $genre);
-//                           $statement->execute();
-
-//                           $statement = $db->prepare("INSERT INTO tags (book_number, tags) VALUES (:isbn, :tags)");
-//                           $statement->bindValue(':isbn', $isbn);
-//                           $statement->bindValue(':tags', $tags);
-//                           $statement->execute();
-
                         }
 
       ?>

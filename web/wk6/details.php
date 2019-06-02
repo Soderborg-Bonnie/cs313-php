@@ -31,12 +31,12 @@ session_start();
 <?php
 
 $book_number = $_GET['book_number'];
-$row['author_name'] = '';
-$row2['words'] = '';
-$row3['book_title'] = '';
-$row4['media'] = '';
-$row5['genre'] = '';
-$row6['tags'] = '';
+// $row['author_name'] = '';
+// $row2['words'] = '';
+// $row3['book_title'] = '';
+// $row4['media'] = '';
+// $row5['genre'] = '';
+// $row6['tags'] = '';
     foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
     foreach ($db->query("SELECT * FROM author WHERE book_number='$book_number'") as $row2){
     foreach ($db->query("SELECT * FROM words WHERE book_number='$book_number'") as $row3){

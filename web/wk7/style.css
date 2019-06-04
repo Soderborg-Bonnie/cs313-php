@@ -150,5 +150,6 @@ td {
   background-image: url(../wk7/images/sparklyBook.jpg);
 }
 #loginInput {
-  z-index: 10;
+  color: white;
+  /* z-index: 10; */
 }

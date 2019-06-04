@@ -58,9 +58,9 @@ session_start();
       </div>
     </header>
     <main>
-    <img src="../images/sparkleBook.php" alt="sparkly book" />
+    <img src="../images/sparkleBook.jpg" alt="sparkly book" />
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
-      <h2>Table o' Books</h2>
+      <!-- <h2>Table o' Books</h2> -->
 </main>
 </body>
 </html>

@@ -147,6 +147,7 @@ td {
 #login {
   margin: 0;
   padding: 0;
+  background-image: url(../wk7/images/sparklyBook.jpg);
 }
 #loginInput {
   z-index: 10;

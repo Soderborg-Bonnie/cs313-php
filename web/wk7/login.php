@@ -43,24 +43,25 @@ session_start();
     ></script>
   </head>
   <body id ="login">
-    <header>
+    <!-- <header>
       <div class="topOfPage">
         <img src="../images/booksLeft.png" alt="photo of books" />
         <div class="mainHeader">
           <h1>Login</h1>
           <nav>
-            <ul class="mainNav">
+            <ul class="mainNav"> -->
               <!-- <li><a href="/wk6/index.php/index.php" class="current">Home</a></li>
               <li><a href="/wk6/details.php/details.php">Details</a></li> -->
-            </ul>
+            <!-- </ul>
           </nav>
         </div>
       </div>
-    </header>
+    </header> -->
     <main>
-    <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/>
+        <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/>
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
-</main>
-</body>
+        <label>User name: <input type="text"><input/></label>
+    </main>
+  </body>
 </html>

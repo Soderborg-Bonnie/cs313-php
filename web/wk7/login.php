@@ -58,6 +58,7 @@ session_start();
       </div>
     </header> -->
     <main>
+        <h1>Finding Books</h1>
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->

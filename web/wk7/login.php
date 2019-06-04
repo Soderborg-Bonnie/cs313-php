@@ -64,7 +64,7 @@ session_start();
         <div id="loginInput">
             <label>User name: 
                 <input type="text"><input/>
-            </label>
+            </label><br>
             <label>Password: 
                 <input type="password"><input/>
             </label>

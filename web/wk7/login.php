@@ -42,7 +42,7 @@ session_start();
       src="../main.js"
     ></script>
   </head>
-  <body>
+  <body id ="login">
     <header>
       <div class="topOfPage">
         <img src="../images/booksLeft.png" alt="photo of books" />
@@ -58,7 +58,7 @@ session_start();
       </div>
     </header>
     <main>
-    <img src="../images/sparklyBookSm.jpg" alt="sparkly book" id="loginPic"/>
+    <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/>
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
 </main>

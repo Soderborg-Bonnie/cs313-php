@@ -141,4 +141,9 @@ td {
 }
 #loginPic {
   width: 100%;
+  margin-top: -20em;
+}
+#login {
+  margin: 0;
+  padding: 0;
 }

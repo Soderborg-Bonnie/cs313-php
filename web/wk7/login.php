@@ -63,10 +63,10 @@ session_start();
       <!-- <h2>Table o' Books</h2> -->
         <div id="loginInput">
             <label>User name: 
-                <input type="text"><input/>
+                <input type="text">
             </label><br>
             <label>Password: 
-                <input type="password"><input/>
+                <input type="password">
             </label>
         </div>
     </main>

@@ -58,11 +58,11 @@ session_start();
       </div>
     </header> -->
     <main>
+    <h1 id="loginTitle">Finding Books</h1><br><br>
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
         <div id="loginInput">
-        <h1>Finding Books</h1><br><br>
             <label>User name: 
                 <input type="text">
             </label><br>

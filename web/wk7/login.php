@@ -47,18 +47,18 @@ session_start();
       <div class="topOfPage">
         <img src="../images/booksLeft.png" alt="photo of books" />
         <div class="mainHeader">
-          <h1>Finding Books</h1>
+          <h1>Login</h1>
           <nav>
             <ul class="mainNav">
-              <li><a href="/wk6/index.php/index.php" class="current">Home</a></li>
-              <li><a href="/wk6/details.php/details.php">Details</a></li>
+              <!-- <li><a href="/wk6/index.php/index.php" class="current">Home</a></li>
+              <li><a href="/wk6/details.php/details.php">Details</a></li> -->
             </ul>
           </nav>
         </div>
       </div>
     </header>
     <main>
-    <img src="../images/sparklyBook.jpg" alt="sparkly book" />
+    <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/>
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
 </main>

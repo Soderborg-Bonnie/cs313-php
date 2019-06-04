@@ -61,7 +61,7 @@ session_start();
         <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/>
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
-        <label>User name: <input type="text"><input/></label>
+        <div id="loginInput"><label>User name: <input type="text"><input/></label></div>
     </main>
   </body>
 </html>

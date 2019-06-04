@@ -141,9 +141,13 @@ td {
 }
 #loginPic {
   width: 100%;
+  z-index: -10;
   /* margin-top: -20em; */
 }
 #login {
   margin: 0;
   padding: 0;
+}
+#loginInput {
+  z-index: 10;
 }

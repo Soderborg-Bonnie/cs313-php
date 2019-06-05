@@ -62,7 +62,6 @@ session_start();
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
-      <?php
         <div id="loginInput">
             <label>User name: 
                 <input type="text">
@@ -72,7 +71,6 @@ session_start();
             </label><br><br>
             <input type="submit" class="btn btn-success" name="loginSubmit">
         </div>
-        ?>
     </main>
   </body>
 </html>

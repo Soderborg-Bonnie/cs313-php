@@ -74,7 +74,7 @@ $usernameError = $pwdError = '';
     
 ?> 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -92,8 +92,7 @@ $usernameError = $pwdError = '';
     />
   </head>
   <body id ="registrationBody">
-    <main> -->
-<div id ="registrationBody">
+    <main>
     <h1 id="registrationTitle">Finding Books</h1><br><br>
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
@@ -108,8 +107,7 @@ $usernameError = $pwdError = '';
             <button type="submit" class="btn btn-success">register</button>
         </div>
       </form>
-</div>
-    <!-- </main> -->
+    </main>
     <script src="../main.js"></script>
     <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -126,5 +124,5 @@ $usernameError = $pwdError = '';
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-  <!-- </body>
-</html> -->
+  </body>
+</html>

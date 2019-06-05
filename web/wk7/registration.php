@@ -90,7 +90,7 @@ session_start();
             // echo '1'.$stmt;
             $statement->bindValue(':username', $username);
             // echo '2'.$stmt;
-            $statement->bindValue(':password', $password);
+            $statement->bindValue(':pwd', $password);
             // echo '3'.$stmt;
             $statement->execute();
             $rowsChanged = $stmt->rowCount();

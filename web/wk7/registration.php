@@ -41,13 +41,16 @@ session_start();
       </form>
     </main>
     <?php
-    $username = $_POST['username'];
-    $password = $_POST['pwd'];
-    $username = filter_input(INPUT_POST, $username, FILTER_SANITIZE_STRING);
-    $password_clearText = filter_input(INPUT_POST, $password, FILTER_SANITIZE_STRING);
-    $usernameError = $pwdError = '';
+    // $username = $_POST['username'];
+    // $password = $_POST['pwd'];
+    // $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    // $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+    // $usernameError = $pwdError = '';
     
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+            $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+            $usernameError = $pwdError = '';
             // echo 'YES!';
             if (strlen($password_clearText)>=8
                 && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)

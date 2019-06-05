@@ -18,15 +18,15 @@ $usernameError = $pwdError = '';
             echo 'PASSED!';
             $rows = regUser($username, $password_clearText);
             echo $rows;
-            if ($rows > 0)
+            // if ($rows > 0)
             {
                 header('Location: ../login.php/login.php');
                 die();
             }
-            else
-            {
-                echo '<p class="error">***Error, try again!</p>';
-            }
+            // else
+            // {
+            //     echo '<p class="error">***Error, try again!</p>';
+            // }
         }
         else
         {
@@ -42,8 +42,8 @@ $usernameError = $pwdError = '';
     function regUser($username, $password_clearText) {
         echo $username, $password_clearText;
         // $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
-        $username = test_input($username);
-        $password_clearText = test_input($password_clearText);
+        // $username = test_input($username);
+        // $password_clearText = test_input($password_clearText);
         $password = password_hash($password_clearText, PASSWORD_DEFAULT);
         echo 'hashed'.$password;
 
@@ -55,16 +55,16 @@ $usernameError = $pwdError = '';
         $stmt->bindValue(':username', $username);
         $stmt->bindValue(':password', $password);
         $stmt->execute();
-        $rowsChanged = $stmt->rowCount();
-        $stmt->closeCursor();
-        return $rowsChanged;
+        // $rowsChanged = $stmt->rowCount();
+        // $stmt->closeCursor();
+        // return $rowsChanged;
     }
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-        }
+    // function test_input($data) {
+    //     $data = trim($data);
+    //     $data = stripslashes($data);
+    //     $data = htmlspecialchars($data);
+    //     return $data;
+    //     }
     
 ?> 
 

@@ -1,5 +1,5 @@
 <?php
-    require_once 'common.php';
+    require_once '../common.php/common.php';
     
     // Client Side
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);

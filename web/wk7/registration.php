@@ -11,7 +11,7 @@ session_start();
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>login</title>
+    <title>registration</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -42,7 +42,7 @@ session_start();
       src="../main.js"
     ></script>
   </head>
-  <body id ="login">
+  <body id ="registration">
     <!-- <header>
       <div class="topOfPage">
         <img src="../images/booksLeft.png" alt="photo of books" />
@@ -58,11 +58,12 @@ session_start();
       </div>
     </header> -->
     <main>
-    <h1 id="loginTitle">Finding Books</h1><br><br>
+    <h1 id="registrationTitle">Finding Books</h1><br><br>
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
-        <div id="loginInput">
+        <div id="registrationInput">
+            <h2>Welcome! Please <a href="login.php">login</a> or register.</h2><br><br>
             <label>User name: 
                 <input type="text">
             </label><br>

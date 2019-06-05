@@ -63,7 +63,7 @@ session_start();
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
         <div id="registrationInput">
-            <h2>Welcome! Please <a href="login.php">login</a> or register.</h2><br><br>
+            <h2>Welcome! Please <a href="login.php/login.php">login</a> or register.</h2><br><br>
             <label>User name: 
                 <input type="text">
             </label><br>

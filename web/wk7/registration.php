@@ -8,34 +8,34 @@ $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
 $usernameError = $pwdError = '';
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        if (strlen($password_clearText)>=8
-            && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
-            && isset($password_clearText)
-            && isset($username))
-        {
-            $rows = regUser($username, $password_clearText);
-            if ($rows > 0)
-            {
-                header('Location: ../login.php/login.php');
-                die();
-            }
-            else
-            {
-                echo '<p class="error">***Error, try again!</p>';
-            }
-        }
-        else
-        {
-            if (strlen($password_clearText)<8)
-            {
-                $pwdError = 'Check Password Length!';
-            } else {
-                $pwdError = 'Password Error!';
-            }
+    // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //     if (strlen($password_clearText)>=8
+    //         && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+    //         && isset($password_clearText)
+    //         && isset($username))
+    //     {
+    //         $rows = regUser($username, $password_clearText);
+    //         if ($rows > 0)
+    //         {
+    //             header('Location: ../login.php/login.php');
+    //             die();
+    //         }
+    //         else
+    //         {
+    //             echo '<p class="error">***Error, try again!</p>';
+    //         }
+    //     }
+    //     else
+    //     {
+    //         if (strlen($password_clearText)<8)
+    //         {
+    //             $pwdError = 'Check Password Length!';
+    //         } else {
+    //             $pwdError = 'Password Error!';
+    //         }
 
-        }
-    }
+    //     }
+    // }
             function regUser($username, $password_clearText) {
                 $sql = 'INSERT INTO users (username, password)
                         VALUES (:username, :password)';
@@ -85,9 +85,9 @@ $usernameError = $pwdError = '';
         <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
             <label>Username: <span class="error">* <?php echo $userError; ?></span></label>
-            <input type="text" name="username" placeholder="username" required="required"><br>
+            <input type="text" name="username" placeholder="username" required><br>
             <label>Password: <span class="error">* <?php echo $pwdError; ?></span></label>
-            <input type="password" name="pwd" id="password"  placeholder="password" required="required" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br>  
+            <input type="password" name="pwd" id="password"  placeholder="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br>  
             <h6>Password should be at least 8 characters long and include at least 1 number.</h6> <br><br>    
             <button type="submit" class="btn btn-success" name="register" value="register" id="register">register</button>
         </div>

@@ -36,27 +36,27 @@ $usernameError = $pwdError = '';
 
         }
     }
-            function regUser($username, $password_clearText) {
-                $sql = 'INSERT INTO users (username, password)
-                        VALUES (:username, :password)';
-                // $username = test_input($username);
-                // $password_clearText = test_input($password_clearText);
-                $password = password_hash($password_clearText, PASSWORD_DEFAULT);
-                $stmt = $db->prepare($sql);
-                $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-                $stmt->bindValue(':password', $password, PDO::PARAM_STR);
-                $stmt->execute();
-                $rowsChanged = $stmt->rowCount();
-                $stmt->closeCursor();
-                return $rowsChanged;
-            }
-            // function test_input($data) {
-            //     $data = trim($data);
-            //     $data = stripslashes($data);
-            //     $data = htmlspecialchars($data);
-            //     return $data;
-            //   }
+    function regUser($username, $password_clearText) {
+        $sql = 'INSERT INTO users (username, password)
+                VALUES (:username, :password)';
+        $username = test_input($username);
+        $password_clearText = test_input($password_clearText);
+        $password = password_hash($password_clearText, PASSWORD_DEFAULT);
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+        $rowsChanged = $stmt->rowCount();
+        $stmt->closeCursor();
+        return $rowsChanged;
     }
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+        }
+    
 ?> 
 
 <!DOCTYPE html>

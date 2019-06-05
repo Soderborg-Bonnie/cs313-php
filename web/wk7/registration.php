@@ -9,15 +9,15 @@ $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
 $usernameError = $pwdError = '';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        echo 'YES!';
+        // echo 'YES!';
         if (strlen($password_clearText)>=8
             && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
             && isset($password_clearText)
             && isset($username))
         {
-            echo 'PASSED!';
+            // echo 'PASSED!';
             $rows = regUser($username, $password_clearText);
-            echo 'rows'.$rows;
+            // echo 'rows'.$rows;
             if ($rows > 0)
             {
                 header('Location: ../login.php/login.php');
@@ -43,7 +43,7 @@ $usernameError = $pwdError = '';
         echo $username, $password_clearText;
         // $sql = 'INSERT INTO teach07_users (username, password)
         //     VALUES (:username, :password)';
-        $sql = 'INSERT INTO users (username, password) VALUES (':username', :password)';
+        $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
         $username = test_input($username);
         $password_clearText = test_input($password_clearText);
         $password = password_hash($password_clearText, PASSWORD_DEFAULT);

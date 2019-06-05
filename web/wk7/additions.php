@@ -107,7 +107,7 @@ session_start();
                     </div>
                             <br /><br />
                             <hr />
-                            <input type="submit" class="btn btn-info" value="Submit Button" id="update">
+                            <input type="submit" class="btn btn-info" value="Submit" id="update">
                         </form>
     </main>
   </body>

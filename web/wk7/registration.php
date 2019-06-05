@@ -18,15 +18,15 @@ $usernameError = $pwdError = '';
             echo 'PASSED!';
             $rows = regUser($username, $password_clearText);
             echo 'rows'.$rows;
-            // if ($rows > 0)
+            if ($rows > 0)
             {
                 header('Location: ../login.php/login.php');
                 die();
             }
-            // else
-            // {
-            //     echo '<p class="error">***Error, try again!</p>';
-            // }
+            else
+            {
+                echo '<p class="error">***Error, try again!</p>';
+            }
         }
         else
         {
@@ -43,17 +43,17 @@ $usernameError = $pwdError = '';
         echo $username, $password_clearText;
         // $sql = 'INSERT INTO teach07_users (username, password)
         //     VALUES (:username, :password)';
-        $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
-        // $username = test_input($username);
-        // $password_clearText = test_input($password_clearText);
+        $sql = 'INSERT INTO users (username, password) VALUES (':username', :password)';
+        $username = test_input($username);
+        $password_clearText = test_input($password_clearText);
         $password = password_hash($password_clearText, PASSWORD_DEFAULT);
         echo 'hashed'.$password;
 
-        // $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
-        // $statement->bindValue(':title', $title);
-        // $statement->execute();
+        $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
+        $statement->bindValue(':title', $title);
+        $statement->execute();
 
-        // $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+        $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
         $stmt = $db->prepare($sql);        
         echo '1'.$stmt;
         $stmt->bindValue(':username', $username);
@@ -61,16 +61,16 @@ $usernameError = $pwdError = '';
         $stmt->bindValue(':password', $password);
         echo '3'.$stmt;
         $stmt->execute();
-        // $rowsChanged = $stmt->rowCount();
-        // $stmt->closeCursor();
-        // return $rowsChanged;
+        $rowsChanged = $stmt->rowCount();
+        $stmt->closeCursor();
+        return $rowsChanged;
     }
-    // function test_input($data) {
-    //     $data = trim($data);
-    //     $data = stripslashes($data);
-    //     $data = htmlspecialchars($data);
-    //     return $data;
-    //     }
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+        }
     
 ?> 
 

@@ -106,7 +106,7 @@ session_start();
             <label>Password: 
                 <input type="password">
             </label><br>
-            <h5>Password should be at least 8 characters long and include at least one number.</h5>
+            <h6>Password should be at least 8 characters long and include at least one number.</h6>
             <br>
             <input type="submit" class="btn btn-success" name="register" value="register" id="register">
         </div>

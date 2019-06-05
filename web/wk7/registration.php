@@ -50,17 +50,17 @@ $usernameError = $pwdError = '';
                 $stmt->closeCursor();
                 return $rowsChanged;
             }
-            function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-              }
+            // function test_input($data) {
+            //     $data = trim($data);
+            //     $data = stripslashes($data);
+            //     $data = htmlspecialchars($data);
+            //     return $data;
+            //   }
     }
 ?> 
 
-<!-- <!DOCTYPE html>
-<html lang="en"> -->
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>registration</title>
@@ -81,16 +81,15 @@ $usernameError = $pwdError = '';
     <h1 id="registrationTitle">Finding Books</h1><br><br>
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
-      <!-- <h2>Table o' Books</h2> -->
       <form action="registration.php" method="POST">
         <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
             <label>Username: <span class="error">* <?php echo $userError; ?></span></label>
             <input type="text" name="username" placeholder="username" required><br>
-            <label>Password: <span class="error">* <?php echo $pwdError; ?></span></label>
+            <label>Password:  <span class="error">* <?php echo $pwdError; ?></span></label>
             <input type="password" name="pwd" id="password"  placeholder="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br>  
             <h6>Password should be at least 8 characters long and include at least 1 number.</h6> <br><br>    
-            <button type="submit" class="btn btn-success" name="register" value="register" id="register">register</button>
+            <button type="submit" class="btn btn-success">register</button>
         </div>
       </form>
     </main>
@@ -111,4 +110,4 @@ $usernameError = $pwdError = '';
       crossorigin="anonymous"
     ></script>
   </body>
-<!-- </html> -->
+</html>

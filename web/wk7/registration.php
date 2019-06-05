@@ -17,7 +17,7 @@ $usernameError = $pwdError = '';
         {
             echo 'PASSED!';
             $rows = regUser($username, $password_clearText);
-            echo $rows;
+            echo 'rows'.$rows;
             // if ($rows > 0)
             {
                 header('Location: ../login.php/login.php');

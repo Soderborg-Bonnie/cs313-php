@@ -41,8 +41,10 @@ session_start();
       </form>
     </main>
     <?php
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+    $username = $_POST['username'];
+    $password = $_POST['pwd'];
+    $username = filter_input(INPUT_POST, $username, FILTER_SANITIZE_STRING);
+    $password_clearText = filter_input(INPUT_POST, $password, FILTER_SANITIZE_STRING);
     $usernameError = $pwdError = '';
     
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

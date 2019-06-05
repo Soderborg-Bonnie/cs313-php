@@ -156,6 +156,9 @@ td {
   text-align: left;
   /* z-index: 10; */
 }
+#registrationInput h3 {
+  color: #fe938c;
+}
 #loginTitle,
 #registrationTitle {
   color: white;

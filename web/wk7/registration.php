@@ -3,7 +3,6 @@ $GLOBALS['book_number']='book_number';
 //Get the database connection file  
 require 'connections.php';  
 session_start();
-<?php
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
             $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
             $userError = $pwdError = '';

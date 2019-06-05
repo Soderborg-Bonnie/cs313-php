@@ -1,10 +1,59 @@
 <?php 
-
 $GLOBALS['book_number']='book_number';
-
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+<?php
+            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+            $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+            $userError = $pwdError = '';
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (strlen($password_clearText)>=8
+                    && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+                    && isset($password_clearText)
+                    && isset($username))
+                {
+                    $rows = regClient($username, $password_clearText);
+                    if ($rows > 0)
+                    {
+                        header('Location: login.php');
+                        die();
+                    }
+                    else
+                    {
+                        echo '<p class="error">***Error, try again!</p>';
+                    }
+                }
+                else
+                {
+                    if (strlen($password_clearText)<7)
+                    {
+                        $pwdError = 'Check Password Length!';
+                    } elseif ($password_clearText!=$password2) {
+                        $pwdError = 'Password Mismatch!';
+                    } else {
+                        $pwdError = 'Undefined Error!';
+                    }
+
+                }
+            }
+            function regUser($username, $password_clearText) {
+                $sql = 'INSERT INTO users (username, password)
+                        VALUES (:username, :password)';
+                
+                // Server Side
+                $username = test_input($username);
+                $password_clearText = test_input($password_clearText);
+                $password = password_hash($password_clearText, PASSWORD_DEFAULT);
+                $stmt = $db->prepare($sql);
+                $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+                $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+                $stmt->execute();
+                $rowsChanged = $stmt->rowCount();
+                $stmt->closeCursor();
+                return $rowsChanged;
+            }
 ?> 
 
 <!DOCTYPE html>
@@ -43,35 +92,26 @@ session_start();
     ></script>
   </head>
   <body id ="registrationBody">
-    <!-- <header>
-      <div class="topOfPage">
-        <img src="../images/booksLeft.png" alt="photo of books" />
-        <div class="mainHeader">
-          <h1>Login</h1>
-          <nav>
-            <ul class="mainNav"> -->
-              <!-- <li><a href="/wk6/index.php/index.php" class="current">Home</a></li>
-              <li><a href="/wk6/details.php/details.php">Details</a></li> -->
-            <!-- </ul>
-          </nav>
-        </div>
-      </div>
-    </header> -->
     <main>
     <h1 id="registrationTitle">Finding Books</h1><br><br>
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
+      <form action="registration.php" method="post">
         <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
+            
             <label>User name: 
                 <input type="text">
             </label><br>
             <label>Password: 
                 <input type="password">
-            </label><br><br>
+            </label><br>
+            <h3>Password should be at least 8 characters long and include at least one number.</h3>
+            <br>
             <input type="submit" class="btn btn-success" name="register" value="register" id="register">
         </div>
+      </form>
     </main>
   </body>
 </html>

@@ -79,3 +79,9 @@ DELETE FROM isbn WHERE book_number = 'B01EI2IMQO';
 
 ALTER TABLE isbn
 DROP CONSTRAINT isbn_author_id_fkey;
+
+CREATE TABLE users(
+    tags_id SERIAL PRIMARY KEY,
+    username TEXT,
+    password TEXT
+);

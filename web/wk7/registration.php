@@ -70,7 +70,7 @@ session_start();
             <label>Password: 
                 <input type="password">
             </label><br><br>
-            <input type="submit" class="btn btn-success" name="loginSubmit" value="loginSubmit" id="loginSubmit">
+            <input type="submit" class="btn btn-success" name="Register" value="register" id="register">
         </div>
     </main>
   </body>

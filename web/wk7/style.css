@@ -144,7 +144,8 @@ td {
   z-index: -10;
   /* margin-top: -20em; */
 }
-#login {
+#login,
+#registration {
   margin: 0;
   padding: 0;
   background-image: url(../wk7/images/sparklyBook.jpg);
@@ -156,4 +157,6 @@ td {
 }
 #loginTitle {
   color: white;
+}
+#registration {
 }

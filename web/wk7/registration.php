@@ -49,20 +49,20 @@ $usernameError = $pwdError = '';
         $password = password_hash($password_clearText, PASSWORD_DEFAULT);
         echo 'hashed'.$password;
 
-        $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
-        $statement->bindValue(':title', $title);
-        $statement->execute();
+        // $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
+        // $statement->bindValue(':title', $title);
+        // $statement->execute();
 
-        $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-        $stmt = $db->prepare($sql);        
+        // $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+        $statement = $db->prepare($sql);        
         echo '1'.$stmt;
-        $stmt->bindValue(':username', $username);
+        $statement->bindValue(':username', $username);
         echo '2'.$stmt;
-        $stmt->bindValue(':password', $password);
+        $statement->bindValue(':password', $password);
         echo '3'.$stmt;
-        $stmt->execute();
+        $statement->execute();
         $rowsChanged = $stmt->rowCount();
-        $stmt->closeCursor();
+        $statement->closeCursor();
         return $rowsChanged;
     }
     function test_input($data) {

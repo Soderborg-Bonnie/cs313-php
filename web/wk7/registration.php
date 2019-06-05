@@ -40,11 +40,13 @@ $usernameError = $pwdError = '';
         }
     }
     function regUser($username, $password_clearText) {
+        echo $username, $password_clearText;
         $sql = 'INSERT INTO users (username, password)
                 VALUES (:username, :password)';
         $username = test_input($username);
         $password_clearText = test_input($password_clearText);
         $password = password_hash($password_clearText, PASSWORD_DEFAULT);
+        echo 'hashed'.$password;
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt->bindValue(':password', $password, PDO::PARAM_STR);

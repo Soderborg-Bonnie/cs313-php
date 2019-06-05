@@ -93,7 +93,7 @@ session_start();
             $statement->bindValue(':pwd', $password);
             // echo '3'.$stmt;
             $statement->execute();
-            $rowsChanged = $stmt->rowCount();
+            $rowsChanged = $statement->rowCount();
             $statement->closeCursor();
             return $rowsChanged;
         }

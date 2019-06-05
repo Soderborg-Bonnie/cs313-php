@@ -9,11 +9,13 @@ $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
 $usernameError = $pwdError = '';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        echo 'YES!';
         if (strlen($password_clearText)>=8
             && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
             && isset($password_clearText)
             && isset($username))
         {
+            echo 'PASSED!';
             $rows = regUser($username, $password_clearText);
             if ($rows > 0)
             {

@@ -3,40 +3,39 @@ $GLOBALS['book_number']='book_number';
 //Get the database connection file  
 require 'connections.php';  
 session_start();
-            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-            $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-            $usernameError = $pwdError = '';
 
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                if (strlen($password_clearText)>=8
-                    && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
-                    && isset($password_clearText)
-                    && isset($username))
-                {
-                    $rows = regUser($username, $password_clearText);
-                    if ($rows > 0)
-                    {
-                        header('Location: ../login.php/login.php');
-                        die();
-                    }
-                    else
-                    {
-                        echo '<p class="error">***Error, try again!</p>';
-                    }
-                }
-                else
-                {
-                    if (strlen($password_clearText)<7)
-                    {
-                        $pwdError = 'Check Password Length!';
-                    } elseif ($password_clearText!=$password2) {
-                        $pwdError = 'Password Mismatch!';
-                    } else {
-                        $pwdError = 'Undefined Error!';
-                    }
+$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+$password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+$usernameError = $pwdError = '';
 
-                }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (strlen($password_clearText)>=8
+            && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+            && isset($password_clearText)
+            && isset($username))
+        {
+            $rows = regUser($username, $password_clearText);
+            if ($rows > 0)
+            {
+                header('Location: ../login.php/login.php');
+                die();
             }
+            else
+            {
+                echo '<p class="error">***Error, try again!</p>';
+            }
+        }
+        else
+        {
+            if (strlen($password_clearText)<8)
+            {
+                $pwdError = 'Check Password Length!';
+            } else {
+                $pwdError = 'Password Error!';
+            }
+
+        }
+    }
             function regUser($username, $password_clearText) {
                 $sql = 'INSERT INTO users (username, password)
                         VALUES (:username, :password)';

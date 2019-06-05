@@ -106,8 +106,8 @@ session_start();
             <label>Username: <span class="error">* <?php echo $userError; ?></span></label>
             <input type="text" name="username" placeholder="username" required="required"><br>
             <label>Password: <span class="error">* <?php echo $pwdError; ?></span></label>
-            <h6>Password should be at least 8 characters long and include at least one number.</h6>
-            <input type="password" class="form-control" name="pwd" id="password"  placeholder="Password" required="required" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br>       
+            <input type="password" name="pwd" id="password"  placeholder="password" required="required" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br>  
+            <h6>Password should be at least 8 characters long and include at least one number.</h6> <br><br>    
             <button type="submit" class="btn btn-success" name="register" value="register" id="register">register</button>
         </div>
       </form>

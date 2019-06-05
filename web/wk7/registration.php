@@ -4,74 +4,6 @@ $GLOBALS['book_number']='book_number';
 include 'connections.php';  
 session_start();
 
-$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-$usernameError = $pwdError = '';
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // echo 'YES!';
-        if (strlen($password_clearText)>=8
-            && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
-            && isset($password_clearText)
-            && isset($username))
-        {
-            // echo 'PASSED!';
-            $rows = regUser($username, $password_clearText);
-            // echo 'rows'.$rows;
-            if ($rows > 0)
-            {
-                header('Location: ../login.php/login.php');
-                die();
-            }
-            else
-            {
-                echo '<p class="error">***Error, try again!</p>';
-            }
-        }
-        else
-        {
-            if (strlen($password_clearText)<8)
-            {
-                $pwdError = 'Check Password Length!';
-            } else {
-                $pwdError = 'Password Error!';
-            }
-
-        }
-    }
-    function regUser($username, $password_clearText) {
-        echo $username, $password_clearText;
-        // $sql = 'INSERT INTO teach07_users (username, password)
-        //     VALUES (:username, :password)';
-        $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
-        $username = test_input($username);
-        $password_clearText = test_input($password_clearText);
-        $password = password_hash($password_clearText, PASSWORD_DEFAULT);
-        echo 'hashed'.$password;
-
-        // $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
-        // $statement->bindValue(':title', $title);
-        // $statement->execute();
-
-        // $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-        $statement = $db->prepare($sql);        
-        echo '1'.$stmt;
-        $statement->bindValue(':username', $username);
-        echo '2'.$stmt;
-        $statement->bindValue(':password', $password);
-        echo '3'.$stmt;
-        $statement->execute();
-        $rowsChanged = $stmt->rowCount();
-        $statement->closeCursor();
-        return $rowsChanged;
-    }
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-        }
-    
 ?> 
 
 <!DOCTYPE html>
@@ -108,6 +40,72 @@ $usernameError = $pwdError = '';
         </div>
       </form>
     </main>
+    <?php
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+    $usernameError = $pwdError = '';
+    
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // echo 'YES!';
+            if (strlen($password_clearText)>=8
+                && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+                && isset($password_clearText)
+                && isset($username))
+            {
+                // echo 'PASSED!';
+                $rows = regUser($username, $password_clearText);
+                // echo 'rows'.$rows;
+                if ($rows > 0)
+                {
+                    header('Location: ../login.php/login.php');
+                    die();
+                }
+                else
+                {
+                    echo '<p class="error">***Error, try again!</p>';
+                }
+            }
+            else
+            {
+                if (strlen($password_clearText)<8)
+                {
+                    $pwdError = 'Check Password Length!';
+                } else {
+                    $pwdError = 'Password Error!';
+                }
+    
+            }
+        }
+        function regUser($username, $password_clearText) {
+            // echo $username, $password_clearText;
+            // $sql = 'INSERT INTO teach07_users (username, password)
+            //     VALUES (:username, :password)';
+            $sql = 'INSERT INTO users (username, pwd) VALUES (:username, :pwd)';
+            $username = test_input($username);
+            $password_clearText = test_input($password_clearText);
+            $password = password_hash($password_clearText, PASSWORD_DEFAULT);
+            // echo 'hashed'.$password;    
+            // $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+            $statement = $db->prepare($sql);        
+            // echo '1'.$stmt;
+            $statement->bindValue(':username', $username);
+            // echo '2'.$stmt;
+            $statement->bindValue(':password', $password);
+            // echo '3'.$stmt;
+            $statement->execute();
+            $rowsChanged = $stmt->rowCount();
+            $statement->closeCursor();
+            return $rowsChanged;
+        }
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+            }
+
+            ?>
+
     <script src="../main.js"></script>
     <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>

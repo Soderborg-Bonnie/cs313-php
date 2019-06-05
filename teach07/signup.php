@@ -36,7 +36,7 @@
             }
             else
             {
-                echo '<p class="err"><span class="red">***</span>Error, try again!</p>';
+                echo '<p class="err"><span class="err">***</span>Error, try again!</p>';
             }
 
         }

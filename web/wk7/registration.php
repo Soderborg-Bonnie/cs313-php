@@ -16,7 +16,7 @@ session_start();
                     $rows = regUser($username, $password_clearText);
                     if ($rows > 0)
                     {
-                        header('Location: login.php');
+                        header('Location: ../login.php/login.php');
                         die();
                     }
                     else
@@ -82,7 +82,7 @@ session_start();
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <!-- <h2>Table o' Books</h2> -->
-      <form action="../login.php/login.php" method="POST">
+      <form action="../registration.php/registration.php" method="POST">
         <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
             <label>Username: <span class="error">* <?php echo $userError; ?></span></label>

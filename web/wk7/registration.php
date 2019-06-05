@@ -42,7 +42,7 @@ session_start();
       src="../main.js"
     ></script>
   </head>
-  <body id ="registration">
+  <body id ="registrationBody">
     <!-- <header>
       <div class="topOfPage">
         <img src="../images/booksLeft.png" alt="photo of books" />

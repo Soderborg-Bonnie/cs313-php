@@ -13,7 +13,7 @@ session_start();
                     && isset($password_clearText)
                     && isset($username))
                 {
-                    $rows = regClient($username, $password_clearText);
+                    $rows = regUser($username, $password_clearText);
                     if ($rows > 0)
                     {
                         header('Location: login.php');
@@ -40,8 +40,6 @@ session_start();
             function regUser($username, $password_clearText) {
                 $sql = 'INSERT INTO users (username, password)
                         VALUES (:username, :password)';
-                
-                // Server Side
                 $username = test_input($username);
                 $password_clearText = test_input($password_clearText);
                 $password = password_hash($password_clearText, PASSWORD_DEFAULT);

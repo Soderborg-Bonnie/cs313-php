@@ -41,7 +41,7 @@ $usernameError = $pwdError = '';
     }
     function regUser($username, $password_clearText) {
         echo $username, $password_clearText;
-        $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
+        // $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
         $username = test_input($username);
         $password_clearText = test_input($password_clearText);
         $password = password_hash($password_clearText, PASSWORD_DEFAULT);
@@ -51,7 +51,7 @@ $usernameError = $pwdError = '';
         // $statement->bindValue(':title', $title);
         // $statement->execute();
 
-        $stmt = $db->prepare($sql);
+        $stmt = $db->prepare('INSERT INTO users (username, password) VALUES (:username, :password)');
         $stmt->bindValue(':username', $username);
         $stmt->bindValue(':password', $password);
         $stmt->execute();

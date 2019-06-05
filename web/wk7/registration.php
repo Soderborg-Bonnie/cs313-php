@@ -8,7 +8,7 @@ $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
 $usernameError = $pwdError = '';
 
-    // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //     if (strlen($password_clearText)>=8
     //         && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
     //         && isset($password_clearText)
@@ -39,8 +39,8 @@ $usernameError = $pwdError = '';
             function regUser($username, $password_clearText) {
                 $sql = 'INSERT INTO users (username, password)
                         VALUES (:username, :password)';
-                $username = test_input($username);
-                $password_clearText = test_input($password_clearText);
+                // $username = test_input($username);
+                // $password_clearText = test_input($password_clearText);
                 $password = password_hash($password_clearText, PASSWORD_DEFAULT);
                 $stmt = $db->prepare($sql);
                 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -56,6 +56,7 @@ $usernameError = $pwdError = '';
                 $data = htmlspecialchars($data);
                 return $data;
               }
+    }
 ?> 
 
 <!-- <!DOCTYPE html>

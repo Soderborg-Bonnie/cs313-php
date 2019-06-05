@@ -46,48 +46,48 @@ session_start();
     // $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     // $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
     // $usernameError = $pwdError = '';
-    
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
             $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
             $usernameError = $pwdError = '';
             // echo 'YES!';
-            if (strlen($password_clearText)>=8
-                && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
-                && isset($password_clearText)
-                && isset($username))
-            {
-                // echo 'PASSED!';
-                $rows = regUser($username, $password_clearText);
-                // echo 'rows'.$rows;
-                if ($rows > 0)
-                {
-                    header('Location: ../login.php/login.php');
-                    die();
-                }
-                else
-                {
-                    echo '<p class="error">***Error, try again!</p>';
-                }
-            }
-            else
-            {
-                if (strlen($password_clearText)<8)
-                {
-                    $pwdError = 'Check Password Length!';
-                } else {
-                    $pwdError = 'Password Error!';
-                }
+        //     if (strlen($password_clearText)>=8
+        //         && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+        //         && isset($password_clearText)
+        //         && isset($username))
+        //     {
+        //         // echo 'PASSED!';
+        //         $rows = regUser($username, $password_clearText);
+        //         // echo 'rows'.$rows;
+        //         if ($rows > 0)
+        //         {
+        //             header('Location: ../login.php/login.php');
+        //             die();
+        //         }
+        //         else
+        //         {
+        //             echo '<p class="error">***Error, try again!</p>';
+        //         }
+        //     }
+        //     else
+        //     {
+        //         if (strlen($password_clearText)<8)
+        //         {
+        //             $pwdError = 'Check Password Length!';
+        //         } else {
+        //             $pwdError = 'Password Error!';
+        //         }
     
-            }
-        }
-        function regUser($username, $password_clearText) {
+        //     }
+        // }
+        // function regUser($username, $password_clearText) {
             // echo $username, $password_clearText;
             // $sql = 'INSERT INTO teach07_users (username, password)
             //     VALUES (:username, :password)';
-            $sql = "INSERT INTO users (username, pwd) VALUES ('admin', 'admin2beme')";
-            $username = test_input($username);
-            $password_clearText = test_input($password_clearText);
+            $sql = "INSERT INTO users (username, pwd) VALUES (:user, :password)";
+            // $username = test_input($username);
+            // $password_clearText = test_input($password_clearText);
             $password = password_hash($password_clearText, PASSWORD_DEFAULT);
             // echo 'hashed'.$password;    
             // $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
@@ -98,16 +98,16 @@ session_start();
             $statement->bindValue(':pwd', $password);
             // echo '3'.$stmt;
             $statement->execute();
-            $rowsChanged = $statement->rowCount();
-            $statement->closeCursor();
-            return $rowsChanged;
+            // $rowsChanged = $statement->rowCount();
+            // $statement->closeCursor();
+            // return $rowsChanged;
         }
-        function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-            }
+        // function test_input($data) {
+        //     $data = trim($data);
+        //     $data = stripslashes($data);
+        //     $data = htmlspecialchars($data);
+        //     return $data;
+        //     }
 
             ?>
 

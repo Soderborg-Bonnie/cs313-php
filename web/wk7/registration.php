@@ -1,7 +1,7 @@
 <?php 
 $GLOBALS['book_number']='book_number';
 //Get the database connection file  
-require_once 'connections.php';  
+include 'connections.php';  
 session_start();
 
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);

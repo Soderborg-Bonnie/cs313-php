@@ -51,7 +51,7 @@ $usernameError = $pwdError = '';
         // $statement->bindValue(':title', $title);
         // $statement->execute();
 
-        $stmt = $db->prepare('INSERT INTO users (username, password) VALUES (:username, :password)');
+        $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
         $stmt->bindValue(':username', $username);
         $stmt->bindValue(':password', $password);
         $stmt->execute();

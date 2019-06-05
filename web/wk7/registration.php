@@ -41,12 +41,16 @@ $usernameError = $pwdError = '';
     }
     function regUser($username, $password_clearText) {
         echo $username, $password_clearText;
-        $sql = 'INSERT INTO users (username, password)
-                VALUES (:username, :password)';
+        $sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
         $username = test_input($username);
         $password_clearText = test_input($password_clearText);
         $password = password_hash($password_clearText, PASSWORD_DEFAULT);
         echo 'hashed'.$password;
+
+        // $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
+        // $statement->bindValue(':title', $title);
+        // $statement->execute();
+
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':username', $username);
         $stmt->bindValue(':password', $password);

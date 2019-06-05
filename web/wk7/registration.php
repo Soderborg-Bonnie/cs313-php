@@ -51,6 +51,12 @@ session_start();
                 $stmt->closeCursor();
                 return $rowsChanged;
             }
+            function test_input($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+              }
 ?> 
 
 <!DOCTYPE html>

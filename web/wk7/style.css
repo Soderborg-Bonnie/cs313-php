@@ -175,6 +175,12 @@ td {
   color: white;
   text-align: left;
 }
+#homeBody {
+  z-index: -10;
+}
+#topImage {
+  z-index: 10;
+}
 .error {
   color: red;
   font-weight: bold;

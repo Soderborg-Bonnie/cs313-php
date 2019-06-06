@@ -45,7 +45,7 @@ session_start();
   <body id="homeBody">
     <header>
       <div class="topOfPage">
-        <!-- <img src="../images/sparklyBookSm.jpg" alt="sparkly books" /> -->
+        <img src="../images/sparklyBookSm.jpg" alt="sparkly books" />
         <div class="mainHeader">
           <h1>Finding Books</h1>
           <nav>

@@ -50,9 +50,8 @@ session_start();
           <h1>Finding Books</h1>
           <nav>
             <ul class="mainNav">
-              <li><a href="/wk6/index.php/index.php" class="current">Home</a></li>
-              <li><a href="/wk6/details.php/details.php">Details</a></li>
-            </ul>
+            <li><a href="../home.php/home.php">Home</a></li>
+              <li><a href="../details.php/details.php" class="current">Details</a></li>            </ul>
           </nav>
         </div>
       </div>

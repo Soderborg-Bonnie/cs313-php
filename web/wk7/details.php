@@ -47,7 +47,7 @@ session_start();
           <h1>Finding Books</h1>
           <nav>
             <ul class="mainNav">
-              <li><a href="../index.php/index.php">Home</a></li>
+              <li><a href="../home.php/home.php">Home</a></li>
               <li><a href="../details.php/details.php" class="current">Details</a></li>
             </ul>
           </nav>

@@ -5,7 +5,15 @@ pale gold: #E6B89C
 desert sand: #EAD2AC
 pewter blue: #9CAFB7
 steel blue: #4281A4
-https://coolors.co/fe938c-e6b89c-ead2ac-9cafb7-4281a4 */
+https://coolors.co/fe938c-e6b89c-ead2ac-9cafb7-4281a4
+
+https://coolors.co/d49f8c-a9b48a-88b4ab-c35b4f-87a985
+tan: #D49F8C
+sage: #A9B48A
+pewter blue: #88B4AB
+cedar chest: #C35B4F
+asparagus: #87A985
+*/
 
 * {
   box-sizing: border-box;
@@ -23,6 +31,7 @@ body {
   text-align: center;
 }
 header img {
+  opacity: 0.8;
   /* display: inline; */
 }
 header h1 {

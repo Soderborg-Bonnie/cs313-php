@@ -45,7 +45,7 @@ session_start();
   <body id="homeBody">
     <div>
         <img src="../images/sparklyBook.jpg" alt="sparkly book" id="topImage">
-    </div>
+    <!-- </div> -->
     <header>
       <div class="topOfPage">
         <img src="../images/sparklyBookSm.jpg" alt="sparkly books" />
@@ -104,7 +104,8 @@ session_start();
         </tbody>
       </table>
     </main>
-    <footer>&copy 2019 All rights reserved. Bonnie Soderborg</footer>
+    <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
+    </div>
   </body>
 </html>
 

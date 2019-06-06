@@ -177,3 +177,8 @@ td {
   color: red;
   font-weight: bold;
 }
+footer {
+  background-color: #ead2ac;
+  color: #fe938c;
+  padding: 2em;
+}

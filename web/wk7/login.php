@@ -34,7 +34,7 @@ $GLOBALS['conn']=$db;
         <input type="text" name="username" placeholder="username" required>   <br>        
         <label>Password<span class="error">* <?php echo $pwdErr; ?></span></label>
         <input type="password" name="pwd" placeholder="Password" required><br><br>
-        <button type="submit" class="btn btn-primary">login</button>
+        <button type="submit" class="btn-rose">login</button>
       </div>
     </form>
     </main>

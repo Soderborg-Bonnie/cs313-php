@@ -79,7 +79,7 @@ session_start();
         <tbody>
         <?php 
 
-          foreach ($db->query('SELECT * FROM isbn, author, words, media, genre, tags WHERE isbn.book_number = author.book_number = words.book_number = media.book_number = genre.book_number = tags.book_number') as $row)
+          foreach ($db->query('SELECT * FROM isbn, author, words, media, genre, tags WHERE isbn.book_number = author.book_number AND isbn.book_number = words.book_number AND isbn.book_number = media.book_number AND isbn.book_number = genre.book_number AND isbn.book_number = tags.book_number') as $row)
             // foreach ($db->query("SELECT * FROM isbn, words WHERE book_number='$book_number'") as $row2){
             // foreach ($db->query("SELECT * FROM isbn, media WHERE book_number='$book_number'") as $row3){
             // foreach ($db->query("SELECT * FROM isbn, genre WHERE book_number='$book_number'") as $row4){

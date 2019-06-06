@@ -141,8 +141,6 @@ td {
 }
 #loginPic {
   width: 100%;
-  z-index: -10;
-  /* margin-top: -20em; */
 }
 #loginBody,
 #registrationBody {
@@ -154,7 +152,7 @@ td {
 #registrationInput {
   color: white;
   text-align: left;
-  /* z-index: 10; */
+  margin: 5em;
 }
 #registrationInput h6 {
   color: #fe938c;

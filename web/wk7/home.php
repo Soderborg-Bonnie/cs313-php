@@ -104,7 +104,9 @@ session_start();
         </tbody>
       </table>
     </main>
+    <div id="footerBG">
     <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
+        </div>
     </div>
   </body>
 </html>

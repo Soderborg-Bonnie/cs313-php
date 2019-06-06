@@ -182,6 +182,8 @@ footer {
   background-color: #ead2ac;
   color: #4281a4;
   padding: 2em;
+}
+#footerBG {
   background-image: url(../wk7/images/blueBricks.jpg);
   height: 5em;
 }

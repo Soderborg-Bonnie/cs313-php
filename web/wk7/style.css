@@ -148,11 +148,15 @@ td {
   padding: 0;
   background-image: url(../wk7/images/sparklyBook.jpg);
   /* Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html  */
+}
 #loginInput,
 #registrationInput {
   color: white;
   text-align: left;
   margin: 5em;
+}
+#loginInput h2{
+  color: white;
 }
 #registrationInput h6 {
   color: #fe938c;

@@ -34,9 +34,10 @@ $GLOBALS['conn']=$db;
             <input type="text" name="username" placeholder="username" required><br>
             <label>Password:  <span class="error">* <?php echo $pwdError; ?></span></label>
             <input type="password" name="pwd" id="password"  placeholder="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br><br> 
-            <h6>* required</h6> <br>
+            <h6>* required</h6> 
             <h6>Password should be at least 8 characters long and include at least 1 number.</h6> <br><br>    
-            <button type="submit" class="btn btn-primary">register</button>
+            <!-- <button type="submit" class="btn btn-primary">register</button> -->
+            <button type="submit" class="btn-rose">register</button>
         </div>
       </form>
     </main>

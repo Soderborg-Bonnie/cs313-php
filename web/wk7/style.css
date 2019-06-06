@@ -170,14 +170,10 @@ td {
 #loginInput h2 {
   color: white;
 }
-#registrationInput h6,
 #registrationInput h2 {
   color: #c35b4f;
 }
-/* #registrationInput h2 {
-  color: #fe938c;
-} */
-#registrationInput h2 a {
+#registrationInput h6, #registrationInput h2 a {
   color: white;
 }
 #loginTitle,
@@ -203,7 +199,7 @@ footer {
   /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
   height: 5em;
 }
-.btn-success {
+.btn-rose {
   background-color: #c35b4f;
   color: white;
 }

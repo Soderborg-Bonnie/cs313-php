@@ -28,7 +28,7 @@ header img {
 header h1 {
   color: #4281a4;
   font-family: "Neucha", cursive;
-  font-size: 2.6rem;
+  font-size: 4em;
   padding-left: 8em;
   padding-top: 2em;
 }
@@ -43,6 +43,7 @@ header {
   margin-left: 0px;
   background-color: #ead2ac;
   background-image: url(../wk7/images/grungeColor.jpg);
+  /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
 }
 .mainHeader {
   display: grid;
@@ -149,7 +150,7 @@ td {
   margin: 0;
   padding: 0;
   background-image: url(../wk7/images/sparklyBook.jpg);
-  /* Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html  */
+  /* CanStock Photo by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html  used with permission*/
 }
 #loginInput,
 #registrationInput {
@@ -190,6 +191,7 @@ footer {
   color: #4281a4;
   padding: 2em;
   background-image: url(../wk7/images/grungeColor.jpg);
+  /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
   height: 5em;
 }
 #footerBG {

@@ -5,6 +5,7 @@ $GLOBALS['book_number']='book_number';
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+$GLOBALS['conn']=$db;
 ?> 
 
 <!DOCTYPE html>
@@ -43,34 +44,80 @@ session_start();
     ></script>
   </head>
   <body id ="loginBody">
-    <!-- <header>
-      <div class="topOfPage">
-        <img src="../images/booksLeft.png" alt="photo of books" />
-        <div class="mainHeader">
-          <h1>Login</h1>
-          <nav>
-            <ul class="mainNav"> -->
-              <!-- <li><a href="/wk6/index.php/index.php" class="current">Home</a></li>
-              <li><a href="/wk6/details.php/details.php">Details</a></li> -->
-            <!-- </ul>
-          </nav>
-        </div>
-      </div>
-    </header> -->
-    <main>
     <h1 id="loginTitle">Finding Books</h1><br><br>
         <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
-      <!-- <h2>Table o' Books</h2> -->
-        <div id="loginInput">
-            <label>User name: 
-                <input type="text">
-            </label><br>
-            <label>Password: 
-                <input type="password">
-            </label><br><br>
-            <input type="submit" class="btn btn-success" name="login" value="login" id="login">
-        </div>
-    </main>
+    <form action="login.php" method="post">
+      <div id="loginInput">
+        <label>Username<span class="error">* <?php echo $usrErr; ?></span></label>
+        <input type="text" name="username" placeholder="username" required>            
+        <label>Password<span class="error">* <?php echo $pwdErr; ?></span></label>
+        <input type="password" name="pwd" placeholder="Password" required>
+        <button type="submit" class="btn btn-success">login</button>
+      </div>
+    </form>
   </body>
+  <?php
+  $userError = $pwdError = '';
+    
+  $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+  $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+  
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      if (
+          isset($password_clearText)
+          && isset($username)
+          )
+      {
+          checkUser($username, $password_clearText);
+
+      }
+  }
+  function checkUser($username, $password) {
+      //$db = dbConnect();
+      
+      $sql = 'SELECT username, password FROM users WHERE username = :username LIMIT 1';
+      $statement = $GLOBALS['conn']->prepare($sql);
+      $statement->bindValue(':username', $username, PDO::PARAM_STR);
+      $statement->execute();
+      
+      echo 'Executed<br />';
+      //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
+      $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+      $statement->closeCursor();
+      
+      echo 'SQL Results Fetched <br />';
+      if (!is_array($results)) {
+          echo 'Nothing Set<br />';
+          
+        return 0;
+        //echo 'Nothing found';
+        //exit;
+      } else {
+        //echo 'Match found';
+        //exit;
+          echo 'Array Set <br />';
+          print_r($results);
+          $username = $results[0]['username'];
+          $db_password =  $results[0]['password'];
+          if (password_verify($password, $db_password) )
+          {
+              $_SESSION['username'] = $username;
+              $_SESSION['loggedin'] = TRUE;
+
+              header('Location: ../index.php/index.php');
+              die();
+              
+          } else {
+              echo '<p class="err">Error, login failed!</p>';
+
+          }
+
+          return 1;
+      }
+    }
+  
+
+  ?>
 </html>

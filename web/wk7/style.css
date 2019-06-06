@@ -42,7 +42,7 @@ header {
   display: inline-flex;
   margin-left: 0px;
   background-color: #ead2ac;
-  background-image: url(../wk7/images/blueBricks.jpg);
+  background-image: url(../wk7/images/grungeColor.jpg);
 }
 .mainHeader {
   display: grid;
@@ -183,8 +183,10 @@ footer {
   background-color: #ead2ac;
   color: #4281a4;
   padding: 2em;
+  background-image: url(../wk7/images/grungeColor.jpg);
+  height: 5em;
 }
 #footerBG {
-  background-image: url(../wk7/images/blueBricks.jpg);
-  height: 5em;
+  /* background-image: url(../wk7/images/blueBricks.jpg);
+  height: 5em; */
 }

@@ -166,6 +166,7 @@ td {
 #loginTitle,
 #registrationTitle {
   color: white;
+  text-align: left;
 }
 .error {
   color: red;

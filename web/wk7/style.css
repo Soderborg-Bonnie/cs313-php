@@ -159,8 +159,11 @@ td {
 #registrationInput h6 {
   color: #fe938c;
 }
-#registrationInput h2 a {
+#registrationInput h2 {
   color: #fe938c;
+}
+#registrationInput h2 a {
+  color: white;
 }
 #loginTitle,
 #registrationTitle {

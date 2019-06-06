@@ -85,14 +85,15 @@ session_start();
             echo $username, $password_clearText;
             // $sql = 'INSERT INTO teach07_users (username, password)
             //     VALUES (:username, :password)';
-            // $sql = "INSERT INTO users (username, password) VALUES (:username, :pwd)";
-            $sql = "select * from users";
+            $sql = "INSERT INTO users (username, password) VALUES (:username, :pwd)";
+            // $sql = "select * from users";
             // $sql = 'INSERT INTO users (username, password) VALUES ("admin", "admin2beme")';
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);
             $password = password_hash($password_clearText, PASSWORD_DEFAULT);
             echo 'hashed'.$password;    
             // $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+           echo $sql;
             $statement = $db->prepare($sql);        
             echo '1'.$statement;
             $statement->bindValue(':username', $username);

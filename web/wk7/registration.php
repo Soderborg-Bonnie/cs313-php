@@ -30,7 +30,7 @@ session_start();
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <form action="registration.php" method="POST">
         <div id="registrationInput">
-            <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
+            <h2>Welcome! Please <a href="../login.php/login.php" id="loginLink">login</a> or register.</h2><br><br>
             <label>Username: <span class="error">* <?php echo $userError; ?></span></label>
             <input type="text" name="username" placeholder="username" required><br>
             <label>Password:  <span class="error">* <?php echo $pwdError; ?></span></label>

@@ -1,9 +1,10 @@
 <?php 
 $GLOBALS['book_number']='book_number';
+
 //Get the database connection file  
 include 'connections.php';  
 session_start();
-
+$GLOBALS['conn']=$db;
 ?> 
 
 <!DOCTYPE html>
@@ -41,8 +42,8 @@ session_start();
       </form>
     </main>
     <?php
-    $username = $_POST['username'];
-    $password = $_POST['pwd'];
+    // $username = $_POST['username'];
+    // $password = $_POST['pwd'];
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
     // $usernameError = $pwdError = '';
@@ -85,7 +86,7 @@ session_start();
             echo $username, $password_clearText;
             // $sql = 'INSERT INTO teach07_users (username, password)
             //     VALUES (:username, :password)';
-            $sql = "INSERT INTO users (username, password) VALUES (:username, :pwd)";
+            $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             // $sql = "select * from users";
             // $sql = 'INSERT INTO users (username, password) VALUES ("admin", "admin2beme")';
             $username = test_input($username);
@@ -94,7 +95,7 @@ session_start();
             echo 'hashed'.$password;    
             // $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
            echo $sql;
-            $statement = $db->prepare($sql);        
+            $statement = $GLOBALS['conn']->prepare($sql);        
             echo '1'.$statement;
             $statement->bindValue(':username', $username);
             echo '2'.$statement;

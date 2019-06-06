@@ -29,6 +29,7 @@ $GLOBALS['conn']=$db;
     <h1 id="loginTitle">Finding Books</h1><br><br>
     <form action="login.php" method="post">
       <div id="loginInput">
+      <h2>Login</h2><br><br>
         <label>Username<span class="error">* <?php echo $usrErr; ?></span></label>
         <input type="text" name="username" placeholder="username" required>   <br>        
         <label>Password<span class="error">* <?php echo $pwdErr; ?></span></label>

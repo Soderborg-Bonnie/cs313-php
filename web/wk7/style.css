@@ -192,7 +192,7 @@ td {
   z-index: 10;
 } */
 .error {
-  color: red;
+  color: white;
   font-weight: bold;
 }
 footer {
@@ -202,4 +202,7 @@ footer {
   background-image: url(../wk7/images/grungeColor.jpg);
   /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
   height: 5em;
+}
+.button-rose{
+  background-color: #C35B4F;
 }

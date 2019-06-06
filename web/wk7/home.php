@@ -59,7 +59,7 @@ session_start();
     <main>
 
       <h2>Table o' Books</h2>
-      <a href="/wk6/additions.php/additions.php"><h3 id="newBook">Add new book</h3></a>
+      <a href="/wk7/additions.php/additions.php"><h3 id="newBook">Add new book</h3></a>
       <table
         id="bookTable"
         class="table table-striped table-bordered"

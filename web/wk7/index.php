@@ -1,17 +1,18 @@
 <?php 
-
 $GLOBALS['book_number']='book_number';
 
 //Get the database connection file  
-require 'connections.php';  
+include 'connections.php';  
 session_start();
+$GLOBALS['conn']=$db;
 ?> 
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Books</title>
+    <title>registration</title>
+    <link rel="stylesheet" media="screen" href="../style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,7 +23,80 @@ session_start();
       rel="stylesheet"
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
-    <link rel="stylesheet" media="screen" href="../style.css" />
+  </head>
+  <body id ="registrationBody">
+    <main>
+    <h1 id="registrationTitle">Finding Books</h1><br><br>
+    <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
+      <form action="registration.php" method="POST">
+        <div id="registrationInput">
+            <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
+            <label>Username: <span class="error">* <?php echo $userError; ?></span></label>
+            <input type="text" name="username" placeholder="username" required><br>
+            <label>Password:  <span class="error">* <?php echo $pwdError; ?></span></label>
+            <input type="password" name="pwd" id="password"  placeholder="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br>  
+            <h6>Password should be at least 8 characters long and include at least 1 number.</h6> <br><br>    
+            <button type="submit" class="btn btn-success">register</button>
+        </div>
+      </form>
+    </main>
+    <?php
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+    $usernameError = $pwdError = '';
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (strlen($password_clearText)>=8
+                && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+                && isset($password_clearText)
+                && isset($username))
+            {
+                $rows = regUser($username, $password_clearText);
+                if ($rows > 0)
+                {
+                    header('Location: ../login.php/login.php');
+                    die();
+                }
+                else
+                {
+                    echo '<p class="error">***Error, try again!</p>';
+                }
+            }
+            else
+            {
+                if (strlen($password_clearText)<8)
+                {
+                    $pwdError = 'Check Password Length!';
+                } else {
+                    $pwdError = 'Password Error!';
+                }
+    
+            }
+        }
+        function regUser($username, $password_clearText) {
+            echo $username, $password_clearText;
+            $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+            $username = test_input($username);
+            $password_clearText = test_input($password_clearText);
+            $password = password_hash($password_clearText, PASSWORD_DEFAULT);
+            echo 'hashed'.$password;    
+            $statement = $GLOBALS['conn']->prepare($sql);        
+            $statement->bindValue(':username', $username, PDO::PARAM_STR);
+            $statement->bindValue(':password', $password, PDO::PARAM_STR);
+            $statement->execute();
+            $rowsChanged = $statement->rowCount();
+            $statement->closeCursor();
+            return $rowsChanged;
+        }
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+            }
+
+            ?>
+
+    <script src="../main.js"></script>
     <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -38,68 +112,5 @@ session_start();
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="../main.js"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <div class="topOfPage">
-        <img src="../images/booksLeft.png" alt="photo of books" />
-        <div class="mainHeader">
-          <h1>Finding Books</h1>
-          <nav>
-            <ul class="mainNav">
-              <li><a href="/wk6/index.php/index.php" class="current">Home</a></li>
-              <li><a href="/wk6/details.php/details.php">Details</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <main>
-
-      <h2>Table o' Books</h2>
-      <a href="/wk6/additions.php/additions.php"><h3 id="newBook">Add new book</h3></a>
-      <table
-        id="bookTable"
-        class="table table-striped table-bordered"
-      >
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <!-- <th>Description</th>
-            <th>Media Type</th>
-            <th>Genre</th>
-            <th>Tags</th> -->
-            <th>ISBN</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php 
-
-          foreach ($db->query('SELECT * FROM isbn, author WHERE isbn.book_number = author.book_number') as $row)
-            { 
-              echo '<tr>';  
-              echo '<td><a href="../details.php/details.php?book_number='.$row['book_number'].'">'.$row['book_title'].'</a></td>';
-              echo '<td>'.$row['author_name'].'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
-              // echo '<td>'.''.'</td>';
-              echo '<td>'.$row['book_number'].'</td>';
-              echo '</tr>';
-            }
-            $_SESSION['book_number']=$row['book_number'];
-        ?> 
-        </tbody>
-      </table>
-    </main>
-    <footer></footer>
   </body>
 </html>
-
-                
-                
-                    

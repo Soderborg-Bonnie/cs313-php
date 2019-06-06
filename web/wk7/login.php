@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               $_SESSION['username'] = $username;
               $_SESSION['loggedin'] = TRUE;
 
-              header('Location: ../index.php/index.php');
+              header('Location: ../home.php/home.php');
               die();
               
           } else {

@@ -48,7 +48,7 @@ session_start();
           <nav>
             <ul class="mainNav">
               <li><a href="../home.php/home.php">Home</a></li>
-              <li><a href="../details.php/details.php" class="current">Details</a></li>
+              <!-- <li><a href="../details.php/details.php" class="current">Details</a></li> -->
             </ul>
           </nav>
         </div>

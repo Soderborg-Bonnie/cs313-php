@@ -51,7 +51,7 @@ session_start();
           <nav>
             <ul class="mainNav">
               <li><a href="/wk7/home.php/home.php" class="current">Home</a></li>
-              <li><a href="/wk7/details.php/details.php">Details</a></li>
+              <!-- <li><a href="/wk7/details.php/details.php">Details</a></li> -->
             </ul>
           </nav>
         </div>

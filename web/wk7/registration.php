@@ -86,7 +86,7 @@ session_start();
             // $sql = 'INSERT INTO teach07_users (username, password)
             //     VALUES (:username, :password)';
             // $sql = "INSERT INTO users (username, pwd) VALUES (:user, :password)";
-            $sql = "INSERT INTO users (username, pwd) VALUES ('admin', 'admin2beme')";
+            $sql = "INSERT INTO users (username, password) VALUES ('admin', 'admin2beme')";
             // $username = test_input($username);
             // $password_clearText = test_input($password_clearText);
             $password = password_hash($password_clearText, PASSWORD_DEFAULT);

@@ -155,7 +155,11 @@ td {
   text-align: left;
   margin: 5em;
 }
-#registrationInput h6, #registrationInput h2{
+#loginInput h2 {
+  color: white;
+}
+#registrationInput h6,
+#registrationInput h2 {
   color: #fe938c;
 }
 /* #registrationInput h2 {

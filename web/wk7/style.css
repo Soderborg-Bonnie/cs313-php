@@ -35,7 +35,7 @@ header img {
   /* display: inline; */
 }
 header h1 {
-  color: #88B4AB;
+  color: #4281a4;
   font-family: "Neucha", cursive;
   font-size: 4em;
   padding-left: 2em;
@@ -127,7 +127,7 @@ td {
   width: 100%;
 }
 #newBook {
-  color: #fe938c;
+  color: #C35B4F;
   padding-top: 1.5em;
 }
 #inputForm {
@@ -197,13 +197,9 @@ td {
 }
 footer {
   background-color: #ead2ac;
-  color: #4281a4;
+  color: white;
   padding: 2em;
   background-image: url(../wk7/images/grungeColor.jpg);
   /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
   height: 5em;
-}
-#footerBG {
-  /* background-image: url(../wk7/images/blueBricks.jpg);
-  height: 5em; */
 }

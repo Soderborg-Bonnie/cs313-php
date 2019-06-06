@@ -203,6 +203,7 @@ footer {
   /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
   height: 5em;
 }
-/* .btn-rose{
+.btn-rose{
   background-color: #C35B4F;
-} */
+  color: white;
+}

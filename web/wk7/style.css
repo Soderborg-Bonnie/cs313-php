@@ -35,12 +35,12 @@ header h1 {
 header {
   display: grid;
   grid-template-rows: 1fr;
-  border-bottom: 1px solid #4281a4;
+  border-bottom: 2px solid #4281a4;
 }
 .topOfPage {
   display: inline-flex;
   margin-left: 0px;
-  background-color: #ead2ac;
+  /* background-color: #ead2ac; */
 }
 .mainHeader {
   display: grid;

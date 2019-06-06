@@ -40,7 +40,7 @@ header {
 .topOfPage {
   display: inline-flex;
   margin-left: 0px;
-  /* background-color: #ead2ac; */
+  background-color: #ead2ac;
 }
 .mainHeader {
   display: grid;
@@ -56,7 +56,7 @@ nav {
 }
 nav ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin: 0 auto;
   list-style-type: none;
   overflow: hidden;

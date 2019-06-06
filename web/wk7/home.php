@@ -42,10 +42,10 @@ session_start();
       src="../main.js"
     ></script>
   </head>
-  <body id="homeBody" onload="hidePic()">
-    <div>
+  <body id="homeBody">
+    <!-- <div>
         <img src="../images/sparklyBook.jpg" alt="sparkly book" id="topImage">
-    </div>
+    </div> -->
     <header>
       <div class="topOfPage">
         <img src="../images/sparklyBookSm.jpg" alt="sparkly books" />

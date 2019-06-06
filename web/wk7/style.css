@@ -35,13 +35,14 @@ header h1 {
 header {
   display: grid;
   grid-template-rows: 1fr;
-  background-image: url(../wk7/images/blueBricks.jpg);
+  /* background-image: url(../wk7/images/blueBricks.jpg); */
   border-bottom: 2px solid #4281a4;
 }
 .topOfPage {
   display: inline-flex;
   margin-left: 0px;
-  /* background-color: #ead2ac; */
+  background-color: #ead2ac;
+  background-image: url(../wk7/images/blueBricks.jpg);
 }
 .mainHeader {
   display: grid;

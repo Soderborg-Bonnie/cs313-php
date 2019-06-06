@@ -50,7 +50,7 @@ $GLOBALS['conn']=$db;
     <form action="login.php" method="post">
       <div id="loginInput">
         <label>Username<span class="error">* <?php echo $usrErr; ?></span></label>
-        <input type="text" name="username" placeholder="username" required>            
+        <input type="text" name="username" placeholder="username" required>   <br>        
         <label>Password<span class="error">* <?php echo $pwdErr; ?></span></label>
         <input type="password" name="pwd" placeholder="Password" required>
         <button type="submit" class="btn btn-success">login</button>

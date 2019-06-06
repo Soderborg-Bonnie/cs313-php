@@ -27,7 +27,6 @@ $GLOBALS['conn']=$db;
   <body id ="registrationBody">
     <main>
     <h1 id="registrationTitle">Finding Books</h1><br><br>
-        <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
     <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <form action="registration.php" method="POST">
         <div id="registrationInput">
@@ -42,25 +41,16 @@ $GLOBALS['conn']=$db;
       </form>
     </main>
     <?php
-    // $username = $_POST['username'];
-    // $password = $_POST['pwd'];
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-    // $usernameError = $pwdError = '';
+    $usernameError = $pwdError = '';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            
-            // $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-            // $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-            // $usernameError = $pwdError = '';
-            echo 'YES!';
             if (strlen($password_clearText)>=8
                 && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
                 && isset($password_clearText)
                 && isset($username))
             {
-                // echo 'PASSED!';
                 $rows = regUser($username, $password_clearText);
-                // echo 'rows'.$rows;
                 if ($rows > 0)
                 {
                     header('Location: ../login.php/login.php');
@@ -84,23 +74,14 @@ $GLOBALS['conn']=$db;
         }
         function regUser($username, $password_clearText) {
             echo $username, $password_clearText;
-            // $sql = 'INSERT INTO teach07_users (username, password)
-            //     VALUES (:username, :password)';
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
-            // $sql = "select * from users";
-            // $sql = 'INSERT INTO users (username, password) VALUES ("admin", "admin2beme")';
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);
             $password = password_hash($password_clearText, PASSWORD_DEFAULT);
             echo 'hashed'.$password;    
-            // $statement = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-           echo $sql;
             $statement = $GLOBALS['conn']->prepare($sql);        
-            // echo '1'.$statement;
             $statement->bindValue(':username', $username);
-            // echo '2'.$statement;
             $statement->bindValue(':password', $password);
-            // echo '3'.$statement;
             $statement->execute();
             $rowsChanged = $statement->rowCount();
             $statement->closeCursor();

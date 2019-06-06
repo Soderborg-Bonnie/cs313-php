@@ -31,14 +31,14 @@ body {
   text-align: center;
 }
 header img {
-  opacity: 0.8;
+  opacity: 0.7;
   /* display: inline; */
 }
 header h1 {
   color: #4281a4;
   font-family: "Neucha", cursive;
   font-size: 4em;
-  padding-left: 8em;
+  padding-left: 2em;
   padding-top: 2em;
 }
 header {

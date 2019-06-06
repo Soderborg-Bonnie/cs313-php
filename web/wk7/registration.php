@@ -99,7 +99,7 @@ $GLOBALS['conn']=$db;
             // echo '1'.$statement;
             $statement->bindValue(':username', $username);
             // echo '2'.$statement;
-            $statement->bindValue(':pwd', $password);
+            $statement->bindValue(':password', $password);
             // echo '3'.$statement;
             $statement->execute();
             $rowsChanged = $statement->rowCount();

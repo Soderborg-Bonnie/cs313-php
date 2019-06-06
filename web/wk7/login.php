@@ -1,5 +1,4 @@
 <?php 
-
 $GLOBALS['book_number']='book_number';
 
 //Get the database connection file  
@@ -13,6 +12,7 @@ $GLOBALS['conn']=$db;
   <head>
     <meta charset="utf-8" />
     <title>login</title>
+    <link rel="stylesheet" media="screen" href="../style.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -23,7 +23,21 @@ $GLOBALS['conn']=$db;
       rel="stylesheet"
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
-    <link rel="stylesheet" media="screen" href="../style.css" />
+  </head>
+  <body id ="loginBody">
+  <main>
+    <h1 id="loginTitle">Finding Books</h1><br><br>
+    <form action="login.php" method="post">
+      <div id="loginInput">
+        <label>Username<span class="error">* <?php echo $usrErr; ?></span></label>
+        <input type="text" name="username" placeholder="username" required>   <br>        
+        <label>Password<span class="error">* <?php echo $pwdErr; ?></span></label>
+        <input type="password" name="pwd" placeholder="Password" required><br><br>
+        <button type="submit" class="btn btn-success">login</button>
+      </div>
+    </form>
+    </main>
+    <script src="../main.js"></script>
     <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -39,24 +53,8 @@ $GLOBALS['conn']=$db;
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="../main.js"
-    ></script>
-  </head>
-  <body id ="loginBody">
-    <h1 id="loginTitle">Finding Books</h1><br><br>
-        <!-- <img src="../images/sparklyBook.jpg" alt="sparkly book" id="loginPic"/> -->
-    <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
-    <form action="login.php" method="post">
-      <div id="loginInput">
-        <label>Username<span class="error">* <?php echo $usrErr; ?></span></label>
-        <input type="text" name="username" placeholder="username" required>   <br>        
-        <label>Password<span class="error">* <?php echo $pwdErr; ?></span></label>
-        <input type="password" name="pwd" placeholder="Password" required><br><br>
-        <button type="submit" class="btn btn-success">login</button>
-      </div>
-    </form>
   </body>
+
   <?php
   $userError = $pwdError = '';
     

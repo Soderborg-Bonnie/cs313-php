@@ -27,7 +27,6 @@ $GLOBALS['conn']=$db;
   <body id ="registrationBody">
     <main>
     <h1 id="registrationTitle">Finding Books</h1><br><br>
-    <!-- Can Stock Photography by Jag_cz https://www.canstockphoto.com/old-book-on-wooden-table-22417225.html -->
       <form action="registration.php" method="POST">
         <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>

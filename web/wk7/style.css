@@ -90,7 +90,7 @@ nav ul li a:visited {
   color: white;
 }
 nav ul li a:hover {
-  color: #fe938c;
+  color: #C35B4F;
 }
 nav ul li a:active {
   color: #4281a4;
@@ -172,7 +172,7 @@ td {
 }
 #registrationInput h6,
 #registrationInput h2 {
-  color: #fe938c;
+  color: #C35B4F;
 }
 /* #registrationInput h2 {
   color: #fe938c;

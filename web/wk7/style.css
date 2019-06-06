@@ -173,7 +173,8 @@ td {
 #registrationInput h2 {
   color: #c35b4f;
 }
-#registrationInput h6, #registrationInput h2 a {
+#registrationInput h6,
+#registrationInput h2 a {
   color: white;
 }
 #loginTitle,
@@ -202,4 +203,6 @@ footer {
 .btn-rose {
   background-color: #c35b4f;
   color: white;
+  padding: 2em;
+  border-radius: 2em;
 }

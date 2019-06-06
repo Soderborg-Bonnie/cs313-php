@@ -42,7 +42,7 @@ session_start();
       src="../main.js"
     ></script>
   </head>
-  <body id="homeBody">
+  <body id="homeBody" onload="hidePic()">
     <div>
         <img src="../images/sparklyBook.jpg" alt="sparkly book" id="topImage">
     <!-- </div> -->

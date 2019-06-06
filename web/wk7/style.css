@@ -90,7 +90,7 @@ nav ul li a:visited {
   color: white;
 }
 nav ul li a:hover {
-  color: #C35B4F;
+  color: #c35b4f;
 }
 nav ul li a:active {
   color: #4281a4;
@@ -172,7 +172,7 @@ td {
 }
 #registrationInput h6,
 #registrationInput h2 {
-  color: #C35B4F;
+  color: #c35b4f;
 }
 /* #registrationInput h2 {
   color: #fe938c;
@@ -203,7 +203,7 @@ footer {
   /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
   height: 5em;
 }
-.btn-rose{
-  background-color: #C35B4F;
+.btn-success {
+  background-color: #c35b4f;
   color: white;
 }

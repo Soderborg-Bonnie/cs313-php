@@ -40,7 +40,8 @@ header {
 .topOfPage {
   display: inline-flex;
   margin-left: 0px;
-  background-color: #ead2ac;
+  /* background-color: #ead2ac; */
+  background-image: url(../wk7/images/blueBricks.jpg);
 }
 .mainHeader {
   display: grid;
@@ -179,6 +180,8 @@ td {
 }
 footer {
   background-color: #ead2ac;
-  color: #fe938c;
+  color: #4281a4;
   padding: 2em;
+  background-image: url(../wk7/images/blueBricks.jpg);
+  height: 5em;
 }

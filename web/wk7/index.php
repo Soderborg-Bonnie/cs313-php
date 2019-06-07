@@ -76,6 +76,8 @@ $GLOBALS['conn']=$db;
         function checkUser($username) {
           $sql = 'SELECT username FROM users WHERE username = :username';
           $stmt = $GLOBALS['conn']->prepare($sql);
+          echo 'prepare: '.$stmt;
+
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
           $stmt->execute();
           $results = $stmt->fetch(PDO::FETCH_ASSOC);

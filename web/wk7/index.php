@@ -88,7 +88,7 @@ $GLOBALS['conn']=$db;
             $statement->bindValue(':password', $password, PDO::PARAM_STR);
             $statement->execute();
             $rowsChanged = $statement->rowCount();
-            echo $rowsChanged;
+            echo 'rows'.$rowsChanged;
             $statement->closeCursor();
             return $rowsChanged;
         }

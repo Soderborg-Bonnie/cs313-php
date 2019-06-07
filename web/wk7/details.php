@@ -41,8 +41,8 @@ session_start();
 <body>
     <header>
       <div class="topOfPage">
-        <img src="../images/booksLeft.png" alt="photo of books" />
-        <div class="mainHeader">
+      <img src="../images/sparklyBookSm.jpg" alt="sparkly books" />
+              <div class="mainHeader">
           <h1>Finding Books</h1>
           <nav>
             <ul class="mainNav">

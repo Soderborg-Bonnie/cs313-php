@@ -34,14 +34,13 @@ header img {
   opacity: 0.7;
   /* display: inline; */
 }
-header h1,
-#registrationTitle,
-#loginTitle {
+header h1
+{
   color: #4281a4;
   font-family: "Neucha", cursive;
   font-size: 4em;
-  /* padding-left: 2em;
-  padding-top: 2em; */
+  padding-left: 2em;
+  padding-top: 2em;
 }
 header {
   display: grid;
@@ -179,11 +178,13 @@ td {
 #registrationInput h2 a {
   color: white;
 }
-/* #loginTitle,
+#loginTitle,
 #registrationTitle {
+  font-family: "Neucha", cursive;
+  font-size: 4em;
   color: white;
   text-align: left;
-} */
+}
 /* #homeBody {
   z-index: -10;
 }

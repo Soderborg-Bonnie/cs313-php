@@ -123,7 +123,6 @@ $GLOBALS['conn']=$db;
             exit;
           } else {
             //echo 'Match found';
-            exit;
               echo 'Array Set <br />';
               // print_r($results);
               $logins = $results[0]['username'];
@@ -142,6 +141,7 @@ $GLOBALS['conn']=$db;
               // }
   
               return 0;
+              exit;
           }
         }
 

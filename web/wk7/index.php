@@ -52,7 +52,7 @@ $GLOBALS['conn']=$db;
                 && isset($username))
             {
                 $logins = checkUser($username);
-                if ($logins = 1){
+                if ($logins != 1){
                   echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
                   echo '<h3 class="error">***Please choose another username.</h3>';
                 }else{

@@ -32,7 +32,7 @@ session_start();
         </div>
       </div>
     </header>
-    <h2>Your addition of a new book was successful!</h2><br><br>
+    <!-- <h2>Your addition of a new book was successful!</h2><br><br> -->
     <?php
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
@@ -46,12 +46,14 @@ session_start();
                         echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                          $rowsChanged = 0;
                           // echo 'POSTING!<br />';        
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           // echo 'After Statement!<br />';
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
                           // echo 'After Bind!<br />';
+                          $rowsChanged = $statement->rowCount();
                           $statement->execute();
 
                           $statement = $db->prepare("INSERT INTO author (book_number, author_name) VALUES (:isbn, :author)");
@@ -78,6 +80,13 @@ session_start();
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
+
+                          if ($rowsChanged = 0){
+                            echo 'Oops. That book is already in here.';
+                          }
+                          else[
+                            echo '<h2>Your addition of a new book was successful!</h2>';
+                          ]
 
                       }
 

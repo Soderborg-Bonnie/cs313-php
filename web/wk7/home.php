@@ -54,7 +54,7 @@ session_start();
           <nav>
             <ul class="mainNav">
               <li><a href="../home.php/home.php" class="current">Home</a></li>
-              <li><a href="../details.php/details.php" >Details</a></li>
+              <!-- <li><a href="../details.php/details.php" >Details</a></li> -->
               <li><a href="../login.php/login.php">Logout</a></li>
             </ul>
           </nav>

@@ -66,7 +66,7 @@ $GLOBALS['conn']=$db;
                 }
                 else
                 {
-                    echo '<h3 class="error">***Error! Try a different username.</h3>';
+                    echo '<h2 class="error">***Error! Try a different username.</h2>';
                 }
             }}
             else

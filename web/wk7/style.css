@@ -105,9 +105,9 @@ a.current:visited {
 #bookTable {
   color: #4281a4;
 }
-.tableDisplay {
+/* .tableDisplay {
   display: none;
-}
+} */
 main h2 {
   color: #4281a4;
   font-family: "Neucha", cursive;

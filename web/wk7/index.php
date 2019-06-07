@@ -118,8 +118,8 @@ $GLOBALS['conn']=$db;
           if ($results == NULL) {
             // if ($results == NULL) {
               echo 'Nothing Set<br />';
-              
-            return 0;
+              $logins = 0;
+            return $logins;
             echo 'Nothing found';
             exit;
           } else {
@@ -140,8 +140,8 @@ $GLOBALS['conn']=$db;
               //     echo '<p class="err">Error, login failed!</p>';
   
               // }
-  
-              return 1;
+  $logins = 1;
+              return $logins;
               exit;
           }
         }

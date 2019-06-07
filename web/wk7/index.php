@@ -36,7 +36,6 @@ $GLOBALS['conn']=$db;
             <input type="password" name="pwd" id="password"  placeholder="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br><br> 
             <h6>* required</h6> 
             <h6>Password should be at least 8 characters long and include at least 1 number.</h6> <br><br>    
-            <!-- <button type="submit" class="btn btn-primary">register</button> -->
             <button type="submit" class="btn-rose">register</button>
         </div>
       </form>
@@ -57,7 +56,7 @@ $GLOBALS['conn']=$db;
                     header('Location: ../login.php/login.php');
                     die();
                 }
-                elseif ($rows = 0)
+                else
                 {
                     echo '<p class="error">***Error! Try a different username.</p>';
                 }
@@ -74,7 +73,6 @@ $GLOBALS['conn']=$db;
             }
         }
         function regUser($username, $password_clearText) {
-            $rowschanged = 0;
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);

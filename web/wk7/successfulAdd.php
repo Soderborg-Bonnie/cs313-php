@@ -26,13 +26,12 @@ session_start();
           <nav>
             <ul class="mainNav">
             <li><a href="../home.php/home.php">Home</a></li>
-              <!-- <li><a href="../details.php/details.php" class="current">Details</a></li> -->
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <!-- <h2>Your addition of a new book was successful!</h2><br><br> -->
+    <h2>Your addition of a new book was successful!</h2><br><br>
     <?php
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
@@ -46,31 +45,26 @@ session_start();
                         echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                          $rowsChanged = 0;
-                          // echo 'POSTING!<br />';        
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
-                          // echo 'After Statement!<br />';
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
-                          // echo 'After Bind!<br />';
-                          $rowsChanged = $statement->rowCount();
                           $statement->execute();
 
                           $statement = $db->prepare("INSERT INTO author (book_number, author_name) VALUES (:isbn, :author)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':author', $author);
                           $statement->execute();
-// echo 'before description';
+
                           $statement = $db->prepare("INSERT INTO words (book_number, words) VALUES (:isbn, :words)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':words', $words);
                           $statement->execute();
-// echo 'before media';
+
                           $statement = $db->prepare("INSERT INTO media (book_number, media) VALUES (:isbn, :media)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':media', $media);
                           $statement->execute();
-                          // echo 'after media';
+
                           $statement = $db->prepare("INSERT INTO genre (book_number, genre) VALUES (:isbn, :genre)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':genre', $genre);
@@ -80,13 +74,6 @@ session_start();
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
-
-                          if ($rowsChanged = 0){
-                            echo 'Oops. That book is already in here.';
-                          }
-                          else{
-                            echo '<h2>Your addition of a new book was successful!</h2>';
-                          }
 
                     }
 

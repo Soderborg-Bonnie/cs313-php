@@ -107,7 +107,7 @@ $GLOBALS['conn']=$db;
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
           $stmt->execute();
           $results = $stmt->fetch(PDO::FETCH_ASSOC);
-          echo 'user: '.$results[0]['username'];
+          // echo 'user: '.$results[0]['username'];
           $stmt->closeCursor();
           
           // echo 'SQL Results Fetched <br />';
@@ -132,9 +132,9 @@ $GLOBALS['conn']=$db;
                   // die();
                   
               // } else {
-                  echo '<p class="err">Error, login failed!</p>';
-  
-              // }
+                  // echo '<p class="error">Error, login failed!</p>';
+                  echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
+                  echo '<h3 class="error">***Please choose another username.</h3>';              // }
               return 1;
               // exit;
           }

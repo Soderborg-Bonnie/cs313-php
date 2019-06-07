@@ -67,7 +67,7 @@ $GLOBALS['conn']=$db;
                       echo '<h2 class="error">***Error! Try a different username.</h2>';
                   }
             }
-          }
+          
             else
             {
                 if (strlen($password_clearText)<8)
@@ -78,7 +78,7 @@ $GLOBALS['conn']=$db;
                 }
     
             }
-        }
+        }}
         function regUser($username, $password_clearText) {
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);

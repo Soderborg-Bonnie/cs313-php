@@ -84,11 +84,11 @@ session_start();
                           if ($rowsChanged = 0){
                             echo 'Oops. That book is already in here.';
                           }
-                          else[
+                          else{
                             echo '<h2>Your addition of a new book was successful!</h2>';
-                          ]
+                          }
 
-                      }
+                    }
 
       ?>
 

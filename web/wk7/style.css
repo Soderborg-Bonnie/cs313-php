@@ -222,6 +222,6 @@ footer {
     display: inline;
   }
   .tableDisplay {
-    display: inline;
+    display: inline-table;
   }
 }

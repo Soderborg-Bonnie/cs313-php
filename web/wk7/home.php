@@ -1,6 +1,6 @@
 <?php 
-if ($_SESSION['loggedin'] != TRUE){
-    header(Location: ../login.php/login.php)
+if ($_SESSION['loggedin'] = FALSE){
+    header('Location: ../login.php/login.php')
     die()
 }
 $GLOBALS['book_number']='book_number';

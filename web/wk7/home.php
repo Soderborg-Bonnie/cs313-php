@@ -1,14 +1,18 @@
 <?php 
-if ($_SESSION['loggedin'] = FALSE){
-    header('Location: ../login.php/login.php');
-    die();
-}
-else{
+
 $GLOBALS['book_number']='book_number';
 
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+if (isset($_SESSION['username']))
+{
+	$username = $_SESSION['username'];
+}
+else
+{
+	header("Location: ../login.php/login.php");
+	die(); // we always include a die after redirects.
 }
 ?> 
 
@@ -60,7 +64,7 @@ session_start();
             <ul class="mainNav">
               <li><a href="../home.php/home.php" class="current">Home</a></li>
               <!-- <li><a href="../details.php/details.php" >Details</a></li> -->
-              <li><a href="../login.php/login.php">Logout</a></li>
+              <li><a href="../logout.php/logout.php">Logout</a></li>
             </ul>
           </nav>
         </div>

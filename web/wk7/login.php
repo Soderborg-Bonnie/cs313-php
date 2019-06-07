@@ -1,7 +1,7 @@
 <?php 
-$_SESSION['loggedin'] = FALSE;
+// $_SESSION['loggedin'] = FALSE;
 $GLOBALS['book_number']='book_number';
-session_destroy();
+// session_destroy();
 //Get the database connection file  
 require 'connections.php';  
 session_start();

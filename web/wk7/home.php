@@ -32,6 +32,7 @@ else
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
     <link rel="stylesheet" media="screen" href="../style.css" />
+    <!-- <script src="../main.js"></script>
     <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -46,10 +47,8 @@ else
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
-    ></script>
-    <script
-      src="../main.js"
-    ></script>
+    ></script> -->
+
   </head>
   <body id="homeBody">
     <!-- <div>
@@ -116,6 +115,7 @@ else
       </table>
     </main>
     <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'wk7/common/scripts.php'; ?>
   </body>
 </html>
 

@@ -1,7 +1,5 @@
 <?php 
-// $_SESSION['loggedin'] = FALSE;
 $GLOBALS['book_number']='book_number';
-// session_destroy();
 //Get the database connection file  
 require 'connections.php';  
 session_start();
@@ -40,7 +38,6 @@ $GLOBALS['conn']=$db;
     </form>
     </main>
     <script src="../main.js"></script>
-    <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>

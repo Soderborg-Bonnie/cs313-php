@@ -3,11 +3,13 @@ if ($_SESSION['loggedin'] = FALSE){
     header('Location: ../login.php/login.php')
     die()
 }
+else{
 $GLOBALS['book_number']='book_number';
 
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+}
 ?> 
 
 <!DOCTYPE html>

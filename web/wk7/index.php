@@ -51,29 +51,16 @@ $GLOBALS['conn']=$db;
                 && isset($password_clearText)
                 && isset($username))
             {
-                // $rows = 0;
                 $rows = regUser($username, $password_clearText);
-                // echo $rows;
-                // if ($rows > 0)
-                if (!$rows)
+                if ($rows > 0)
                 {
-                  echo '<p class="error">***Error! Try a different username.</p>';
-                  echo 'Ugh!';
-              }
-              else
+                    header('Location: ../login.php/login.php');
+                    die();
+                }
+                else
                 {
-                  header('Location: ../login.php/login.php');
-                  die();
-              }
-                // {
-                //     header('Location: ../login.php/login.php');
-                //     die();
-                // }
-                // else
-                // {
-                //     echo '<p class="error">***Error! Try a different username.</p>';
-                //     echo 'Ugh!';
-                // }
+                    echo '<p class="error">***Error! Try a different username.</p>';
+                }
             }
             else
             {
@@ -87,19 +74,15 @@ $GLOBALS['conn']=$db;
             }
         }
         function regUser($username, $password_clearText) {
-            // $rowsChanged = 0;
-            // echo $username, $password_clearText;
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);
             $password = password_hash($password_clearText, PASSWORD_DEFAULT);
-            // echo 'hashed'.$password;    
             $statement = $GLOBALS['conn']->prepare($sql);        
-            $statement->bindValue(':username', $username, PDO::PARAM_STR);
-            $statement->bindValue(':password', $password, PDO::PARAM_STR);
+            $statement->bindValue(':username', $username);
+            $statement->bindValue(':password', $password);
             $statement->execute();
             $rowsChanged = $statement->rowCount();
-            // echo 'rows'.$rowsChanged;
             $statement->closeCursor();
             return $rowsChanged;
         }

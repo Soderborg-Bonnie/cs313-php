@@ -55,16 +55,25 @@ $GLOBALS['conn']=$db;
                 $rows = regUser($username, $password_clearText);
                 // echo $rows;
                 // if ($rows > 0)
-                if ($rows)
+                if (!$rows)
                 {
-                    header('Location: ../login.php/login.php');
-                    die();
-                }
-                else
+                  echo '<p class="error">***Error! Try a different username.</p>';
+                  echo 'Ugh!';
+              }
+              else
                 {
-                    echo '<p class="error">***Error! Try a different username.</p>';
-                    echo 'Ugh!';
-                }
+                  header('Location: ../login.php/login.php');
+                  die();
+              }
+                // {
+                //     header('Location: ../login.php/login.php');
+                //     die();
+                // }
+                // else
+                // {
+                //     echo '<p class="error">***Error! Try a different username.</p>';
+                //     echo 'Ugh!';
+                // }
             }
             else
             {

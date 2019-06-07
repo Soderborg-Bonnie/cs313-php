@@ -54,8 +54,6 @@ $GLOBALS['conn']=$db;
                       echo '<h2 class="error">***Error! Try a different username.</h2>';
                   }
         }
-        // else{
-        // }
         function regUser($username, $password_clearText) {
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
@@ -85,7 +83,7 @@ $GLOBALS['conn']=$db;
           if (!is_array($results)) {
               return 0;
           } else {
-                  echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
+                  echo '<h3 class="error">***Oops! This username is already taken.</h3>';
                   echo '<h3 class="error">***Please choose another username.</h3>';              
               return 1;
           }

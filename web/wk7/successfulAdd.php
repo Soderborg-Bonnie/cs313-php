@@ -82,7 +82,7 @@ session_start();
                     }
 
                     function checkBook($isbn) {
-                      $sql = 'SELECT book_number FROM isbn WHERE book_number = :isbn';
+                      $sql = 'SELECT * FROM isbn WHERE book_number = :isbn';
                       $stmt = $GLOBALS['conn']->prepare($sql);
                       $stmt->bindValue(':isbn', $isbn, PDO::PARAM_STR);
                       $stmt->execute();
@@ -91,10 +91,11 @@ session_start();
                       if (!is_array($results)) {
                         echo '<h2>Your addition of a new book was successful!</h2><br><br>';
                         echo "'$title' has been added."."<br>";
-                        echo "It's ISBN number is: $isbn";
-                          return 0;
+                        // echo "It's ISBN number is: $isbn";
+                        return;
                       } else {
-                        echo '<h3 class="error">***Oops! That book is already in here.</h3>';                          return 1;
+                        echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
+                        return;
                       }
                     }
 

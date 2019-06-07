@@ -81,11 +81,11 @@ $GLOBALS['conn']=$db;
           $results = $stmt->fetch(PDO::FETCH_ASSOC);
           $stmt->closeCursor();
           if (!is_array($results)) {
-              return 0;
+              return;
           } else {
                   echo '<h3 class="error">***Oops! This username is already taken.</h3>';
                   echo '<h3 class="error">***Please choose another username.</h3>';              
-              return 1;
+              return;
           }
         }
 ?>

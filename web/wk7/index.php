@@ -57,7 +57,7 @@ $GLOBALS['conn']=$db;
                     header('Location: ../login.php/login.php');
                     die();
                 }
-                elseif ($rows = 0")
+                elseif ($rows = 0)
                 {
                     echo '<p class="error">***Error! Try a different username.</p>';
                 }

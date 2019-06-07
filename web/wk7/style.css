@@ -199,6 +199,7 @@ td {
 .error {
   color: white;
   font-weight: bold;
+  margin-left: 2em;
 }
 footer {
   background-color: #ead2ac;

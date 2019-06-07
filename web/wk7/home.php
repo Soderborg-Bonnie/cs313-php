@@ -12,8 +12,7 @@ if (isset($_SESSION['username']))
 else
 {
 	header("Location: ../login.php/login.php");
-	die(); // we always include a die after redirects.
-}
+	die(); 
 ?> 
 
 <!DOCTYPE html>
@@ -32,12 +31,24 @@ else
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
     <link rel="stylesheet" media="screen" href="../style.css" />
+    <script src="../main.js"></script>
+    <script
+		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body id="homeBody">
-    <!-- <div>
-        <img src="../images/sparklyBook.jpg" alt="sparkly book" id="topImage">
-    </div> -->
     <header>
       <div class="topOfPage">
         <img src="../images/sparklyBookSm.jpg" alt="sparkly books" />
@@ -46,7 +57,6 @@ else
           <nav>
             <ul class="mainNav">
               <li><a href="../home.php/home.php" class="current">Home</a></li>
-              <!-- <li><a href="../details.php/details.php" >Details</a></li> -->
               <li><a href="../logout.php/logout.php">Logout</a></li>
             </ul>
           </nav>
@@ -92,7 +102,7 @@ else
       </table>
     </main>
     <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
-    <script src="../main.js"></script>
+    <!-- <script src="../main.js"></script>
     <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -107,7 +117,7 @@ else
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </body>
 </html>
 

@@ -87,7 +87,7 @@ $GLOBALS['conn']=$db;
             return $rowsChanged;
           }
           catch{
-            return 0; 
+            echo 'Oops'; 
           }
         }
         function test_input($data) {

@@ -120,7 +120,7 @@ $GLOBALS['conn']=$db;
               
             return 0;
             echo 'Nothing found';
-            // exit;
+            exit;
           } else {
             //echo 'Match found';
               echo 'Array Set <br />';
@@ -141,7 +141,7 @@ $GLOBALS['conn']=$db;
               // }
   
               return 1;
-              // exit;
+              exit;
           }
         }
 

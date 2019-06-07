@@ -111,15 +111,14 @@ $GLOBALS['conn']=$db;
           // echo 'Executed<br />';
           //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
           $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          echo $results[0]['username'];
+          echo 'user: '.$results[0]['username'];
           $stmt->closeCursor();
           
           // echo 'SQL Results Fetched <br />';
           if ($results == NULL) {
             // if ($results == NULL) {
               echo 'Nothing Set<br />';
-              $logins = 0;
-            return $logins;
+            return 0;
             echo 'Nothing found';
             exit;
           } else {
@@ -140,8 +139,7 @@ $GLOBALS['conn']=$db;
               //     echo '<p class="err">Error, login failed!</p>';
   
               // }
-  $logins = 1;
-              return $logins;
+              return 1;
               exit;
           }
         }

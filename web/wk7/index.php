@@ -30,9 +30,9 @@ $GLOBALS['conn']=$db;
       <form action="index.php" method="POST">
         <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
-            <label>Username: <span class="error">* <?php echo $userError; ?></span></label>
+            <label>*Username: </label>
             <input type="text" name="username" placeholder="username" required><br>
-            <label>Password:  <span class="error">* <?php echo $pwdError; ?></span></label>
+            <label>*Password:  </label>
             <input type="password" name="pwd" id="password"  placeholder="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"><br><br> 
             <h6>* required</h6> 
             <h6>Password should be at least 8 characters long and include at least 1 number.</h6> <br><br>    
@@ -44,21 +44,20 @@ $GLOBALS['conn']=$db;
 <?php
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-    $userError = $pwdError = '';
+    // $userError = $pwdError = '';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (strlen($password_clearText)>=8
-                && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
-                && isset($password_clearText)
-                && isset($username))
-            {
+            // if (strlen($password_clearText)>=8
+            //     && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+            //     && isset($password_clearText)
+            //     && isset($username))
+            // {
                 $logins = checkUser($username);
                 if ($logins != 1){
                   echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
                   echo '<h3 class="error">***Please choose another username.</h3>';
                 }else{
                 $rows = regUser($username, $password_clearText);
-                  if ($rows > 0)
-                  {
+                  if ($rows > 0){
                       header('Location: ../login.php/login.php');
                       die();
                   }
@@ -66,19 +65,23 @@ $GLOBALS['conn']=$db;
                   {
                       echo '<h2 class="error">***Error! Try a different username.</h2>';
                   }
-            }
-          
-            else
-            {
-                if (strlen($password_clearText)<8)
-                {
-                    $pwdError = 'Check Password Length!';
-                } else {
-                    $pwdError = 'Password Error!';
                 }
+        }
+        else{
+          echo 'try again and again';
+        }
+          
+            // else
+            // {
+            //     if (strlen($password_clearText)<8)
+            //     {
+            //         $pwdError = 'Check Password Length!';
+            //     } else {
+            //         $pwdError = 'Password Error!';
+            //     }
     
-            }
-        }}
+            // }
+        // }
         function regUser($username, $password_clearText) {
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);

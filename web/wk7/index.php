@@ -44,7 +44,7 @@ $GLOBALS['conn']=$db;
     <?php
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-    $usernameError = $pwdError = '';
+    $userError = $pwdError = '';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (strlen($password_clearText)>=8
                 && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)

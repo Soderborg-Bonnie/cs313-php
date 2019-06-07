@@ -73,7 +73,6 @@ $GLOBALS['conn']=$db;
             }
         }
         function regUser($username, $password_clearText) {
-          try{
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);
@@ -85,10 +84,6 @@ $GLOBALS['conn']=$db;
             $rowsChanged = $statement->rowCount();
             $statement->closeCursor();
             return $rowsChanged;
-          }
-          catch{
-            echo 'Oops'; 
-          }
         }
         function test_input($data) {
             $data = trim($data);

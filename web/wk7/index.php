@@ -66,7 +66,7 @@ $GLOBALS['conn']=$db;
                 }
                 else
                 {
-                    echo '<p class="error">***Error! Try a different username.</p>';
+                    echo '<h3 class="error">***Error! Try a different username.</h3>';
                 }
             }}
             else
@@ -107,12 +107,12 @@ $GLOBALS['conn']=$db;
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
           $stmt->execute();
           
-          echo 'Executed<br />';
+          // echo 'Executed<br />';
           //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
           $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           $stmt->closeCursor();
           
-          echo 'SQL Results Fetched <br />';
+          // echo 'SQL Results Fetched <br />';
           if (!is_array($results)) {
               echo 'Nothing Set<br />';
               

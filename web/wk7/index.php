@@ -44,6 +44,12 @@ $GLOBALS['conn']=$db;
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
     $userError = $pwdError = '';
+
+    $query = 'SELECT password FROM users WHERE username=$username';
+    if (!$query){
+      echo 'Oops'
+    } else{
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (strlen($password_clearText)>=8
                 && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
@@ -71,8 +77,10 @@ $GLOBALS['conn']=$db;
                 }
     
             }
-        }
+        }}
         function regUser($username, $password_clearText) {
+            $user = "SELECT * FROM users WHERE  username = $username";
+            if $user
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);

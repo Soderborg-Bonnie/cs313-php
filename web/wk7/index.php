@@ -116,7 +116,7 @@ $GLOBALS['conn']=$db;
           if (!is_array($results)) {
               echo 'Nothing Set<br />';
               
-            return 0;
+            return 1;
             //echo 'Nothing found';
             //exit;
           } else {
@@ -139,7 +139,7 @@ $GLOBALS['conn']=$db;
   
               // }
   
-              return 1;
+              return 0;
           }
         }
 

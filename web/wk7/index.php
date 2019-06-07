@@ -56,7 +56,7 @@ $GLOBALS['conn']=$db;
             {
                 $logins = checkUser($username);
                 if ($logins = 1){
-                  echo '<h3 class="error">***Error! Try a different username.</h3>';
+                  echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
                 }else{
                 $rows = regUser($username, $password_clearText);
                 if ($rows > 0)
@@ -120,7 +120,7 @@ $GLOBALS['conn']=$db;
               
             return 1;
             echo 'Nothing found';
-            exit;
+            // exit;
           } else {
             //echo 'Match found';
               echo 'Array Set <br />';
@@ -141,7 +141,7 @@ $GLOBALS['conn']=$db;
               // }
   
               return 0;
-              exit;
+              // exit;
           }
         }
 

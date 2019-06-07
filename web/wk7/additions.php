@@ -60,7 +60,7 @@ session_start();
     <main>
 
     <?php
-                        $title=$author=$description=$media=$genre=$tags=$isbn='';
+                        $title=$author=$words=$description=$media=$genre=$tags=$isbn='';
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $title = test_input($_POST['title']);
                             $author = test_input($_POST['author']);

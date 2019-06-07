@@ -106,16 +106,16 @@ $GLOBALS['conn']=$db;
           $sql = 'SELECT username FROM users WHERE username = :username';
           $stmt = $GLOBALS['conn']->prepare($sql);
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-          $stmt->execute();
+          $results->execute();
           
           // echo 'Executed<br />';
           //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
-          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          // $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           echo 'user: '.$results[0]['username'];
           $stmt->closeCursor();
           
           // echo 'SQL Results Fetched <br />';
-          if ($results == '') {
+          if ($results) {
             // if ($results == NULL) {
               echo 'Nothing Set<br />';
             return 0;

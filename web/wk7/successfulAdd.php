@@ -83,7 +83,7 @@ session_start();
 
                     function checkBook($isbn) {
                       $sql = 'SELECT book_number FROM isbn WHERE :isbn = book_number';
-                      echo 'records: '.$sql;
+                      // echo 'records: '.$sql;
                       $stmt = $GLOBALS['conn']->prepare($sql);
                       // echo 'prepare: '.$stmt;
                       $stmt->bindValue(':isbn', $isbn, PDO::PARAM_STR);

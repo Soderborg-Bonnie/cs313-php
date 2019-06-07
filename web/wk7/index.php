@@ -54,11 +54,11 @@ $GLOBALS['conn']=$db;
             //     && isset($password_clearText)
             //     && isset($username))
             // {
-                // $logins = checkUser($username);
-                // if ($logins = 1){
-                //   echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
-                //   echo '<h3 class="error">***Please choose another username.</h3>';
-                // }else{
+                $logins = checkUser($username);
+                if ($logins = 1){
+                  echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
+                  echo '<h3 class="error">***Please choose another username.</h3>';
+                }else{
                 $rows = regUser($username, $password_clearText);
                   if ($rows > 0)
                   {
@@ -101,49 +101,47 @@ $GLOBALS['conn']=$db;
             $data = htmlspecialchars($data);
             return $data;
         }
-        // function checkUser($username) {
-        //   //$db = dbConnect();
-        //   // $results = NULL;
-        //   $sql = 'SELECT username FROM users WHERE username = :username';
-        //   $stmt = $GLOBALS['conn']->prepare($sql);
-        //   $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-        //   $stmt->execute();
+        function checkUser($username) {
+          $sql = 'SELECT username FROM users WHERE username = :username';
+          $stmt = $GLOBALS['conn']->prepare($sql);
+          $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+          $stmt->execute();
           
-        //   // echo 'Executed<br />';
-        //   //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
-        //   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        //   echo 'user: '.$results[0]['username'];
-        //   $stmt->closeCursor();
+          // echo 'Executed<br />';
+          //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
+          $results = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo 'user: '.$results[0]['username'];
+          $stmt->closeCursor();
           
-        //   // echo 'SQL Results Fetched <br />';
-        //   if (!is_array($results)) {
-        //     // if ($results == NULL) {
-        //       echo 'Nothing Set<br />';
-        //     return 0;
-        //     echo 'Nothing found';
-        //     exit;
-        //   } else {
-        //     //echo 'Match found';
-        //       echo 'Array Set <br />';
-        //       // print_r($results);
-        //       // $logins = $results[0]['username'];
-        //       // $db_password =  $results[0]['password'];
-        //       // if (password_verify($password, $db_password) )
-        //       // {
-        //       //     $_SESSION['username'] = $username;
-        //       //     $_SESSION['loggedin'] = TRUE;
+          // echo 'SQL Results Fetched <br />';
+          if (!is_array($results)) {
+            // if ($results == NULL) {
+              echo 'Nothing Set<br />';
+            return 0;
+            echo 'Nothing found';
+            exit;
+          } else {
+            //echo 'Match found';
+              echo 'Array Set <br />';
+              // print_r($results);
+              // $logins = $results[0]['username'];
+              // $db_password =  $results[0]['password'];
+              // if (password_verify($password, $db_password) )
+              // {
+              //     $_SESSION['username'] = $username;
+              //     $_SESSION['loggedin'] = TRUE;
   
-        //           header('Location: index.php');
-        //           die();
+                  header('Location: index.php');
+                  die();
                   
-        //       // } else {
-        //       //     echo '<p class="err">Error, login failed!</p>';
+              // } else {
+              //     echo '<p class="err">Error, login failed!</p>';
   
-        //       // }
-        //       return 0;
-        //       exit;
-        //   }
-        // }
+              // }
+              return 0;
+              exit;
+          }
+        }
 
             ?>
   </body>

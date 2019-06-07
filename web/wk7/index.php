@@ -57,7 +57,7 @@ $GLOBALS['conn']=$db;
                     header('Location: ../login.php/login.php');
                     die();
                 }
-                else
+                elseif ($rows = 0")
                 {
                     echo '<p class="error">***Error! Try a different username.</p>';
                 }
@@ -74,7 +74,7 @@ $GLOBALS['conn']=$db;
             }
         }
         function regUser($username, $password_clearText) {
-            $rowschanged = '0';
+            $rowschanged = 0;
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);

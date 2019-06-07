@@ -94,7 +94,7 @@ $GLOBALS['conn']=$db;
 
             ?>
 
-    <script src="../main.js"></script>
+    <!-- <script src="../main.js"></script>
     <script
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -109,6 +109,6 @@ $GLOBALS['conn']=$db;
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </body>
 </html>

@@ -105,7 +105,7 @@ a.current:visited {
 #bookTable {
   color: #4281a4;
 }
-.tableDisplay{
+.tableDisplay {
   display: none;
 }
 main h2 {
@@ -221,7 +221,7 @@ footer {
   .topOfPage img {
     display: inline;
   }
-  .tableDisplay{
-    display: block;
+  .tableDisplay {
+    display: inline;
   }
 }

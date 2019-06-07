@@ -81,12 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $statement->bindValue(':username', $username, PDO::PARAM_STR);
       $statement->execute();
       
-      echo 'Executed<br />';
+      // echo 'Executed<br />';
       //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       $statement->closeCursor();
       
-      echo 'SQL Results Fetched <br />';
+      // echo 'SQL Results Fetched <br />';
       if (!is_array($results)) {
           echo 'Nothing Set<br />';
           
@@ -96,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       } else {
         //echo 'Match found';
         //exit;
-          echo 'Array Set <br />';
-          print_r($results);
+          // echo 'Array Set <br />';
+          // print_r($results);
           $username = $results[0]['username'];
           $db_password =  $results[0]['password'];
           if (password_verify($password, $db_password) )
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               die();
               
           } else {
-              echo '<p class="err">Error, login failed!</p>';
+              echo '<p class="error">Error, login failed!</p>';
 
           }
 

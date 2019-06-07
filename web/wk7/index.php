@@ -75,8 +75,6 @@ $GLOBALS['conn']=$db;
             }
         }
         function regUser($username, $password_clearText) {
-            $user = "SELECT * FROM users WHERE  username = $username";
-            if $user
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);

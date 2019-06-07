@@ -85,10 +85,15 @@ session_start();
                       $sql = 'SELECT book_number FROM isbn WHERE book_number = :isbn';
                       echo 'records: '.$sql;
                       $stmt = $GLOBALS['conn']->prepare($sql);
+                      echo 'prepare: '.$stmt;
                       $stmt->bindValue(':isbn', $isbn, PDO::PARAM_STR);
+                      echo 'bind: '.$stmt;
                       $stmt->execute();
+                      echo 'execute: '.$stmt;
                       $results = $stmt->fetch(PDO::FETCH_ASSOC);
+                      echo 'results: '.$results;
                       $stmt->closeCursor();
+                      echo 'close: '.$stmt;
                       if (!is_array($results)) {
                         echo '<h2>Your addition of a new book was successful!</h2><br><br>';
                         echo "'$title' has been added."."<br>";

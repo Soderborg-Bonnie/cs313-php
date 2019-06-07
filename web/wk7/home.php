@@ -1,7 +1,7 @@
 <?php 
 if ($_SESSION['loggedin'] = FALSE){
-    header('Location: ../login.php/login.php')
-    die()
+    header('Location: ../login.php/login.php');
+    die();
 }
 else{
 $GLOBALS['book_number']='book_number';

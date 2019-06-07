@@ -45,6 +45,11 @@ session_start();
                         echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                          $bboks = checkbook($isbn);
+                          if ($books = 1){
+                            echo '<h3 class="error">***Oops! That book is already in here.</h3>';
+                          }else{
+
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
@@ -75,6 +80,20 @@ session_start();
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
 
+                    }
+                    function checkBook($isbn) {
+                      $sql = 'SELECT isbn FROM isbn WHERE isbn = :isbn LIMIT 1';
+                      $stmt = $GLOBALS['conn']->prepare($sql);
+                      $stmt->bindValue(':isbn', $isbn, PDO::PARAM_STR);
+                      $stmt->execute();
+                      $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                      $stmt->closeCursor();
+                      if (!is_array($results)) {
+                        return 0;
+                      } else {
+                          $books = $results[0]['isbn'];
+                          return 1;
+                      }
                     }
 
       ?>

@@ -100,45 +100,16 @@ $GLOBALS['conn']=$db;
             return $data;
         }
         function checkUser($username) {
-          //$db = dbConnect();
-          
           $sql = 'SELECT username FROM users WHERE username = :username LIMIT 1';
           $stmt = $GLOBALS['conn']->prepare($sql);
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
           $stmt->execute();
-          
-          // echo 'Executed<br />';
-          //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
           $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           $stmt->closeCursor();
-          
-          // echo 'SQL Results Fetched <br />';
           if (!is_array($results)) {
-              echo 'Nothing Set<br />';
-              
             return 0;
-            //echo 'Nothing found';
-            //exit;
           } else {
-            //echo 'Match found';
-            //exit;
-              // echo 'Array Set <br />';
-              // print_r($results);
               $logins = $results[0]['username'];
-              // $db_password =  $results[0]['password'];
-              // if (password_verify($password, $db_password) )
-              // {
-              //     $_SESSION['username'] = $username;
-              //     $_SESSION['loggedin'] = TRUE;
-  
-              //     header('Location: welcome.php');
-              //     die();
-                  
-              // } else {
-              //     echo '<p class="err">Error, login failed!</p>';
-  
-              // }
-  
               return 1;
           }
         }

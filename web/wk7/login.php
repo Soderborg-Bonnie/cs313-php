@@ -1,6 +1,6 @@
 <?php 
 $GLOBALS['book_number']='book_number';
-
+session_destroy();
 //Get the database connection file  
 require 'connections.php';  
 session_start();

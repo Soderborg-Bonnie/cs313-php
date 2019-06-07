@@ -114,7 +114,7 @@ $GLOBALS['conn']=$db;
           $stmt->closeCursor();
           
           // echo 'SQL Results Fetched <br />';
-          if ($results[0]['username'] = NULL) {
+          if ($results[0]['username'] == NULL) {
             // if ($results == NULL) {
               echo 'Nothing Set<br />';
               

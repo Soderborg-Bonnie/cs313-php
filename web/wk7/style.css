@@ -105,6 +105,9 @@ a.current:visited {
 #bookTable {
   color: #4281a4;
 }
+.tableDisplay{
+  display: none;
+}
 main h2 {
   color: #4281a4;
   font-family: "Neucha", cursive;
@@ -217,5 +220,8 @@ footer {
   /*******************************************************header*/
   .topOfPage img {
     display: inline;
+  }
+  .tableDisplay{
+    display: block;
   }
 }

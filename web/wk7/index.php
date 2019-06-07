@@ -51,6 +51,7 @@ $GLOBALS['conn']=$db;
                 && isset($password_clearText)
                 && isset($username))
             {
+                $rows = 0;
                 $rows = regUser($username, $password_clearText);
                 echo $rows;
                 if ($rows > 0)

@@ -101,7 +101,7 @@ $GLOBALS['conn']=$db;
         }
         function checkUser($username) {
           //$db = dbConnect();
-          $results = NULL;
+          // $results = NULL;
           $sql = 'SELECT username FROM users WHERE username = :username';
           $stmt = $GLOBALS['conn']->prepare($sql);
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -114,16 +114,16 @@ $GLOBALS['conn']=$db;
           $stmt->closeCursor();
           
           // echo 'SQL Results Fetched <br />';
-          // if (!is_array($results)) {
-            if ($results == NULL) {
+          if (!is_array($results)) {
+            // if ($results == NULL) {
               echo 'Nothing Set<br />';
               
             return 0;
             echo 'Nothing found';
-            //exit;
+            exit;
           } else {
             //echo 'Match found';
-            //exit;
+            exit;
               echo 'Array Set <br />';
               // print_r($results);
               $logins = $results[0]['username'];

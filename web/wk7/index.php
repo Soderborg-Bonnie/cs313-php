@@ -56,7 +56,7 @@ $GLOBALS['conn']=$db;
             {
                 $logins = checkUser($username);
                 if ($logins = 1){
-                  echo '<h3 class="error">***Error! Try a different username.</h3>';
+                  echo '<h3 class="error">***Oops! Username is already taken.</h3>';
                 }else{
                 $rows = regUser($username, $password_clearText);
                 if ($rows > 0)

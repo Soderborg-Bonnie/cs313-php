@@ -52,10 +52,10 @@ $GLOBALS['conn']=$db;
             //     && isset($username))
             // {
                 $logins = checkUser($username);
-                if ($logins != 1){
-                  echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
-                  echo '<h3 class="error">***Please choose another username.</h3>';
-                }else{
+                // if ($logins = 1){
+                  // echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
+                  // echo '<h3 class="error">***Please choose another username.</h3>';
+                // }else{
                 $rows = regUser($username, $password_clearText);
                   if ($rows > 0){
                       header('Location: ../login.php/login.php');
@@ -65,7 +65,7 @@ $GLOBALS['conn']=$db;
                   {
                       echo '<h2 class="error">***Error! Try a different username.</h2>';
                   }
-                }
+                // }
         }
         else{
           echo 'try again and again';
@@ -106,9 +106,6 @@ $GLOBALS['conn']=$db;
           $stmt = $GLOBALS['conn']->prepare($sql);
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
           $stmt->execute();
-          
-          // echo 'Executed<br />';
-          //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
           $results = $stmt->fetch(PDO::FETCH_ASSOC);
           echo 'user: '.$results[0]['username'];
           $stmt->closeCursor();
@@ -135,10 +132,10 @@ $GLOBALS['conn']=$db;
                   // die();
                   
               // } else {
-              //     echo '<p class="err">Error, login failed!</p>';
+                  echo '<p class="err">Error, login failed!</p>';
   
               // }
-              return 0;
+              return 1;
               // exit;
           }
         }

@@ -45,10 +45,6 @@ $GLOBALS['conn']=$db;
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
     $userError = $pwdError = '';
 
-    $query = 'SELECT password FROM users WHERE username=$username';
-    if (!$query){
-      echo 'Oops'
-    } else{
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (strlen($password_clearText)>=8
@@ -77,7 +73,7 @@ $GLOBALS['conn']=$db;
                 }
     
             }
-        }}
+        }
         function regUser($username, $password_clearText) {
             $user = "SELECT * FROM users WHERE  username = $username";
             if $user

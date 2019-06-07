@@ -1,5 +1,8 @@
 <?php 
-
+if ($_SESSION['loggedin'] != TRUE){
+    header(Location: ../login.php/login.php)
+    die()
+}
 $GLOBALS['book_number']='book_number';
 
 //Get the database connection file  

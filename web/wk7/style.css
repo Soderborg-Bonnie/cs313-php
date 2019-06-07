@@ -126,9 +126,6 @@ td {
   padding-left: 15em;
   padding-top: 2em;
 }
-#detailsMain h3 {
-  /* padding: 1em; */
-}
 #bookTable {
   width: 100%;
 }
@@ -145,8 +142,6 @@ td {
 }
 #author {
   width: 30em;
-}
-#isbn {
 }
 #media {
   width: 30em;

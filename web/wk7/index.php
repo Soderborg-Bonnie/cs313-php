@@ -46,11 +46,11 @@ $GLOBALS['conn']=$db;
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
     $userError = $pwdError = '';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // if (strlen($password_clearText)>=8
-            //     && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
-            //     && isset($password_clearText)
-            //     && isset($username))
-            // {
+            if (strlen($password_clearText)>=8
+                && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
+                && isset($password_clearText)
+                && isset($username))
+            {
                 $logins = checkUser($username);
                 if ($logins = 1){
                   echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
@@ -67,18 +67,18 @@ $GLOBALS['conn']=$db;
                       echo '<h2 class="error">***Error! Try a different username.</h2>';
                   }
             }
-          // }
-            // else
-            // {
-            //     if (strlen($password_clearText)<8)
-            //     {
-            //         $pwdError = 'Check Password Length!';
-            //     } else {
-            //         $pwdError = 'Password Error!';
-            //     }
+          }
+            else
+            {
+                if (strlen($password_clearText)<8)
+                {
+                    $pwdError = 'Check Password Length!';
+                } else {
+                    $pwdError = 'Password Error!';
+                }
     
-            // }
-        // }
+            }
+        }
         function regUser($username, $password_clearText) {
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
@@ -114,8 +114,8 @@ $GLOBALS['conn']=$db;
           if (!is_array($results)) {
             // if ($results == NULL) {
               echo 'Nothing Set<br />';
-            return 0;
-            echo 'Nothing found';
+              return 0;
+              echo 'Nothing found';
             // exit;
           } else {
             //echo 'Match found';

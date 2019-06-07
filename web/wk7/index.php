@@ -68,7 +68,7 @@ $GLOBALS['conn']=$db;
                 // }
         }
         else{
-          echo 'try again and again';
+          // echo 'try again and again';
         }
           
             // else
@@ -113,13 +113,13 @@ $GLOBALS['conn']=$db;
           // echo 'SQL Results Fetched <br />';
           if (!is_array($results)) {
             // if ($results == NULL) {
-              echo 'Nothing Set<br />';
+              // echo 'Nothing Set<br />';
               return 0;
-              echo 'Nothing found';
+              // echo 'Nothing found';
             // exit;
           } else {
             //echo 'Match found';
-              echo 'Array Set <br />';
+              // echo 'Array Set <br />';
               // print_r($results);
               // $logins = $results[0]['username'];
               // $db_password =  $results[0]['password'];

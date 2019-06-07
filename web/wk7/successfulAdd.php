@@ -79,7 +79,7 @@ session_start();
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
 
-                    }}
+                    }
                     // echo '<h2>Your addition of a new book was successful!</h2><br><br>';
                     // echo "'$title' has been added."."<br>";
                     // echo "It's ISBN number is: $isbn";

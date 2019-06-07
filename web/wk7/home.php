@@ -1,7 +1,5 @@
 <?php 
-
 $GLOBALS['book_number']='book_number';
-
 //Get the database connection file  
 require 'connections.php';  
 session_start();
@@ -12,7 +10,7 @@ if (isset($_SESSION['username']))
 else
 {
 	header("Location: ../login.php/login.php");
-	die(); // we always include a die after redirects.
+	die(); 
 }
 ?> 
 
@@ -52,9 +50,6 @@ else
     ></script>
   </head>
   <body id="homeBody">
-    <!-- <div>
-        <img src="../images/sparklyBook.jpg" alt="sparkly book" id="topImage">
-    </div> -->
     <header>
       <div class="topOfPage">
         <img src="../images/sparklyBookSm.jpg" alt="sparkly books" />
@@ -63,7 +58,6 @@ else
           <nav>
             <ul class="mainNav">
               <li><a href="../home.php/home.php" class="current">Home</a></li>
-              <!-- <li><a href="../details.php/details.php" >Details</a></li> -->
               <li><a href="../logout.php/logout.php">Logout</a></li>
             </ul>
           </nav>
@@ -73,7 +67,7 @@ else
     <main>
 
       <h2>Table o' Books</h2>
-      <a href="/wk7/additions.php/additions.php"><h3 id="newBook">Add new book</h3></a>
+      <a href="../additions.php/additions.php"><h3 id="newBook">Add new book</h3></a>
       <table
         id="bookTable"
         class="table table-striped table-bordered"
@@ -93,11 +87,6 @@ else
         <?php 
 
           foreach ($db->query('SELECT * FROM isbn, author, words, media, genre, tags WHERE isbn.book_number = author.book_number AND isbn.book_number = words.book_number AND isbn.book_number = media.book_number AND isbn.book_number = genre.book_number AND isbn.book_number = tags.book_number') as $row)
-            // foreach ($db->query("SELECT * FROM isbn, words WHERE book_number='$book_number'") as $row2){
-            // foreach ($db->query("SELECT * FROM isbn, media WHERE book_number='$book_number'") as $row3){
-            // foreach ($db->query("SELECT * FROM isbn, genre WHERE book_number='$book_number'") as $row4){
-            // foreach ($db->query("SELECT * FROM isbn, tags WHERE book_number='$book_number'") as $row5){
-
             { 
               echo '<tr>';  
               echo '<td><a href="../details.php/details.php?book_number='.$row['book_number'].'">'.$row['book_title'].'</a></td>';
@@ -109,7 +98,6 @@ else
               echo '<td class="tableDisplay">'.$row['book_number'].'</td>';
               echo '</tr>';
             }
-        // }}}}
             $_SESSION['book_number']=$row['book_number'];
         ?> 
         </tbody>

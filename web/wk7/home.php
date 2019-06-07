@@ -108,7 +108,7 @@ else
       </table>
     </main>
     <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'wk7/common/scripts.php/scripts.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'web/wk7/common/scripts.php/scripts.php'; ?>
   </body>
 </html>
 

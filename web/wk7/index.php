@@ -27,7 +27,7 @@ $GLOBALS['conn']=$db;
   <body id ="registrationBody">
     <main>
     <h1 id="registrationTitle">Finding Books</h1><br><br>
-      <form action="registration.php" method="POST">
+      <form action="index.php" method="POST">
         <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
             <label>Username: <span class="error">* <?php echo $userError; ?></span></label>
@@ -74,12 +74,12 @@ $GLOBALS['conn']=$db;
             }
         }
         function regUser($username, $password_clearText) {
-            echo $username, $password_clearText;
+            // echo $username, $password_clearText;
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);
             $password = password_hash($password_clearText, PASSWORD_DEFAULT);
-            echo 'hashed'.$password;    
+            // echo 'hashed'.$password;    
             $statement = $GLOBALS['conn']->prepare($sql);        
             $statement->bindValue(':username', $username, PDO::PARAM_STR);
             $statement->bindValue(':password', $password, PDO::PARAM_STR);

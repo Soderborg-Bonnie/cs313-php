@@ -52,6 +52,7 @@ $GLOBALS['conn']=$db;
                 && isset($username))
             {
                 $rows = regUser($username, $password_clearText);
+                echo $rows;
                 if ($rows > 0)
                 {
                     header('Location: ../login.php/login.php');

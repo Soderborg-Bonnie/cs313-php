@@ -40,14 +40,11 @@ $GLOBALS['conn']=$db;
         </div>
       </form>
     </main>
-    <?php
+
+<?php
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
     $userError = $pwdError = '';
-
-
-    
-
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // if (strlen($password_clearText)>=8
             //     && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
@@ -131,8 +128,8 @@ $GLOBALS['conn']=$db;
               //     $_SESSION['username'] = $username;
               //     $_SESSION['loggedin'] = TRUE;
   
-                  header('Location: index.php');
-                  die();
+                  // header('Location: index.php');
+                  // die();
                   
               // } else {
               //     echo '<p class="err">Error, login failed!</p>';
@@ -143,6 +140,6 @@ $GLOBALS['conn']=$db;
           }
         }
 
-            ?>
+?>
   </body>
 </html>

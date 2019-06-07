@@ -116,13 +116,13 @@ $GLOBALS['conn']=$db;
           if (!is_array($results)) {
               echo 'Nothing Set<br />';
               
-            return 1;
-            //echo 'Nothing found';
+            return 0;
+            echo 'Nothing found';
             //exit;
           } else {
             //echo 'Match found';
             //exit;
-              // echo 'Array Set <br />';
+              echo 'Array Set <br />';
               // print_r($results);
               $logins = $results[0]['username'];
               // $db_password =  $results[0]['password'];
@@ -139,7 +139,7 @@ $GLOBALS['conn']=$db;
   
               // }
   
-              return 0;
+              return 1;
           }
         }
 

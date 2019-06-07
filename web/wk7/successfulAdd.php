@@ -31,7 +31,7 @@ session_start();
         </div>
       </div>
     </header>
-    <h2>Your addition of a new book was successful!</h2><br><br>
+    <!-- <h2>Your addition of a new book was successful!</h2><br><br> -->
     <?php
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
@@ -41,15 +41,14 @@ session_start();
                         $genre = ($_POST['genre']);
                         $tags = ($_POST['tags']);
                         $author_id =  ($_POST['author_id']);
-                        echo "'$title' has been added."."<br>";
-                        echo "It's ISBN number is: $isbn";
+                        // echo "'$title' has been added."."<br>";
+                        // echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           $books = checkbook($isbn);
-                          // if ($books = 1){
-                          //   echo '<h3 class="error">***Oops! That book is already in here.</h3>';
-                          // }else{
-
+                          if ($books = 1){
+                            echo '<h3 class="error">***Oops! That book is already in here.</h3>';
+                          }else{
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
@@ -80,7 +79,10 @@ session_start();
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
 
-                    }
+                    }}
+                    echo '<h2>Your addition of a new book was successful!</h2><br><br>'
+                    echo "'$title' has been added."."<br>";
+                    echo "It's ISBN number is: $isbn";
                     function checkBook($isbn) {
                       $sql = 'SELECT isbn FROM isbn WHERE isbn = :isbn LIMIT 1';
                       $stmt = $GLOBALS['conn']->prepare($sql);

@@ -44,43 +44,17 @@ $GLOBALS['conn']=$db;
 <?php
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
     $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-    // $userError = $pwdError = '';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // if (strlen($password_clearText)>=8
-            //     && preg_match('/[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/', $password_clearText)
-            //     && isset($password_clearText)
-            //     && isset($username))
-            // {
                 $logins = checkUser($username);
-                // if ($logins = 1){
-                  // echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
-                  // echo '<h3 class="error">***Please choose another username.</h3>';
-                // }else{
                 $rows = regUser($username, $password_clearText);
                   if ($rows > 0){
                       header('Location: ../login.php/login.php');
                       die();
-                  }
-                  else
-                  {
+                  }else{
                       echo '<h2 class="error">***Error! Try a different username.</h2>';
                   }
-                // }
         }
-        else{
-          // echo 'try again and again';
-        }
-          
-            // else
-            // {
-            //     if (strlen($password_clearText)<8)
-            //     {
-            //         $pwdError = 'Check Password Length!';
-            //     } else {
-            //         $pwdError = 'Password Error!';
-            //     }
-    
-            // }
+        // else{
         // }
         function regUser($username, $password_clearText) {
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
@@ -107,39 +81,15 @@ $GLOBALS['conn']=$db;
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
           $stmt->execute();
           $results = $stmt->fetch(PDO::FETCH_ASSOC);
-          // echo 'user: '.$results[0]['username'];
           $stmt->closeCursor();
-          
-          // echo 'SQL Results Fetched <br />';
           if (!is_array($results)) {
-            // if ($results == NULL) {
-              // echo 'Nothing Set<br />';
               return 0;
-              // echo 'Nothing found';
-            // exit;
           } else {
-            //echo 'Match found';
-              // echo 'Array Set <br />';
-              // print_r($results);
-              // $logins = $results[0]['username'];
-              // $db_password =  $results[0]['password'];
-              // if (password_verify($password, $db_password) )
-              // {
-              //     $_SESSION['username'] = $username;
-              //     $_SESSION['loggedin'] = TRUE;
-  
-                  // header('Location: index.php');
-                  // die();
-                  
-              // } else {
-                  // echo '<p class="error">Error, login failed!</p>';
                   echo '<h3 class="error">***Uh oh! This username is already taken.</h3>';
-                  echo '<h3 class="error">***Please choose another username.</h3>';              // }
+                  echo '<h3 class="error">***Please choose another username.</h3>';              
               return 1;
-              // exit;
           }
         }
-
 ?>
   </body>
 </html>

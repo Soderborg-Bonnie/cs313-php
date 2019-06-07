@@ -34,8 +34,7 @@ header img {
   opacity: 0.7;
   /* display: inline; */
 }
-header h1
-{
+header h1 {
   color: #4281a4;
   font-family: "Neucha", cursive;
   font-size: 4em;
@@ -54,6 +53,9 @@ header {
   background-color: #ead2ac;
   background-image: url(../wk7/images/grungeColor.jpg);
   /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
+}
+.topOfPage img {
+  display: none;
 }
 .mainHeader {
   display: grid;
@@ -208,4 +210,12 @@ footer {
   color: white;
   padding: 2em;
   border-radius: 2em;
+}
+/******************************************************tablet size*/
+
+@media only screen and (min-width: 860px) {
+  /*******************************************************header*/
+  .topOfPage img {
+    display: inline;
+  }
 }

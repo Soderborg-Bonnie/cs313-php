@@ -46,9 +46,9 @@ session_start();
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           $books = checkbook($isbn);
-                          if ($books = 1){
-                            echo '<h3 class="error">***Oops! That book is already in here.</h3>';
-                          }else{
+                          // if ($books = 1){
+                          //   echo '<h3 class="error">***Oops! That book is already in here.</h3>';
+                          // }else{
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
@@ -83,8 +83,9 @@ session_start();
                     echo '<h2>Your addition of a new book was successful!</h2><br><br>';
                     echo "'$title' has been added."."<br>";
                     echo "It's ISBN number is: $isbn";
+
                     function checkBook($isbn) {
-                      $sql = 'SELECT isbn FROM isbn WHERE isbn = :isbn LIMIT 1';
+                      $sql = 'SELECT isbn FROM isbn WHERE isbn = :isbn';
                       $stmt = $GLOBALS['conn']->prepare($sql);
                       $stmt->bindValue(':isbn', $isbn, PDO::PARAM_STR);
                       $stmt->execute();
@@ -94,7 +95,23 @@ session_start();
                         return 0;
                       } else {
                           echo '<h3 class="error">***Oops! That book is already in here.</h3>';
+                          header(Location: '../home.php/home.php');
                         return 1;
+                      }
+                    }
+                    function checkUser($username) {
+                      $sql = 'SELECT username FROM users WHERE username = :username';
+                      $stmt = $GLOBALS['conn']->prepare($sql);
+                      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+                      $stmt->execute();
+                      $results = $stmt->fetch(PDO::FETCH_ASSOC);
+                      $stmt->closeCursor();
+                      if (!is_array($results)) {
+                          return 0;
+                      } else {
+                              echo '<h3 class="error">***Oops! This username is already taken.</h3>';
+                              echo '<h3 class="error">***Please choose another username.</h3>';              
+                          return 1;
                       }
                     }
 

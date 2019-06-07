@@ -125,7 +125,7 @@ $GLOBALS['conn']=$db;
             //echo 'Match found';
               echo 'Array Set <br />';
               // print_r($results);
-              $logins = $results[0]['username'];
+              // $logins = $results[0]['username'];
               // $db_password =  $results[0]['password'];
               // if (password_verify($password, $db_password) )
               // {

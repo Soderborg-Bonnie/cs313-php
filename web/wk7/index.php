@@ -102,7 +102,7 @@ $GLOBALS['conn']=$db;
         function checkUser($username) {
           //$db = dbConnect();
           
-          $sql = 'SELECT username FROM users WHERE username = :username LIMIT 1';
+          $sql = 'SELECT username FROM users WHERE username = :username';
           $stmt = $GLOBALS['conn']->prepare($sql);
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
           $stmt->execute();
@@ -110,6 +110,7 @@ $GLOBALS['conn']=$db;
           // echo 'Executed<br />';
           //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
           $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          echo $results[0]['username'];
           $stmt->closeCursor();
           
           // echo 'SQL Results Fetched <br />';

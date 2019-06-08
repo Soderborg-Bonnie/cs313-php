@@ -176,6 +176,11 @@ footer {
   /* CanStock Photo by april70 https://www.canstockphoto.com/textured-background-9878812.html used with permission */
   height: 5em;
 }
+.fixedFooter{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
 .btn-rose {
   background-color: #c35b4f;
   color: white;

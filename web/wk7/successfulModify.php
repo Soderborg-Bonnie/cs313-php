@@ -93,6 +93,6 @@ user must be logged in
           }
         }
     ?>
-    <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
+    <footer class="fixedFooter">&copy 2019 Bonnie Soderborg All rights reserved.</footer>
   </body>
 </html>

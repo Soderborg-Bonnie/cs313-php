@@ -99,6 +99,7 @@ $GLOBALS['conn']=$db;
                         return 0;
                       } else {
                         echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
+                        sleep (5);
                         return 1;
                       }
                     }

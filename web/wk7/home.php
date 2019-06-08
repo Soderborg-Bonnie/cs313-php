@@ -3,6 +3,7 @@ $GLOBALS['book_number']='book_number';
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+unset($_SESSION['book']);
 if (isset($_SESSION['username']))
 {
 	$username = $_SESSION['username'];

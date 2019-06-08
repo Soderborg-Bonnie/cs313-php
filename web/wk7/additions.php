@@ -70,7 +70,7 @@ session_start();
                             $isbn = test_input ($_POST['isbn']);
                         }
                         if (isset($_SESSION['book'])){
-                          echo 'That ISBN number is already taken by another book in here.';
+                          echo '<h3 class="error">Your book was not added because that ISBN number is already taken by another book in here.</h3>';
                         }
                         
 ?>

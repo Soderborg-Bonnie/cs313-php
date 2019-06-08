@@ -6,16 +6,6 @@ Get the database connection file
   require 'connections.php';  
   session_start();
   $GLOBALS['conn']=$db;
-/**********************************************************
-user must be logged in
-***********************************************************/
-  if (isset($_SESSION['username'])){
-    $username = $_SESSION['username'];
-  }
-  else{
-    header("Location: ../login.php/login.php");
-    die(); 
-  }
 ?> 
 
 <!DOCTYPE html>

@@ -5,6 +5,9 @@ $GLOBALS['book_number']='book_number';
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+if (isset($_SESSION['book'])){
+  echo 'That ISBN number is already taken by another book in here.';
+}
 ?> 
 
 <!DOCTYPE html>

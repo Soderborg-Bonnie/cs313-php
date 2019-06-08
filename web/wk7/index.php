@@ -89,6 +89,5 @@
           }
         }
     ?>
-    <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
   </body>
 </html>

@@ -30,7 +30,7 @@
     <link rel="stylesheet" media="screen" href="../style.css" />
   </head> -->
   <?php
-  include 'head.php';
+  include '../common/head.php';
   ?>
   <body>
     <header>

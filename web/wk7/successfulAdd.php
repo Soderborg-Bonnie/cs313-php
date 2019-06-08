@@ -92,10 +92,10 @@ $GLOBALS['conn']=$db;
                         echo '<h2>Your addition of a new book was successful!</h2><br><br>';
                         echo "'$title' has been added."."<br>";
                         // echo "It's ISBN number is: $isbn";
-                        return;
+                        return 0;
                       } else {
                         echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
-                        return;
+                        return 1;
                       }
                     }
 

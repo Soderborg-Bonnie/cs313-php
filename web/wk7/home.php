@@ -5,6 +5,7 @@ Get the database connection file
 ***********************************************************/
   require 'connections.php';  
   session_start();
+  unset($_SESSION['book']);
 /**********************************************************
 user must be logged in
 ***********************************************************/
@@ -18,6 +19,7 @@ user must be logged in
 ?> 
 
 <!DOCTYPE html>
+  <!-- use own css, bootstrap and datatable libraries------------------------------------------------------ -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />

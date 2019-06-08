@@ -48,7 +48,7 @@ $GLOBALS['conn']=$db;
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           $books = checkBook($isbn);
-                          echo 'books: '.$books;
+                          // echo 'books: '.$books;
                           if ($books == 0){
                             
                           
@@ -83,10 +83,10 @@ $GLOBALS['conn']=$db;
                           $statement->execute();
 
                         }else{
-                          echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
+                          // echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
 
-                          // header('Location: ../additions.php/additions.php');
-                          // die();
+                          header('Location: ../additions.php/additions.php');
+                          die();
                         }}
 
                     function checkBook($isbn) {

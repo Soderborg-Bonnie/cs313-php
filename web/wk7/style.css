@@ -193,7 +193,7 @@ td {
   z-index: 10;
 } */
 .error {
-  color: white;
+  color: red;
   font-weight: bold;
   margin-left: 2em;
 }

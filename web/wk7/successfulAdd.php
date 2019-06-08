@@ -48,6 +48,7 @@ $GLOBALS['conn']=$db;
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           $books = checkBook($isbn);
+                          echo 'books: '.$books;
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);

@@ -2,6 +2,13 @@
 //Get the database connection file  
 include 'connections.php';  
 session_start(); 
+if (isset($_SESSION['username'])){
+	$username = $_SESSION['username'];
+}
+else{
+	header("Location: ../login.php/login.php");
+	die(); 
+}
 ?> 
 
 <!DOCTYPE html>
@@ -20,23 +27,6 @@ session_start();
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
     <link rel="stylesheet" media="screen" href="../style.css" />
-		<!-- <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="../main.js"
-    ></script> -->
 </head>
 <body>
     <header>
@@ -47,7 +37,6 @@ session_start();
           <nav>
             <ul class="mainNav">
               <li><a href="../home.php/home.php">Home</a></li>
-              <!-- <li><a href="../details.php/details.php" class="current">Details</a></li> -->
             </ul>
           </nav>
         </div>
@@ -64,10 +53,7 @@ $book_number = $_GET['book_number'];
     foreach ($db->query("SELECT * FROM genre WHERE book_number='$book_number'") as $row5){
     foreach ($db->query("SELECT * FROM tags WHERE book_number='$book_number'") as $row6){
 
-      // echo '<form action="../successfulDelete.php/successfulDelete.php?book_number='.$row['book_number'].'" method="POST">';
     echo '<form action="../successfulModify.php/successfulModify.php?book_number='.$row['book_number'].'" method="POST">';
-
-    // ?book_number='.$row['book_number']
     echo '<h2>Details</h2><br />';
     echo '<label>Title:  </label>';
     echo '<input type="text" name="title" id="title" value="'.$row['book_title'].'"/><br />';
@@ -75,27 +61,21 @@ $book_number = $_GET['book_number'];
     echo '<input type="text" name="author" id="author" value="'.$row2['author_name'].'"/><br />';
     echo '<label>Description:  </label>';
     echo '<textarea rows="4" cols="50" name="words" id="words">'.$row3['words'].'</textarea><br />';                          
-
-    // echo '<input type="text" name="title" id="words" value="'.$row3['words'].'"/><br />';
     echo '<label>Media type:  </label>';
     echo '<input type="text" name="media" id="media" value="'.$row4['media'].'"/><br />';
     echo '<label>Genre:  </label>';
     echo '<input type="text" name="genre" id="genre" value="'.$row5['genre'].'"/><br />';
     echo '<label>Tags:  </label>';
     echo '<input type="text" name="tags" id="tags" value="'.$row6['tags'].'"/><br />';
-    
     echo '<br><br>';
     echo '<input type="submit" class="btn btn-primary" name="save" value="Save" id="save">';
     echo '<br><br>';
-
     echo '<input type="submit" class="btn btn-danger" name="delete" value="Delete" id="delete">';
     echo '<h1>DELETE REALLY MEANS DELETE. NO GOING BACK.</h1>';
-  
     echo '</form>';
   }}}}}}
     ?> 
 <br><br>
-
 </main>
-
+</body>
 </html>

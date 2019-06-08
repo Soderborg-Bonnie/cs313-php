@@ -1,10 +1,16 @@
 <?php 
-
 $GLOBALS['book_number']='book_number';
-
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+if (isset($_SESSION['username'])){
+	$username = $_SESSION['username'];
+}
+else{
+	header("Location: ../login.php/login.php");
+	die(); 
+}
+
 ?> 
 
 <!DOCTYPE html>
@@ -23,24 +29,6 @@ session_start();
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
     <link rel="stylesheet" media="screen" href="../style.css" />
-    <!-- <script
-		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="../main.js"
-    ></script> -->
   </head>
   <body>
     <header>
@@ -51,7 +39,6 @@ session_start();
           <nav>
             <ul class="mainNav">
               <li><a href="/wk7/home.php/home.php" class="current">Home</a></li>
-              <!-- <li><a href="/wk7/details.php/details.php">Details</a></li> -->
             </ul>
           </nav>
         </div>
@@ -81,35 +68,23 @@ session_start();
                             <h2>Add a book</h2><br /> 
                             <div id="inputForm">                           
                             <label>Title:  </label>
-                            <!-- <br /> -->
                             <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
-                            <!-- <br /> -->
                             <label>Author:  </label>
-                            <!-- <br /> -->
                             <input type="text" name="author" id="author"  value="<?php echo $author; ?>"/><br />
-                            
                             <label>Description:  </label>
-                            <!-- <br /> -->
                             <textarea rows="4" cols="50" name="words" id="words">  <?php echo $words; ?> </textarea><br />                          
                             <label>Media type:  </label>
-                            <!-- <br /> -->
                             <input type="text" name="media" id="media"  value="<?php echo $media; ?>"/>
                             <br />                            
                             <label>Genre:  </label>
-                            <!-- <br /> -->
                             <input type="text" name="genre" id="genre"  value="<?php echo $genre; ?>"/><br />
-
                             <label>Tags:  </label>
-                            <!-- <br /> -->
                             <input type="text" name="tags" id="tags"  value="<?php echo $tags; ?>"/><br />
-
                             <label>ISBN:  </label>
-                            <!-- <br /> -->
                             <input type="text" name="isbn" id="isbn"  value="<?php echo $isbn; ?>"/><br />
                             <br /><br />
                     </div>
                             <br /><br />
-                            <!-- <hr /> -->
                             <input type="submit" class="btn btn-info btn-space" value="Submit" id="update">
                         </form>
     </main>

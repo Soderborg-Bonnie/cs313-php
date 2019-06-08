@@ -14,7 +14,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <head>
+  <head>
     <meta charset="utf-8" />
     <title>Add a book</title>
     <link
@@ -28,10 +28,7 @@
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
     <link rel="stylesheet" media="screen" href="../style.css" />
-  </head> -->
-  <?php
-  include '../common/head.php/head.php';
-  ?>
+  </head>
   <body>
     <header>
       <div class="topOfPage">

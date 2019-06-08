@@ -45,7 +45,7 @@ session_start();
                         // echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                          // $books = checkbook($isbn);
+                          $books = checkbook($isbn);
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
@@ -78,29 +78,23 @@ session_start();
 
                         }
 
-                    // function checkBook($isbn) {
-                    //   $sql = 'SELECT book_number FROM isbn WHERE :isbn = book_number';
-                    //   // echo 'records: '.$sql;
-                    //   $stmt = $GLOBALS['conn']->prepare($sql);
-                    //   // echo 'prepare: '.$stmt;
-                    //   $stmt->bindValue(':isbn', $isbn, PDO::PARAM_STR);
-                    //   // echo 'bind: '.$stmt;
-                    //   $stmt->execute();
-                    //   // echo 'execute: '.$stmt;
-                    //   $results = $stmt->fetch(PDO::FETCH_ASSOC);
-                    //   // echo 'results: '.$results;
-                    //   $stmt->closeCursor();
-                    //   // echo 'close: '.$stmt;
-                    //   if (!is_array($results)) {
-                    //     echo '<h2>Your addition of a new book was successful!</h2><br><br>';
-                    //     echo "'$title' has been added."."<br>";
-                    //     // echo "It's ISBN number is: $isbn";
-                    //     return;
-                    //   } else {
-                    //     echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
-                    //     return;
-                    //   }
-                    // }
+                    function checkBook($isbn) {
+                      $sql = 'SELECT book_number FROM isbn WHERE book_number  =:isbn ';
+                      $stmt = $GLOBALS['conn']->prepare($sql);
+                      $stmt->bindValue(':isbn', $isbn, PDO::PARAM_STR);
+                      $stmt->execute();
+                      $results = $stmt->fetch(PDO::FETCH_ASSOC);
+                      $stmt->closeCursor();
+                      if (!is_array($results)) {
+                        echo '<h2>Your addition of a new book was successful!</h2><br><br>';
+                        echo "'$title' has been added."."<br>";
+                        // echo "It's ISBN number is: $isbn";
+                        return;
+                      } else {
+                        echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
+                        return;
+                      }
+                    }
 
       ?>
 

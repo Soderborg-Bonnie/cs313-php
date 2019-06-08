@@ -43,11 +43,11 @@ $GLOBALS['conn']=$db;
                         $genre = ($_POST['genre']);
                         $tags = ($_POST['tags']);
                         // $author_id =  ($_POST['author_id']);
-                        echo "'$title' has been added."."<br>";
+                        // echo "'$title' has been added."."<br>";
                         // echo "It's ISBN number is: $isbn";
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                          $books = checkbook($isbn);
+                          $books = checkBook($isbn);
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);

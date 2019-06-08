@@ -1,13 +1,25 @@
 <?php 
   $GLOBALS['book_number']='book_number';
-  //Get the database connection file  
+/**********************************************************
+Get the database connection file
+***********************************************************/
   require 'connections.php';  
   session_start();
-  $GLOBALS['conn']=$db;
+/**********************************************************
+user must be logged in
+***********************************************************/
+  if (isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+  }
+  else{
+    header("Location: ../login.php/login.php");
+    die(); 
+  }
 ?> 
 
 <!DOCTYPE html>
 <html lang="en">
+  <!-- use own css, bootstrap and datatable libraries------------------------------------------------------ -->
   <head>
     <meta charset="utf-8" />
     <title>Success!</title>
@@ -28,6 +40,7 @@
           </div>
       </div>
     </header>
+<!-- get book data from details page---------------------------------------------------------------------- -->
     <?php
       $book_number = $_GET['book_number'];
         $title = ($_POST['title']);
@@ -42,6 +55,7 @@
           if (isset($_POST['save'])) {
             echo '<h2>Your modification was successful!</h2><br><br>';
             echo $title.' was modified.';
+// update database with new info-----------------------------------------------------------------------------------
             $statement = $db->prepare("UPDATE isbn SET book_title = :title WHERE book_number = '$book_number'");
             $statement->bindValue(':title', $title);
             $statement->execute();
@@ -63,6 +77,7 @@
           } elseif (isset($_POST['delete'])){
               echo '<h2>Your deletion was successful :(</h2><br><br>';
               echo $title.' was deleted.';
+// delete book from database------------------------------------------------------------------------------------------
               $statement = $db->prepare("DELETE FROM tags WHERE book_number = '$book_number'");
               $statement->execute();
               $statement = $db->prepare("DELETE FROM genre WHERE book_number = '$book_number'");

@@ -1,9 +1,13 @@
 <?php 
   $GLOBALS['book_number']='book_number';
-  //Get the database connection file  
+/**********************************************************
+Get the database connection file
+***********************************************************/
   require 'connections.php';  
   session_start();
-  unset($_SESSION['book']);
+/**********************************************************
+user must be logged in
+***********************************************************/
   if (isset($_SESSION['username'])){
     $username = $_SESSION['username'];
   }

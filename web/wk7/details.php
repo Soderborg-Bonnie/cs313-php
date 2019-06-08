@@ -1,18 +1,25 @@
 <?php 
-//Get the database connection file  
-require 'connections.php';  
-session_start(); 
-if (isset($_SESSION['username'])){
-	$username = $_SESSION['username'];
-}
-else{
-	header("Location: ../login.php/login.php");
-	die(); 
-}
+  $GLOBALS['book_number']='book_number';
+/**********************************************************
+Get the database connection file
+***********************************************************/
+  require 'connections.php';  
+  session_start();
+/**********************************************************
+user must be logged in
+***********************************************************/
+  if (isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+  }
+  else{
+    header("Location: ../login.php/login.php");
+    die(); 
+  }
 ?> 
 
 <!DOCTYPE html>
 <html lang="en">
+<!-- use own css, bootstrap and datatable libraries------------------------------------------------------ -->
   <head>
     <meta charset="utf-8" />
     <title>Books</title>
@@ -43,6 +50,7 @@ else{
       </div>
     </header>
     <main id="detailsMain">
+<!-- query the database for details---------------------------------------------------------------------- -->
     <?php
       $book_number = $_GET['book_number'];
       foreach ($db->query("SELECT * FROM isbn WHERE book_number='$book_number'") as $row){
@@ -58,7 +66,7 @@ else{
                   echo '<label>Author:  </label>';
                   echo '<input type="text" name="author" id="author" value="'.$row2['author_name'].'"/><br />';
                   echo '<label>Description:  </label>';
-                  echo '<textarea rows="4" cols="50" name="words" id="words">'.$row3['words'].'</textarea><br />';                          
+                  echo '<textarea rows="4" cols="50" name="words" id="words">'.$row3['words'].'</textarea><br />';
                   echo '<label>Media type:  </label>';
                   echo '<input type="text" name="media" id="media" value="'.$row4['media'].'"/><br />';
                   echo '<label>Genre:  </label>';

@@ -1,8 +1,13 @@
 <?php 
   $GLOBALS['book_number']='book_number';
-  //Get the database connection file  
+/**********************************************************
+Get the database connection file
+***********************************************************/
   require 'connections.php';  
   session_start();
+/**********************************************************
+user must be logged in
+***********************************************************/
   if (isset($_SESSION['username'])){
     $username = $_SESSION['username'];
   }
@@ -14,7 +19,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<!-- use own css, bootstrap and datatable libraries------------------------------------------------------ -->
+<head>
     <meta charset="utf-8" />
     <title>Add a book</title>
     <link
@@ -44,7 +50,7 @@
       </div>
     </header>
     <main>
-
+<!-- clear and prep variables for input----------------------------------------------------------- -->
       <?php
         $title=$author=$words=$description=$media=$genre=$tags=$isbn='';
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -57,11 +63,13 @@
           $tags = test_input($_POST['tags']);
           $isbn = test_input ($_POST['isbn']);
         }
+// warn if book is already in database---------------------------------------------------------
           if (isset($_SESSION['book'])){
             echo '<h3 class="error">Your book was not added because that ISBN number is already taken by another book in here.</h3>';
             echo '<h3 class="error">Check the ISBN number and try again.</h3>';
           }                    
       ?>
+<!-- actual input form------------------------------------------------------------------------- -->
       <form action="../successfulAdd.php/successfulAdd.php" method="POST">
         <h2>Add a book</h2><br /> 
         <div id="inputForm">                           

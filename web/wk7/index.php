@@ -1,14 +1,25 @@
 <?php 
   $GLOBALS['book_number']='book_number';
-
-  //Get the database connection file  
-  include 'connections.php';  
+/**********************************************************
+Get the database connection file
+***********************************************************/
+  require 'connections.php';  
   session_start();
   $GLOBALS['conn']=$db;
+/**********************************************************
+user must be logged in
+***********************************************************/
+  if (isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+  }
+  else{
+    header("Location: ../login.php/login.php");
+    die(); 
+  }
 ?> 
-
 <!DOCTYPE html>
 <html lang="en">
+  <!-- use own css, bootstrap and datatable libraries------------------------------------------------------ -->
   <head>
     <meta charset="utf-8" />
     <title>registration</title>

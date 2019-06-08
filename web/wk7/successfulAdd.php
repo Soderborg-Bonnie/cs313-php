@@ -50,6 +50,8 @@ $GLOBALS['conn']=$db;
                           $books = checkBook($isbn);
                           echo 'books: '.$books;
                           if ($books == 1){
+                            echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
+                            sleep (5);
                             header('Location: ../additions.php/additions.php');
                             die();
                           }
@@ -99,7 +101,6 @@ $GLOBALS['conn']=$db;
                         return 0;
                       } else {
                         echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
-                        sleep (5);
                         return 1;
                       }
                     }

@@ -49,12 +49,9 @@ $GLOBALS['conn']=$db;
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                           $books = checkBook($isbn);
                           echo 'books: '.$books;
-                          if ($books == 1){
-                            echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
-                            sleep (5);
-                            header('Location: ../additions.php/additions.php');
-                            die();
-                          }
+                          if ($books == 0){
+                            
+                          
                           $statement = $db->prepare("INSERT INTO isbn (book_number, book_title) VALUES (:isbn, :title)");
                           $statement->bindValue(':isbn', $isbn);
                           $statement->bindValue(':title', $title);
@@ -85,7 +82,12 @@ $GLOBALS['conn']=$db;
                           $statement->bindValue(':tags', $tags);
                           $statement->execute();
 
-                        }
+                        }else{
+                          echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
+
+                          // header('Location: ../additions.php/additions.php');
+                          // die();
+                        }}
 
                     function checkBook($isbn) {
                       $sql = 'SELECT book_number FROM isbn WHERE book_number  =:isbn ';

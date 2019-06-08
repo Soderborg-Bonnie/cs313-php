@@ -1,12 +1,5 @@
 /* colors***************************************************/
-/* 
-tulip: #FE938C
-pale gold: #E6B89C
-desert sand: #EAD2AC
-pewter blue: #9CAFB7
-steel blue: #4281A4
-https://coolors.co/fe938c-e6b89c-ead2ac-9cafb7-4281a4
-
+/*
 https://coolors.co/d49f8c-a9b48a-88b4ab-c35b4f-87a985
 tan: #D49F8C
 sage: #A9B48A
@@ -32,7 +25,6 @@ body {
 }
 header img {
   opacity: 0.7;
-  /* display: inline; */
 }
 header h1 {
   color: #4281a4;
@@ -44,7 +36,6 @@ header h1 {
 header {
   display: grid;
   grid-template-rows: 1fr;
-  /* background-image: url(../wk7/images/blueBricks.jpg); */
   border-bottom: 2px solid #4281a4;
 }
 .topOfPage {
@@ -105,9 +96,6 @@ a.current:visited {
 #bookTable {
   color: #4281a4;
 }
-/* .tableDisplay {
-  display: none;
-} */
 main h2 {
   color: #4281a4;
   font-family: "Neucha", cursive;
@@ -137,19 +125,7 @@ td {
   text-align: left;
   padding-left: 15em;
 }
-#title {
-  width: 30em;
-}
-#author {
-  width: 30em;
-}
-#media {
-  width: 30em;
-}
-#genre {
-  width: 30em;
-}
-#tags {
+#title, #author, #media, #genre, #tags {
   width: 30em;
 }
 #loginPic {
@@ -185,12 +161,6 @@ td {
   color: white;
   text-align: left;
 }
-/* #homeBody {
-  z-index: -10;
-}
-#topImage {
-  z-index: 10;
-} */
 .error {
   color: #c35b4f;
   font-weight: bold;
@@ -210,17 +180,14 @@ footer {
   padding: 2em;
   border-radius: 2em;
 }
-.btn-space{
+.btn-space {
 margin-bottom: 2em;
 }
 /******************************************************tablet size*/
 
 @media only screen and (min-width: 860px) {
-  /*******************************************************header*/
+/*******************************************************header*/
   .topOfPage img {
     display: inline;
   }
-  /* .tableDisplay {
-    display: inline-table;
-  } */
 }

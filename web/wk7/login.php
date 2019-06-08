@@ -1,9 +1,9 @@
 <?php 
-$GLOBALS['book_number']='book_number';
-//Get the database connection file  
-require 'connections.php';  
-session_start();
-$GLOBALS['conn']=$db;
+  $GLOBALS['book_number']='book_number';
+  //Get the database connection file  
+  require 'connections.php';  
+  session_start();
+  $GLOBALS['conn']=$db;
 ?> 
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $GLOBALS['conn']=$db;
     <h1 id="loginTitle">Finding Books</h1><br><br>
     <form action="login.php" method="post">
       <div id="loginInput">
-      <h2>Login</h2><br><br>
+        <h2>Login</h2><br><br>
         <label>Username<span class="error">* <?php echo $usrErr; ?></span></label>
         <input type="text" name="username" placeholder="username" required>   <br>        
         <label>Password<span class="error">* <?php echo $pwdErr; ?></span></label>
@@ -36,85 +36,44 @@ $GLOBALS['conn']=$db;
         <button type="submit" class="btn-rose">login</button>
       </div>
     </form>
-    </main>
-    <!-- <script src="../main.js"></script>
-		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script> -->
+  </main>
   </body>
 
   <?php
-  $userError = $pwdError = '';
-    
-  $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-  $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
-  
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $userError = $pwdError = '';
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       if (
-          isset($password_clearText)
-          && isset($username)
-          )
-      {
-          checkUser($username, $password_clearText);
-
-      }
-  }
-  function checkUser($username, $password) {
-      //$db = dbConnect();
-      
+        isset($password_clearText)
+        && isset($username)
+      ) {
+        checkUser($username, $password_clearText);
+        }
+    }
+    function checkUser($username, $password) {
       $sql = 'SELECT username, password FROM users WHERE username = :username LIMIT 1';
       $statement = $GLOBALS['conn']->prepare($sql);
       $statement->bindValue(':username', $username, PDO::PARAM_STR);
       $statement->execute();
-      
-      // echo 'Executed<br />';
-      //$matchUser = $stmt->fetch(PDO::FETCH_NUM);
       $results = $statement->fetchAll(PDO::FETCH_ASSOC);
       $statement->closeCursor();
-      
-      // echo 'SQL Results Fetched <br />';
-      if (!is_array($results)) {
-          echo 'Nothing Set<br />';
-          
+      if (!is_array($results)) {       
         return 0;
-        //echo 'Nothing found';
-        //exit;
       } else {
-        //echo 'Match found';
-        //exit;
-          // echo 'Array Set <br />';
-          // print_r($results);
           $username = $results[0]['username'];
           $db_password =  $results[0]['password'];
-          if (password_verify($password, $db_password) )
-          {
-              $_SESSION['username'] = $username;
-              $_SESSION['loggedin'] = TRUE;
-
-              header('Location: ../home.php/home.php');
-              die();
-              
+          if (password_verify($password, $db_password)){
+            $_SESSION['username'] = $username;
+            $_SESSION['loggedin'] = TRUE;
+            header('Location: ../home.php/home.php');
+            die();
           } else {
               echo '<p class="error">Error, login failed!</p>';
-
           }
-
           return 1;
       }
     }
-  
-
   ?>
+  <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
 </html>

@@ -66,7 +66,6 @@ WHERE author.book_number = isbn.book_number;
 UPDATE words
 SET book_number = isbn.book_number
 FROM isbn;
--- WHERE words.book_number = '';
 INSERT INTO tags(book_number)
 SELECT book_number 
 FROM isbn;

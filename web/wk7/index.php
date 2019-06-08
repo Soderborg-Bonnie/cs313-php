@@ -1,10 +1,10 @@
 <?php 
-$GLOBALS['book_number']='book_number';
+  $GLOBALS['book_number']='book_number';
 
-//Get the database connection file  
-include 'connections.php';  
-session_start();
-$GLOBALS['conn']=$db;
+  //Get the database connection file  
+  include 'connections.php';  
+  session_start();
+  $GLOBALS['conn']=$db;
 ?> 
 
 <!DOCTYPE html>
@@ -26,9 +26,9 @@ $GLOBALS['conn']=$db;
   </head>
   <body id ="registrationBody">
     <main>
-    <h1 id="registrationTitle">Finding Books</h1><br><br>
-      <form action="index.php" method="POST">
-        <div id="registrationInput">
+      <h1 id="registrationTitle">Finding Books</h1><br><br>
+        <form action="index.php" method="POST">
+          <div id="registrationInput">
             <h2>Welcome! Please <a href="../login.php/login.php">login</a> or register.</h2><br><br>
             <label>*Username: </label>
             <input type="text" name="username" placeholder="username" required><br>
@@ -41,20 +41,20 @@ $GLOBALS['conn']=$db;
       </form>
     </main>
 
-<?php
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
+    <?php
+      $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+      $password_clearText = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_STRING);
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $logins = checkUser($username);
-                $rows = regUser($username, $password_clearText);
-                  if ($rows > 0){
-                      header('Location: ../login.php/login.php');
-                      die();
-                  }else{
-                      echo '<h2 class="error">***Error! Try a different username.</h2>';
-                  }
+          $logins = checkUser($username);
+          $rows = regUser($username, $password_clearText);
+          if ($rows > 0){
+            header('Location: ../login.php/login.php');
+            die();
+          }else{
+            echo '<h2 class="error">***Error! Try a different username.</h2>';
+          }
         }
-        function regUser($username, $password_clearText) {
+        function regUser($username, $password_clearText){
             $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
             $username = test_input($username);
             $password_clearText = test_input($password_clearText);
@@ -67,13 +67,13 @@ $GLOBALS['conn']=$db;
             $statement->closeCursor();
             return $rowsChanged;
         }
-        function test_input($data) {
+        function test_input($data){
             $data = trim($data);
             $data = stripslashes($data);
             $data = htmlspecialchars($data);
             return $data;
         }
-        function checkUser($username) {
+        function checkUser($username){
           $sql = 'SELECT username FROM users WHERE username = :username';
           $stmt = $GLOBALS['conn']->prepare($sql);
           $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -83,11 +83,12 @@ $GLOBALS['conn']=$db;
           if (!is_array($results)) {
               return;
           } else {
-                  echo '<h3 class="error">***Oops! This username is already taken.</h3>';
-                  echo '<h3 class="error">***Please choose another username.</h3>';              
+              echo '<h3 class="error">***Oops! This username is already taken.</h3>';
+              echo '<h3 class="error">***Please choose another username.</h3>';              
               return;
           }
         }
-?>
+    ?>
+    <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
   </body>
 </html>

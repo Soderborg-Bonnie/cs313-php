@@ -1,18 +1,16 @@
 <?php 
-$GLOBALS['book_number']='book_number';
-//Get the database connection file  
-require 'connections.php';  
-session_start();
-unset($_SESSION['book']);
-if (isset($_SESSION['username']))
-{
-	$username = $_SESSION['username'];
-}
-else
-{
-	header("Location: ../login.php/login.php");
-	die(); 
-}
+  $GLOBALS['book_number']='book_number';
+  //Get the database connection file  
+  require 'connections.php';  
+  session_start();
+  unset($_SESSION['book']);
+  if (isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+  }
+  else{
+    header("Location: ../login.php/login.php");
+    die(); 
+  }
 ?> 
 
 <!DOCTYPE html>
@@ -31,8 +29,8 @@ else
       href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"
     />
     <link rel="stylesheet" media="screen" href="../style.css" />
-    <script
-		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- datatables open source code from https://datatables.net/ -->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
@@ -66,43 +64,41 @@ else
       </div>
     </header>
     <main>
-
       <h2>Table o' Books</h2>
-      <a href="../additions.php/additions.php"><h3 id="newBook">Add new book</h3></a>
-      <table
-        id="bookTable"
-        class="table table-striped table-bordered"
-      >
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th class="tableDisplay">Description</th>
-            <th class="tableDisplay">Media Type</th>
-            <th class="tableDisplay">Genre</th>
-            <th class="tableDisplay">Tags</th>
-            <th class="tableDisplay">ISBN</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php 
-
-          foreach ($db->query('SELECT * FROM isbn, author, words, media, genre, tags WHERE isbn.book_number = author.book_number AND isbn.book_number = words.book_number AND isbn.book_number = media.book_number AND isbn.book_number = genre.book_number AND isbn.book_number = tags.book_number') as $row)
-            { 
-              echo '<tr>';  
-              echo '<td><a href="../details.php/details.php?book_number='.$row['book_number'].'">'.$row['book_title'].'</a></td>';
-              echo '<td>'.$row['author_name'].'</td>';
-              echo '<td class="tableDisplay">'.$row['words'].'</td>';
-              echo '<td class="tableDisplay">'.$row['media'].'</td>';
-              echo '<td class="tableDisplay">'.$row['genre'].'</td>';
-              echo '<td class="tableDisplay">'.$row['tags'].'</td>';
-              echo '<td class="tableDisplay">'.$row['book_number'].'</td>';
-              echo '</tr>';
-            }
-            $_SESSION['book_number']=$row['book_number'];
-        ?> 
-        </tbody>
-      </table>
+        <a href="../additions.php/additions.php">
+          <h3 id="newBook">Add new book</h3></a>
+            <table 
+              id="bookTable"
+              class="table table-striped table-bordered"
+            >
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th class="tableDisplay">Description</th>
+                  <th class="tableDisplay">Media Type</th>
+                  <th class="tableDisplay">Genre</th>
+                  <th class="tableDisplay">Tags</th>
+                  <th class="tableDisplay">ISBN</th>
+                </tr>
+              </thead>
+              <tbody>
+              <?php 
+                foreach ($db->query('SELECT * FROM isbn, author, words, media, genre, tags WHERE isbn.book_number = author.book_number AND isbn.book_number = words.book_number AND isbn.book_number = media.book_number AND isbn.book_number = genre.book_number AND isbn.book_number = tags.book_number') as $row){ 
+                  echo '<tr>';  
+                  echo '<td><a href="../details.php/details.php?book_number='.$row['book_number'].'">'.$row['book_title'].'</a></td>';
+                  echo '<td>'.$row['author_name'].'</td>';
+                  echo '<td class="tableDisplay">'.$row['words'].'</td>';
+                  echo '<td class="tableDisplay">'.$row['media'].'</td>';
+                  echo '<td class="tableDisplay">'.$row['genre'].'</td>';
+                  echo '<td class="tableDisplay">'.$row['tags'].'</td>';
+                  echo '<td class="tableDisplay">'.$row['book_number'].'</td>';
+                  echo '</tr>';
+                }
+                $_SESSION['book_number']=$row['book_number'];
+                ?> 
+                </tbody>
+            </table>
     </main>
     <footer>&copy 2019 Bonnie Soderborg All rights reserved.</footer>
   </body>

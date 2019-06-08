@@ -71,12 +71,11 @@ session_start();
                         }
                         if (isset($_SESSION['book'])){
                           echo '<h3 class="error">Your book was not added because that ISBN number is already taken by another book in here.</h3>';
-                          echo '<h3>Check the ISBN number and try again.</h3>';
+                          echo '<h3 class="error">Check the ISBN number and try again.</h3>';
                         }
                         
 ?>
 
-      <!-- <form action="/wk6/additions.php/additions.php" method="POST"> -->
       <form action="../successfulAdd.php/successfulAdd.php" method="POST">
 
                             <h2>Add a book</h2><br /> 

@@ -84,7 +84,7 @@ $GLOBALS['conn']=$db;
 
                         }else{
                           // echo '<h3 class="error">***Oops! That book is already in here.</h3>'; 
-$_SESSION['book']=$isbn;
+                          $_SESSION['book']=$isbn;
                           header('Location: ../additions.php/additions.php');
                           die();
                         }}

@@ -33,7 +33,7 @@ $GLOBALS['conn']=$db;
         </div>
       </div>
     </header>
-    <h2>Your addition of a new book was successful!</h2><br><br>
+    <!-- <h2>Your addition of a new book was successful!</h2><br><br> -->
     <?php
                         $title = ($_POST['title']);
                         $isbn = ($_POST['isbn']);
@@ -42,7 +42,7 @@ $GLOBALS['conn']=$db;
                         $media = ($_POST['media']);
                         $genre = ($_POST['genre']);
                         $tags = ($_POST['tags']);
-                        $author_id =  ($_POST['author_id']);
+                        // $author_id =  ($_POST['author_id']);
                         echo "'$title' has been added."."<br>";
                         // echo "It's ISBN number is: $isbn";
 

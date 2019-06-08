@@ -19,7 +19,7 @@ user must be logged in
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- use own css, bootstrap and datatable libraries------------------------------------------------------ -->
+<!-- use own css, bootstrap and datatable libraries----------------------------------------------------- -->
   <head>
     <meta charset="utf-8" />
     <title>Books</title>

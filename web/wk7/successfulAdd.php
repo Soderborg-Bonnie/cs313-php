@@ -5,6 +5,8 @@ $GLOBALS['book_number']='book_number';
 //Get the database connection file  
 require 'connections.php';  
 session_start();
+$GLOBALS['conn']=$db;
+
 ?> 
 
 <!DOCTYPE html>

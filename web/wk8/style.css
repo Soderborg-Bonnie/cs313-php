@@ -1,0 +1,10 @@
+body {
+	text-align: center;
+	color: white;
+	background-color: #4281a4;
+}
+.error {
+	color: red;
+    background-color: white;
+    font-weight: bold;
+}
